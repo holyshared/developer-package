@@ -63,6 +63,8 @@ class MootoolsPluginBuilderPackage extends Package {
 		$db->Replace('atSelectSettings', array('akID' => $key->getAttributeKeyID(), 'akSelectAllowMultipleValues' => true), array('akID'), true);
 
 		BlockType::installBlockTypeFromPackage("builder", $pkg);
+
+		PageTheme::add('script_builder', $pkg);
 	}
 
 	public function uninstall() {
