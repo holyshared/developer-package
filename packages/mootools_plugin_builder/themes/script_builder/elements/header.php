@@ -9,8 +9,9 @@
 		<meta http-equiv="Content-Language" content="ja" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
-		<link rel="stylesheet" href="/themes/script_builder/style.css" type="text/css" media="screen" />
-		<?php  Loader::element('header_required'); ?>
+<!--		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('style.css'); ?>" type="text/css" media="screen" /> -->
+		<link rel="stylesheet" href="/packages/mootools_plugin_builder/themes/script_builder/style.css" type="text/css" media="screen" />
+		<?php Loader::element('header_required'); ?>
 	</head>
 	<body>
 		<div class="page">

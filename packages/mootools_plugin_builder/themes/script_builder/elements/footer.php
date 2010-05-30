@@ -1,5 +1,9 @@
 <?php  defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 		<div class="foot">
+			<?php
+				$footer = new Area('Footer');
+				$footer->display($c);			
+			?>
 			<p>
 				<span class="powered-by"><a href="http://www.concrete5.org" title="<?php echo t('concrete5 open source CMS')?>"><?php echo t('concrete5 Content Management')?></a></span>
 				&copy; <?php echo date('Y')?> <a href="<?php echo DIR_REL?>/"><?php echo SITE?></a>.
