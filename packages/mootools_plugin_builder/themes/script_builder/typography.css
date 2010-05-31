@@ -125,6 +125,8 @@ a:visited {
 
 /* ====== Lists ======*/
 
+.simpleList {}
+
 /* numbered list */
 ol.simpleList li {
 	list-style-type: decimal;
