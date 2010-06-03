@@ -2,8 +2,19 @@
 	defined('C5_EXECUTE') or die(_("Access Denied."));
 	$aBlocks = $controller->generateNav();
 	$c = Page::getCurrentPage();
-	echo("<ul class=\"nav-header\">");
+?>
 
+<div class="mod">
+<div class="inner">
+
+<div class="hd">
+<h3><?php echo $c->vObj->cvName ?></h3>
+</div>
+
+<div class="bd">
+
+<ul class="nav local">
+<?php 
 	$nh = Loader::helper('navigation');
 
 	$isFirst = true;
@@ -45,7 +56,8 @@
 			$isFirst = false;			
 		}
 	}
-	
-	echo('</ul>');
-	echo('<div class="ccm-spacer">&nbsp;</div>');
 ?>
+</ul>
+</div>
+</div>
+</div>

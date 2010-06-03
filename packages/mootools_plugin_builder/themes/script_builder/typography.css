@@ -66,10 +66,14 @@ strong {
 /* ====== Headings ====== */
 /* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
 h1, .h1 {
-	font-size: 196%;
-	font-weight:normal;
+	font-size: 197%;
+	font-weight: normal;
 	font-style: normal;
 	color: #333333;
+	background: url(images/bgi_mpb.png) no-repeat left top;
+	min-height: 124px;
+	padding-left: 130px;
+	padding-top: 20px;
 }
 
 h2, .h2 {

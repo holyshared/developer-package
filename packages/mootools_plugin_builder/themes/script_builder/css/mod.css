@@ -38,20 +38,92 @@ version: 0.2
 	margin-top: 10px;
 }
 
+
+
+
+.head .horizontal {
+	margin-left: 120px;
+	position: absolute;
+	margin-top: -50px;
+}
+
+.head .horizontal li a {
+	display: block;
+	padding: 5px 15px;
+	background: #4682b4;
+	color: #ffffff;
+}
+
+.head .description {
+	margin-left: 130px;
+	position: absolute;
+	margin-top: -90px;
+}
+
+.foot .horizontal {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.foot .horizontal li {
+	display: inline;
+	text-align: center;
+}
+
+.foot {
+	padding-bottom: 15px;
+}
+
+.body {
+	margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.copyright, .signin {
+	text-align: center;
+}
+
+
+
+/*============ LEAD ============*/
 .lead {
 	margin-bottom: 15px;
 }
 
-/*-- local navigation --*/
-.localNav .inner {
+
+/*================== Navigation ====================*/
+
+.horizontal {
+	overflow: hidden;
+}
+
+.horizontal li {
+	float: left;
+	margin-left: 10px;
+}
+
+/*============ Local Navigation ============*/
+.local .inner {
 	padding-right: 5px;
 }
 
-.localNav .nav li {
+.local .nav li {
 	font-size: 93%;
 }
 
-/*-- package --*/
+/*============ Package Navigation ============*/
 .package .hd {
 	margin-bottom: 10px;
 }
