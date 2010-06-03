@@ -7,11 +7,16 @@ version: 0.2
 /* **************** BLOCK STRUCTURES ***************** */
 
 /* mod */
-.mod{
-	margin:10px;
+.mod {
+	margin: 0px 0px 10px 0px;
 }
 
 .mod .inner {
+	padding: 0px 15px 0px 0px;
+}
+
+.inner {
+	position: relative;
 }
 
 .hd, .bd, .ft {
@@ -20,6 +25,34 @@ version: 0.2
 	_zoom: 1;
 }
 
-.inner {
-	position: relative;
+.hd {
+	margin-bottom: 5px;
+	border-bottom: 1px solid #cccccc;
 }
+
+.bd h4, .bd .h4 {
+	margin-top: 15px;
+}
+
+.bd h5, .bd .h5 {
+	margin-top: 10px;
+}
+
+.lead {
+	margin-bottom: 15px;
+}
+
+/*-- local navigation --*/
+.localNav .inner {
+	padding-right: 5px;
+}
+
+.localNav .nav li {
+	font-size: 93%;
+}
+
+/*-- package --*/
+.package .hd {
+	margin-bottom: 10px;
+}
+
