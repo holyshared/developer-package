@@ -18,11 +18,11 @@ class BuilderBlockController extends BlockController {
 	public function getJavaScriptStrings() {
 		return array("aaa" => "aaa");
 	}
-	
-	function loadBlockInformation() {
+
+	public function loadBlockInformation() {
 	}
 
-	function view() {
+	public function view() {
 		Loader::model('file_set');
 		Loader::model('file_list');
 
@@ -87,26 +87,68 @@ class BuilderBlockController extends BlockController {
 		$this->set("filesets", $fssets);
 	}
 
-	function add() {
-		Loader::model('file_set');
+	public function add() {
+/*		Loader::model('file_set');
+		Loader::model('file_list');
 
-		$fs = new FileSet();
-		$userFilesets = $fs->getMySets($u);
-		$this->set("filesets", $userFilesets);
-//		$this->set("uid", $u->getUserID());
+		$u = new User();
+		$fl = new FileList();
+		$fl->filterByMootoolsPlugin(true);
+		$fl->filterByExtension("js");
+		$fl->filter('u.uID', $u->getUserID(), '=');
+		$files = $fl->get();
+
+		$ufsets = array();
+		foreach($files as $file) {
+			$fsets = $file->getFileSets();
+			foreach ($fsets as $fset) {
+				$ufsets[$fset->getFileSetID()] = $fset;
+			}
+		}
+*/
+		$this->set("filesets", $this->getLoadUserFileSet());
 	}
 
-	function edit() {
+	public function edit() {
+		$this->set("filesets", $this->getLoadUserFileSet());
 	}
 
-	function delete(){
+	public function delete(){
 		parent::delete();
 	}
 	
-	function save($data) {
+	public function save($data) {
+		$db = Loader::db();
+		$db->query("DELETE FROM btBuilderPackage WHERE bID=".intval($this->bID));
+
+		
+		
+		
+		
 		parent::save($data);
 	}
 
+	protected function getLoadUserFileSet() {
+		Loader::model('file_set');
+		Loader::model('file_list');
+
+		$u = new User();
+		$fl = new FileList();
+		$fl->filterByMootoolsPlugin(true);
+		$fl->filterByExtension("js");
+		$fl->filter('u.uID', $u->getUserID(), '=');
+		$files = $fl->get();
+
+		$ufsets = array();
+		foreach($files as $file) {
+			$fsets = $file->getFileSets();
+			foreach ($fsets as $fset) {
+				$ufsets[$fset->getFileSetID()] = $fset;
+			}
+		}
+		return $ufsets;
+	}
+	
 }
 
 ?>
