@@ -22,6 +22,10 @@ class BuilderBlockController extends BlockController {
 	public function loadBlockInformation() {
 	}
 
+	public function on_before_render() {
+//		$this->addHeaderItem($item);
+	}
+
 	public function view() {
 		Loader::model('file_set');
 		Loader::model('file_list');

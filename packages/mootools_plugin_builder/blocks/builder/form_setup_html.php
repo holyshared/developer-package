@@ -1,4 +1,14 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php
+	$packages = array();
+	foreach($filesets as $key => $fileset) {
+		$packages[$fileset->fsID] = $fileset->fsName;
+	}
+	$json = json_encode($packages);
+?>
+<?php $form = Loader::helper('form'); ?>
+<?php $ah = Loader::helper('concrete/interface'); ?>
+<script type="text/javascript">var PluginPackages = <?php echo $json; ?>;</script>
 <style type="text/css">
 
 fieldset {
@@ -51,7 +61,6 @@ dl dd {
 
 </style>
 
-<?php $form = Loader::helper('form'); ?>
 <fieldset>
 	<dl>
 		<dt>name <em>optional</em></dt>
@@ -65,18 +74,13 @@ dl dd {
 	<dl>
 		<dt>Packages</dt>
 		<dd>
-			<?php
-				$packages = array();
-				foreach($filesets as $key => $fileset) {
-					$packages[$fileset->fsID] = $fileset->fsName;
-				}
-				echo $form->select("package", $packages, 0, array("id" => "package", "tabindex" => "0"));
-			?>
+			<?php echo $form->select("package", $packages, 0, array("id" => "package", "tabindex" => "0")); ?>
+			<?php echo $ah->button(t('Add Fileset'), '', null, null, array("id" => "addFileset")); ?>
 		</dd>
 	</dl>
 </fieldset>
 
-<ul class="packageList">
+<ul id="packageList" class="packageList">
 	<li><p><strong>Gradually</strong><br />Gradually.js</p>
 		<ul class="pageUpDown">
 			<li><a href="#">↑</a></li>
