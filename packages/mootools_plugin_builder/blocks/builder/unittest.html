@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ja">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title></title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta http-equiv="Content-Language" content="ja" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+<script type="text/javascript">var PluginPackages = {1: "Gradually", 2: "Exhibition", 3: "MMap"};</script>
+<script type="text/javascript" src="../../../../concrete/js/jquery.js"></script>
+<script type="text/javascript" src="auto.js"></script>
+	</head>
+	<body>
+		<div class="page gs960">
+
+<style type="text/css">
+
+fieldset {
+	padding: 10px;
+	border: 1px solid #cccccc;
+	margin-bottom: 15px;
+}
+
+dl dt, dl dd {
+	margin-bottom: 10px;
+}
+
+dl dt {
+	float: left;
+	clear: both;
+	width: 100px;
+}
+
+dl dd {
+	margin-left: 100px;
+}
+
+.packageList {
+}
+
+.packageList li {
+	padding: 5px 10px;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	overflow: hidden;
+}
+
+.packageList li p {
+	float: left;
+	width: 80%;
+}
+
+.packageList li:last-child {
+	border-bottom: 1px solid #cccccc;
+}
+.pageUpDown {
+	width: 19%;
+	float: right;
+}
+.pageUpDown li {
+	border: none;
+}
+</style>
+
+<fieldset>
+	<dl>
+		<dt>name <em>optional</em></dt>
+		<dd><input name="name" value="" size="30" /></dd>
+		<dt>description <em>optional</em></dt>
+		<dd><input name="description" value="" size="30" /></dd>
+	</dl>
+</fieldset>
+
+<fieldset>
+	<dl>
+		<dt>Packages</dt>
+		<dd>
+			<select id="package">
+				<option value="1">Gradually</option>
+				<option value="2">Exhibition</option>
+				<option value="3">MMap</option>
+			</select>
+			<a id="addFileset" href="#">Add Fileset</a>
+		</dd>
+	</dl>
+</fieldset>
+
+<ul id="packageList" class="packageList">
+	<li><p><strong>Gradually</strong><br />Gradually.js</p>
+		<ul class="pageUpDown">
+			<li><a href="#">Å™</a></li>
+		</ul>
+	</li>
+	<li><p><strong>Exhibition</strong><br />Exhibition.js, Exhibition.Holizonaljs, Exhibition.version.js</p>
+		<ul>
+			<li><a href="#">Å™</a></li>
+			<li><a href="#">Å´</a></li>
+		</ul>
+	</li>
+	<li><p><strong>MMap</strong><br />MMap.js, MMap.Overlay, MMap.Marker, MMap.Marker.Image, MMap.Marker.Images</p>
+		<ul>
+			<li><a href="#">Å´</a></li>
+		</ul>
+	</li>
+</ul>
+
+		</div>
+	</body>
+</html>
