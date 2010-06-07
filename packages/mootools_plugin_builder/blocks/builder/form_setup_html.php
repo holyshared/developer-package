@@ -35,7 +35,7 @@ dl dd {
 }
 
 .packageList li {
-	padding: 5px 10px;
+	padding: 5px 10px 5px 5px;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #cccccc;
 	border-right: 1px solid #cccccc;
@@ -44,21 +44,57 @@ dl dd {
 
 .packageList li p {
 	float: left;
-	width: 80%;
+	width: 100px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .packageList li:last-child {
 	border-bottom: 1px solid #cccccc;
 }
-.pageUpDown {
-	width: 19%;
+
+.packageList .pageUpDown  {
+	width: 70px;
 	float: right;
-}
-.pageUpDown li {
+	overflow: hidden;
 	border: none;
 }
 
 
+.packageList .pageUpDown li {
+	border: none;
+	float: left;
+	width: 20px;
+	padding: 0px;
+}
+
+.packageList li a.delete {
+	width: 10px;
+}
+
+.packageList li a.delete,
+.packageList .pageUpDown li a.up,
+.packageList .pageUpDown li a.down {
+	display: block;
+	padding: 5px;
+	text-indent: -9999px;
+	height: 10px;
+}
+
+.packageList li a.delete {
+	float: left;
+}
+
+.packageList li a.delete {
+	background: url(<?php echo $this->getBlockURL() ?>/images/img_delete.gif) no-repeat center center;
+}
+
+.pageUpDown li a.up {
+	background: url(<?php echo $this->getBlockURL() ?>/images/img_up.gif) no-repeat center center;
+}
+.pageUpDown li a.down {
+	background: url(<?php echo $this->getBlockURL() ?>/images/img_down.gif) no-repeat center center;
+}
 </style>
 
 <fieldset>
@@ -81,21 +117,38 @@ dl dd {
 </fieldset>
 
 <ul id="packageList" class="packageList">
+<?php foreach($packages as $key => $value) : ?>
+	<li>
+		<p><a class="delete" href="#<?php echo $key; ?>">delete</a>&nbsp;<strong><?php echo $value; ?></strong></p>
+		<ul class="pageUpDown">
+		<?php if ($key == 1) { ?>
+			<li><a class="down" href="#">down</a></li>
+		<?php } else if (count($packages) >= $key) { ?>
+			<li><a class="up" href="#">up</a></li>
+		<?php } else { ?>
+			<li><a class="up" href="#">up</a></li>
+			<li><a class="down" href="#">down</a></li>
+		<?php } ?>
+		</ul>
+	</li>
+
+<?php endforeach; ?>
+<!--
 	<li><p><strong>Gradually</strong><br />Gradually.js</p>
 		<ul class="pageUpDown">
 			<li><a href="#">↑</a></li>
 		</ul>
 	</li>
-	<li><p><strong>Exhibition</strong><br />Exhibition.js, Exhibition.Holizonaljs, Exhibition.version.js</p>
+	<li><p><strong>Exhibition</strong></p>
 		<ul>
 			<li><a href="#">↑</a></li>
 			<li><a href="#">↓</a></li>
 		</ul>
 	</li>
-	<li><p><strong>MMap</strong><br />MMap.js, MMap.Overlay, MMap.Marker, MMap.Marker.Image, MMap.Marker.Images</p>
+	<li><p><strong>MMap</strong></p>
 		<ul>
 			<li><a href="#">↓</a></li>
 		</ul>
 	</li>
+-->
 </ul>
-

@@ -4,6 +4,8 @@ $(function() {
 
 		initialize: function(list) {
 			this.list = list;
+			this.items = $(this.list).find('a.delete');
+			$(this.items).click($.proxy(this.remove, this));
 		},
 
 		add: function(key, value) {
@@ -13,7 +15,12 @@ $(function() {
 			this.list.append(li);
 		},
 
-		remove: function(row){
+		remove: function(event) {
+			event.preventDefault();
+			var a = event.target;
+			var index = $(a).attr("href").replace("#", "");
+			var li = $(this.list).find(".r" + index);
+			$(li).remove();
 		}
 
 	};

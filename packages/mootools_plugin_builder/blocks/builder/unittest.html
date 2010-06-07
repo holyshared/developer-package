@@ -41,7 +41,7 @@ dl dd {
 }
 
 .packageList li {
-	padding: 5px 10px;
+	padding: 5px 10px 5px 5px;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #cccccc;
 	border-right: 1px solid #cccccc;
@@ -50,27 +50,65 @@ dl dd {
 
 .packageList li p {
 	float: left;
-	width: 80%;
+	width: 100px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .packageList li:last-child {
 	border-bottom: 1px solid #cccccc;
 }
-.pageUpDown {
-	width: 19%;
+
+.packageList .pageUpDown  {
+	width: 70px;
 	float: right;
-}
-.pageUpDown li {
+	overflow: hidden;
 	border: none;
+}
+
+
+.packageList .pageUpDown li {
+	border: none;
+	float: left;
+	width: 20px;
+	padding: 0px;
+}
+
+.packageList li a.delete {
+	width: 10px;
+}
+
+.packageList li a.delete,
+.packageList .pageUpDown li a.up,
+.packageList .pageUpDown li a.down {
+	display: block;
+	padding: 5px;
+	text-indent: -9999px;
+	height: 10px;
+}
+
+.packageList li a.delete {
+	float: left;
+}
+
+.packageList li a.delete {
+	background: url(images/img_delete.gif) no-repeat center center;
+}
+
+.pageUpDown li a.up {
+	background: url(images/img_up.gif) no-repeat center center;
+}
+.pageUpDown li a.down {
+	background: url(images/img_down.gif) no-repeat center center;
 }
 </style>
 
 <fieldset>
 	<dl>
-		<dt>name <em>optional</em></dt>
+		<dt>name</dt>
 		<dd><input name="name" value="" size="30" /></dd>
-		<dt>description <em>optional</em></dt>
-		<dd><input name="description" value="" size="30" /></dd>
+		<dt>description</dt>
+		<dd><input name="description" value="" size="60" /></dd>
 	</dl>
 </fieldset>
 
@@ -89,20 +127,20 @@ dl dd {
 </fieldset>
 
 <ul id="packageList" class="packageList">
-	<li><p><strong>Gradually</strong><br />Gradually.js</p>
+	<li class="r1"><p><a class="delete" href="#1">delete</a>&nbsp;<strong>Gradually</strong></p>
 		<ul class="pageUpDown">
-			<li><a href="#">Å™</a></li>
+			<li><a class="down" href="#">down</a></li>
 		</ul>
 	</li>
-	<li><p><strong>Exhibition</strong><br />Exhibition.js, Exhibition.Holizonaljs, Exhibition.version.js</p>
-		<ul>
-			<li><a href="#">Å™</a></li>
-			<li><a href="#">Å´</a></li>
+	<li class="r2"><p><a class="delete" href="#2">delete</a>&nbsp;<strong>Exhibition</strong></p>
+		<ul class="pageUpDown">
+			<li><a class="up" href="#">up</a></li>
+			<li><a class="down" href="#">down</a></li>
 		</ul>
 	</li>
-	<li><p><strong>MMap</strong><br />MMap.js, MMap.Overlay, MMap.Marker, MMap.Marker.Image, MMap.Marker.Images</p>
-		<ul>
-			<li><a href="#">Å´</a></li>
+	<li class="r3"><p><a class="delete" href="#3">delete</a>&nbsp;<strong>MMap</strong></p>
+		<ul class="pageUpDown">
+			<li><a class="up" href="#">up</a></li>
 		</ul>
 	</li>
 </ul>

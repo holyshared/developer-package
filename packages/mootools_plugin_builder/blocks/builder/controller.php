@@ -8,11 +8,11 @@ class BuilderBlockController extends BlockController {
 	protected $btInterfaceHeight = "400";
 	
 	public function getBlockTypeDescription() {
-		return t("Mootools Plugin Builder Block");
+		return t("Mootools Plugin Builder Form");
 	}
 
 	public function getBlockTypeName() {
-		return t("Mootools Plugin Builder Block");
+		return t("Mootools Plugin Builder Form");
 	}
 
 	public function getJavaScriptStrings() {
