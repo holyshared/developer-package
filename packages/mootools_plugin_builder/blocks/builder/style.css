@@ -42,28 +42,21 @@ dl dd {
 	border-bottom: 1px solid #cccccc;
 }
 
-
-.packageList li .delete {
-	width: 6px;
-}
-
 .packageList li .delete {
 	display: block;
-	padding: 5px;
-	text-indent: -9999px;
+	padding: 5px 5px 5px 25px;
 	height: 10px;
+	text-decoration: none;
 }
 
 .packageList li .delete {
 	float: left;
 }
 
-.packageList li .delete {
-	background: url(images/img_check.gif) no-repeat left center;
+.packageList li {
+	background: url(images/img_check_off.gif) no-repeat 5px center;
 }
-.packageList .selected {
-	background: #e1f1fb;
-}
-.packageList .selected .delete {
-	background: url(images/img_check.gif) no-repeat -16px center;
+
+.packageList li.selected {
+	background: #f0ffdd url(images/img_check_on.gif) no-repeat 5px center;
 }

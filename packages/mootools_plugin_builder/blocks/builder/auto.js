@@ -3,91 +3,36 @@ $(function() {
 	var PackageList = {
 		initialize: function(list) {
 			this.list = list;
-			$(this.list).sortable();
+			$(this.list).sortable({
+				start: $.proxy(this.start, this),
+				stop: $.proxy(this.stop, this)
+			});
 			$(this.list).disableSelection();
-//			this.triggers = $(this.list).find('a.delete');
-			this.list = $(this.list).find('li');
-//			$(this.triggers).click($.proxy(this.remove, this));
-			$(this.list).click($.proxy(this.remove, this));
+			this.lists = $(this.list).find('li a');
+			$(this.lists).mouseup($.proxy(this.remove, this));
 		},
 
 		remove: function(event) {
 			event.preventDefault();
+			if (this.isDraging) return true;
 
-			var name = event.target.tagName;
-			switch (name.toLowerCase()) {
-			case "li":
-				var a = $(event.target).find(".delete");
-				break;
-			case "a":
-				var a = event.target;
-				break;
-			}
-			var index = $(a).attr("href").replace("#", "");
+			var a = $(event.target);
+			var href = $(a).attr("href");
+			var index = href.substr(href.indexOf("#") + 1);
 			var li = $(this.list).find(".r" + index);
 			$(li).toggleClass("selected");
-		}
-	
-	};
-	PackageList.initialize.apply(PackageList, [$("#packageList")]);
 
-		
-		
-		/*
-	var PackageList = {
-
-		initialize: function(list) {
-			this.list = list;
-			this.items = $(this.list).find('a.delete');
-			$(this.items).click($.proxy(this.remove, this));
-		},
-
-		add: function(key, value) {
-			var li = $("<li/>").attr("id", "package-" + key);
-			var strong = $("<strong/>").html(value);
-			li.append(strong);
-			this.list.append(li);
-		},
-
-		remove: function(event) {
-			event.preventDefault();
-			var a = event.target;
-			var index = $(a).attr("href").replace("#", "");
-			var li = $(this.list).find(".r" + index);
-			$(li).remove();
-		}
-
-	};
-
-	this.PackageSelecter = {
-
-		initialize: function(pulldown, button){
-			this.noSelectPackage = false;
-			this.pulldown = pulldown;
-			this.button = button;
-			this.items = $(this.pulldown).children('option');
-			$(this.button).click($.proxy(this.addPackage, this));
-		},
-
-		addPackage: function(event) {
-			event.preventDefault();
-			if (!this.noSelectPackage) {
-				var items = $(this.pulldown).children('option');
-				var item = $(this.pulldown).val();
-				var curent = $(this.pulldown).find('option[value=' + item + ']');
-				$.proxy(PackageList.add, PackageList)(item, PluginPackages[item]);
-				curent.remove();
-	
-				if (items.length <= 1) {
-					var option = $("<option/>").val("").html("not package");
-					$(this.pulldown).append(option);
-					$(this.pulldown).attr("disable", "disable");
-					this.noSelectPackage = true;
-				}
+			var p = $(this.list).find(".r" + index + " input");
+			if ($(p).attr("disabled")) {
+				$(p).attr("disabled", "")
+			} else {
+				$(p).attr("disabled", "disabled");
 			}
-		}
+		},
+
+		start: function(event, ui) { this.isDraging = true; },
+		stop: function(event, ui) { this.isDraging = false; }
 	};
 	PackageList.initialize.apply(PackageList, [$("#packageList")]);
-	this.PackageSelecter.initialize.apply(this.PackageSelecter, [$("#package"), $("#addFileset")]);
-	*/
+
 });

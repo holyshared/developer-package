@@ -92,43 +92,27 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function add() {
-/*		Loader::model('file_set');
-		Loader::model('file_list');
-
-		$u = new User();
-		$fl = new FileList();
-		$fl->filterByMootoolsPlugin(true);
-		$fl->filterByExtension("js");
-		$fl->filter('u.uID', $u->getUserID(), '=');
-		$files = $fl->get();
-
-		$ufsets = array();
-		foreach($files as $file) {
-			$fsets = $file->getFileSets();
-			foreach ($fsets as $fset) {
-				$ufsets[$fset->getFileSetID()] = $fset;
-			}
-		}
-*/
 		$this->set("filesets", $this->getLoadUserFileSet());
 	}
 
 	public function edit() {
+		$this->set("current", $this->getLoadFileSet());
 		$this->set("filesets", $this->getLoadUserFileSet());
 	}
 
 	public function delete(){
 		parent::delete();
+		$db = Loader::db();
+		$db->query("DELETE FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
 	}
-	
+
 	public function save($data) {
 		$db = Loader::db();
-		$db->query("DELETE FROM btBuilderPackage WHERE bID=".intval($this->bID));
-
-		
-		
-		
-		
+		$db->query("DELETE FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
+		$fsIDs = $this->post("fsID");
+		foreach ($fsIDs as $fsID) {
+			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?)", array($fsID, $this->bID));
+		}
 		parent::save($data);
 	}
 
@@ -151,6 +135,17 @@ class BuilderBlockController extends BlockController {
 			}
 		}
 		return $ufsets;
+	}
+
+	protected function getLoadFileSet() {
+		$db = Loader::db();
+		$result = $db->getAll("SELECT fsID FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
+
+		$fsets = array();
+		foreach($result as $fs) {
+			$fsets[] = $fs["fsID"];
+		}
+		return $fsets;
 	}
 	
 }

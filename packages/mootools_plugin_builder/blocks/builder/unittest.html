@@ -26,24 +26,10 @@
 	</dl>
 </fieldset>
 
-<fieldset>
-	<dl>
-		<dt>Packages</dt>
-		<dd>
-			<select id="package">
-				<option value="1">Gradually</option>
-				<option value="2">Exhibition</option>
-				<option value="3">MMap</option>
-			</select>
-			<a id="addFileset" href="#">Add Fileset</a>
-		</dd>
-	</dl>
-</fieldset>
-
 <ul id="packageList" class="packageList">
-	<li class="r1 selected"><p><a class="delete" href="#1">Gradually</a></p></li>
-	<li class="r2 selected"><p><a class="delete" href="#2">Exhibition</a></p></li>
-	<li class="r3 selected"><p><a class="delete" href="#3">MMap</a></p></li>
+	<li class="r1 selected"><p><a class="delete" href="#1">Gradually</a><input type="hidden" name="module[]" value="Gradually" /></p></li>
+	<li class="r2 selected"><p><a class="delete" href="#2">Exhibition</a><input type="hidden" name="module[]" value="Exhibition" /></p></li>
+	<li class="r3 selected"><p><a class="delete" href="#3">MMap</a><input type="hidden" name="module[]" value="MMap" /></p></li>
 </ul>
 
 		</div>
