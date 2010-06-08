@@ -10,98 +10,12 @@
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 <script type="text/javascript">var PluginPackages = {1: "Gradually", 2: "Exhibition", 3: "MMap"};</script>
 <script type="text/javascript" src="../../../../concrete/js/jquery.js"></script>
+<script type="text/javascript" src="../../../../concrete/js/jquery.ui.js"></script>
 <script type="text/javascript" src="auto.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		<div class="page gs960">
-
-<style type="text/css">
-
-fieldset {
-	padding: 10px;
-	border: 1px solid #cccccc;
-	margin-bottom: 15px;
-}
-
-dl dt, dl dd {
-	margin-bottom: 10px;
-}
-
-dl dt {
-	float: left;
-	clear: both;
-	width: 100px;
-}
-
-dl dd {
-	margin-left: 100px;
-}
-
-.packageList {
-}
-
-.packageList li {
-	padding: 5px 10px 5px 5px;
-	border-top: 1px solid #cccccc;
-	border-left: 1px solid #cccccc;
-	border-right: 1px solid #cccccc;
-	overflow: hidden;
-}
-
-.packageList li p {
-	float: left;
-	width: 100px;
-	margin: 0px;
-	padding: 0px;
-}
-
-.packageList li:last-child {
-	border-bottom: 1px solid #cccccc;
-}
-
-.packageList .pageUpDown  {
-	width: 70px;
-	float: right;
-	overflow: hidden;
-	border: none;
-}
-
-
-.packageList .pageUpDown li {
-	border: none;
-	float: left;
-	width: 20px;
-	padding: 0px;
-}
-
-.packageList li a.delete {
-	width: 10px;
-}
-
-.packageList li a.delete,
-.packageList .pageUpDown li a.up,
-.packageList .pageUpDown li a.down {
-	display: block;
-	padding: 5px;
-	text-indent: -9999px;
-	height: 10px;
-}
-
-.packageList li a.delete {
-	float: left;
-}
-
-.packageList li a.delete {
-	background: url(images/img_delete.gif) no-repeat center center;
-}
-
-.pageUpDown li a.up {
-	background: url(images/img_up.gif) no-repeat center center;
-}
-.pageUpDown li a.down {
-	background: url(images/img_down.gif) no-repeat center center;
-}
-</style>
 
 <fieldset>
 	<dl>
@@ -127,22 +41,9 @@ dl dd {
 </fieldset>
 
 <ul id="packageList" class="packageList">
-	<li class="r1"><p><a class="delete" href="#1">delete</a>&nbsp;<strong>Gradually</strong></p>
-		<ul class="pageUpDown">
-			<li><a class="down" href="#">down</a></li>
-		</ul>
-	</li>
-	<li class="r2"><p><a class="delete" href="#2">delete</a>&nbsp;<strong>Exhibition</strong></p>
-		<ul class="pageUpDown">
-			<li><a class="up" href="#">up</a></li>
-			<li><a class="down" href="#">down</a></li>
-		</ul>
-	</li>
-	<li class="r3"><p><a class="delete" href="#3">delete</a>&nbsp;<strong>MMap</strong></p>
-		<ul class="pageUpDown">
-			<li><a class="up" href="#">up</a></li>
-		</ul>
-	</li>
+	<li class="r1 selected"><p><a class="delete" href="#1">Gradually</a></p></li>
+	<li class="r2 selected"><p><a class="delete" href="#2">Exhibition</a></p></li>
+	<li class="r3 selected"><p><a class="delete" href="#3">MMap</a></p></li>
 </ul>
 
 		</div>

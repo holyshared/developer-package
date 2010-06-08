@@ -1,6 +1,40 @@
 $(function() {
 
 	var PackageList = {
+		initialize: function(list) {
+			this.list = list;
+			$(this.list).sortable();
+			$(this.list).disableSelection();
+//			this.triggers = $(this.list).find('a.delete');
+			this.list = $(this.list).find('li');
+//			$(this.triggers).click($.proxy(this.remove, this));
+			$(this.list).click($.proxy(this.remove, this));
+		},
+
+		remove: function(event) {
+			event.preventDefault();
+
+			var name = event.target.tagName;
+			switch (name.toLowerCase()) {
+			case "li":
+				var a = $(event.target).find(".delete");
+				break;
+			case "a":
+				var a = event.target;
+				break;
+			}
+			var index = $(a).attr("href").replace("#", "");
+			var li = $(this.list).find(".r" + index);
+			$(li).toggleClass("selected");
+		}
+	
+	};
+	PackageList.initialize.apply(PackageList, [$("#packageList")]);
+
+		
+		
+		/*
+	var PackageList = {
 
 		initialize: function(list) {
 			this.list = list;
@@ -55,5 +89,5 @@ $(function() {
 	};
 	PackageList.initialize.apply(PackageList, [$("#packageList")]);
 	this.PackageSelecter.initialize.apply(this.PackageSelecter, [$("#package"), $("#addFileset")]);
-	
+	*/
 });

@@ -1,0 +1,69 @@
+@charset "utf-8"; 
+
+fieldset {
+	padding: 10px;
+	border: 1px solid #cccccc;
+	margin-bottom: 15px;
+}
+
+dl dt, dl dd {
+	margin-bottom: 10px;
+}
+
+dl dt {
+	float: left;
+	clear: both;
+	width: 100px;
+}
+
+dl dd {
+	margin-left: 100px;
+}
+
+.packageList {
+}
+
+.packageList li {
+	padding: 5px 10px 5px 5px;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	overflow: hidden;
+}
+
+.packageList li p {
+	float: left;
+	width: 100px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.packageList li:last-child {
+	border-bottom: 1px solid #cccccc;
+}
+
+
+.packageList li .delete {
+	width: 6px;
+}
+
+.packageList li .delete {
+	display: block;
+	padding: 5px;
+	text-indent: -9999px;
+	height: 10px;
+}
+
+.packageList li .delete {
+	float: left;
+}
+
+.packageList li .delete {
+	background: url(images/img_check.gif) no-repeat left center;
+}
+.packageList .selected {
+	background: #e1f1fb;
+}
+.packageList .selected .delete {
+	background: url(images/img_check.gif) no-repeat -16px center;
+}
