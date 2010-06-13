@@ -18,19 +18,27 @@
 		<div class="page gs960">
 
 <fieldset>
+	<legend>general</legend>
+	<p>General setting</p>
 	<dl>
-		<dt>name</dt>
-		<dd><input name="name" value="" size="30" /></dd>
-		<dt>description</dt>
+		<dt>form title&nbsp;<em class="required">required</em></dt>
+		<dd><input name="title" value="" size="30" /></dd>
+		<dt>description of form</dt>
 		<dd><input name="description" value="" size="60" /></dd>
+		<dt>Download file name&nbsp;<em class="required">required</em></dt>
+		<dd><input name="javascript" value="" size="60" /></dd>
 	</dl>
 </fieldset>
 
+<fieldset>
+<legend>plugins</legend>
+<p>Plugin displayed in form</p>
 <ul id="packageList" class="packageList">
 	<li class="r1 selected"><p><a class="delete" href="#1">Gradually</a><input type="hidden" name="module[]" value="Gradually" /></p></li>
 	<li class="r2 selected"><p><a class="delete" href="#2">Exhibition</a><input type="hidden" name="module[]" value="Exhibition" /></p></li>
 	<li class="r3 selected"><p><a class="delete" href="#3">MMap</a><input type="hidden" name="module[]" value="MMap" /></p></li>
 </ul>
+</fieldset>
 
 		</div>
 	</body>

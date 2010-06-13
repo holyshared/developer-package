@@ -1,11 +1,8 @@
-<?php foreach($filesets as $fileset) : ?>
-<!--
-	mootools_plugin_dependences
-	mootools_plugin_license
-	mootools_plugin_authors
--->
+<?php $t = Loader::helper('text'); ?>
 
-	<h4><?php echo $fileset->name ?></h4>
+<?php foreach($filesets as $fileset) : ?>
+
+	<h4><?php echo $t->entities($fileset->name); ?></h4>
 	<table>
 		<tr>
 			<th></th>
@@ -28,9 +25,9 @@
 				}
 			?>
 			<tr>
-				<td><input type="checkbox" name="module[]" value="<?php echo $file->id ?>" class="<?php echo join(" ", $modules); ?>" /></td>
-				<td><?php echo $file->name ?></td>
-				<td><?php echo $file->description ?></td>
+				<td><input type="checkbox" name="module[]" value="<?php echo $t->entities($file->id) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
+				<td><?php echo $t->entities($file->name); ?></td>
+				<td><?php echo $t->entities($file->description); ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</table>

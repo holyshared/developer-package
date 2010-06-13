@@ -1,26 +1,31 @@
 @charset "utf-8"; 
 
 fieldset {
-	padding: 10px;
+	padding: 0px 10px;
 	border: 1px solid #cccccc;
 	margin-bottom: 15px;
 }
 
-dl dt, dl dd {
-	margin-bottom: 10px;
+legend {
+	text-transform: uppercase;
 }
 
 dl dt {
-	float: left;
-	clear: both;
-	width: 100px;
+	margin-bottom: 5px;
+	text-transform: capitalize;
+	font-weight: bold;
 }
 
 dl dd {
-	margin-left: 100px;
+	margin-left: 0px;
+	margin-bottom: 10px;
 }
 
-.packageList {
+em.required {
+	text-transform: uppercase;
+	color: #b22222;
+	font-style: normal;
+	font-weight: bold;
 }
 
 .packageList li {
