@@ -23,75 +23,15 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function on_before_render() {
-//		$this->addHeaderItem($item);
 	}
 
 	public function view() {
-		Loader::model('file_set');
-		Loader::model('file_list');
-
-		$fssets = array();
-
-		$fs = new FileSet();
-		$userFilesets = $fs->getMySets();
-		foreach ($userFilesets as $fileset) {
-			$fl = new FileList();
-			$fl->filterBySet($fileset);
-			$fl->filterByExtension("js");
-			$files = $fl->get();
-
-			$flist = array();
-			foreach ($files as $file) {
-				
-				$attributes = array();
-				$fv = $file->getVersion();
-				$fa = $fv->getAttributeList();
-//				$fa = FileAttributeKey::getAttributes($file->fID, $fv->getFileVersionID());
-				while ($fa->valid()) {
-					$attribute = $fa->current();
-					$attributes[$fa->key()] = $attribute;
-					$fa->next();
-				}
-
-				$f = new stdClass();
-/*				foreach ($fv as $key => $value) {
-					$f->{$key} = $value;
-				}
-				*/
-				$f->id = $fv->getFileID();
-				$f->name = $fv->getFileName();
-				$f->title = $fv->getTitle();
-				$f->tags = $fv->getTags();
-				$f->author = $fv->getAuthorName();
-				$f->dateAdded = $fv->getDateAdded();
-				$f->description = $fv->getDescription();
-				
-/*
-	public function getFileID() {return $this->fID;}
-	public function getFileVersionID() {return $this->fvID;}
-	public function getPrefix() {return $this->fvPrefix;}
-	public function getFileName() {return $this->fvFilename;}
-	public function getTitle() {return $this->fvTitle;}
-	public function getTags() {return $this->fvTags;} 
-	public function getDescription() {return $this->fvDescription;}
-	public function isApproved() {return $this->fvIsApproved;}
-	*/			
-				
-				$f->attributes = $attributes;
-				$flist[] = $f;
-			}
-
-			$fs = new stdClass();
-			$fs->id = $fileset->fsID;
-			$fs->name = $fileset->fsName;
-			$fs->files = $flist;
-
-			$fssets[$fileset->fsID] = $fs;
-		}
-		$this->set("filesets", $fssets);
+		$this->set("bID", $this->bID);
+		$this->set("filesets", $this->getBuildFileSets());
 	}
 
 	public function add() {
+		$this->set("current", $this->getLoadFileSet());
 		$this->set("filesets", $this->getLoadUserFileSet());
 	}
 
@@ -101,19 +41,75 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function delete(){
-		parent::delete();
 		$db = Loader::db();
 		$db->query("DELETE FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
+		parent::delete();
 	}
 
 	public function save($data) {
 		$db = Loader::db();
 		$db->query("DELETE FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
 		$fsIDs = $this->post("fsID");
-		foreach ($fsIDs as $fsID) {
-			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?)", array($fsID, $this->bID));
+		foreach ($fsIDs as $key => $fsID) {
+			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?, ?)", array($fsID, $this->bID, $key));
 		}
 		parent::save($data);
+	}
+
+	public function action_publish() {
+		$fs = $this->post("fsID");
+
+	
+	
+	}
+
+	protected function getBuildFileSets() {
+		Loader::model('file_set');
+		Loader::model('file_list');
+
+		$rows = array();
+		$fsets = $this->getLoadFileSet();
+		foreach($fsets as $key => $fsID) {
+			$fs = FileSet::getByID($fsID);
+
+			$fileset = new stdClass();
+			$fileset->id = $fs->fsID;
+			$fileset->name = $fs->fsName;
+			$fileset->files = $this->getFilesetFiles($fs);
+			$rows[$fileset->id] = $fileset;
+		}
+		return $rows;
+	}
+
+	private function getFilesetFiles($fs) {
+		$fl = new FileList();
+		$fl->filterBySet($fs);
+		$fl->filterByExtension("js");
+		$files = $fl->get();
+
+		$rows = array();
+		foreach ($files as $file) {
+			$attributes = array();
+			$fv = $file->getVersion();
+			$fa = $fv->getAttributeList();
+			while ($fa->valid()) {
+				$attribute = $fa->current();
+				$attributes[$fa->key()] = $attribute;
+				$fa->next();
+			}
+
+			$f = new stdClass();
+			$f->id = $fv->getFileID();
+			$f->name = $fv->getFileName();
+			$f->title = $fv->getTitle();
+			$f->tags = $fv->getTags();
+			$f->author = $fv->getAuthorName();
+			$f->dateAdded = $fv->getDateAdded();
+			$f->description = $fv->getDescription();
+			$f->attributes = $attributes;
+			$rows[] = $f;
+		}
+		return $rows;			
 	}
 
 	protected function getLoadUserFileSet() {
@@ -139,8 +135,7 @@ class BuilderBlockController extends BlockController {
 
 	protected function getLoadFileSet() {
 		$db = Loader::db();
-		$result = $db->getAll("SELECT fsID FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
-
+		$result = $db->getAll("SELECT fsID FROM btBuilderPackage WHERE bID = ? order by fsOrder", array(intval($this->bID)));
 		$fsets = array();
 		foreach($result as $fs) {
 			$fsets[] = $fs["fsID"];

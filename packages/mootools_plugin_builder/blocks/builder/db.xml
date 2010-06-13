@@ -8,8 +8,9 @@
 	</table>
 
 	<table name="btBuilderPackage">
-		<field name="fsID" type="I"><key /><unsigned /></field>
 		<field name="bID" type="I"><key /><unsigned /></field>
+		<field name="fsID" type="I"><key /><unsigned /></field>
+		<field name="fsOrder" type="I"><key /><unsigned /></field>
 	</table>
-	
+
 </schema>
