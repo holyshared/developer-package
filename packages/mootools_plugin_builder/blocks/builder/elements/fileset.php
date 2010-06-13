@@ -28,7 +28,7 @@
 				}
 			?>
 			<tr>
-				<td><input type="checkbox" name="module" value="<?php echo $file->name ?>" class="<?php echo join(" ", $modules); ?>" /></td>
+				<td><input type="checkbox" name="module[]" value="<?php echo $file->id ?>" class="<?php echo join(" ", $modules); ?>" /></td>
 				<td><?php echo $file->name ?></td>
 				<td><?php echo $file->description ?></td>
 			</tr>

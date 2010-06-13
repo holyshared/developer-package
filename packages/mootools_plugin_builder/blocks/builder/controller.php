@@ -8,7 +8,7 @@ class BuilderBlockController extends BlockController {
 	protected $btInterfaceHeight = "400";
 	
 	public function getBlockTypeDescription() {
-		return t("Mootools Plugin Builder Form");
+		return t("The form that does the plugin of Mootools in the packaging is offered.");
 	}
 
 	public function getBlockTypeName() {
@@ -20,9 +20,6 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function loadBlockInformation() {
-	}
-
-	public function on_before_render() {
 	}
 
 	public function view() {
@@ -57,10 +54,28 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function action_publish() {
-		$fs = $this->post("fsID");
+		$filesets = $this->post("module");
 
-	
-	
+		Loader::model('file_list');
+
+		$u = new User();
+		$fl = new FileList();
+		$fl->filterByMootoolsPlugin(true);
+		$fl->filterByExtension("js");
+		$fl->filter('u.uID', $u->getUserID(), '=');
+		$fl->filter('f.fID', $filesets, '=');
+		$files = $fl->get();
+
+		$output = "";
+		foreach ($files as $key => $file)  {
+			$output .= file_get_contents($file->getPath())."\n";
+		}
+
+		$file = $this->javascript.".js";
+		header("Content-disposition: attachment; filename=".$file);
+		header("Content-type: application/octet-stream; name=".$file);
+		echo $output;
+		exit;
 	}
 
 	protected function getBuildFileSets() {
@@ -135,7 +150,7 @@ class BuilderBlockController extends BlockController {
 
 	protected function getLoadFileSet() {
 		$db = Loader::db();
-		$result = $db->getAll("SELECT fsID FROM btBuilderPackage WHERE bID = ? order by fsOrder", array(intval($this->bID)));
+		$result = $db->getAll("SELECT fsID FROM btBuilderPackage WHERE bID = ? order by orderNumber", array(intval($this->bID)));
 		$fsets = array();
 		foreach($result as $fs) {
 			$fsets[] = $fs["fsID"];

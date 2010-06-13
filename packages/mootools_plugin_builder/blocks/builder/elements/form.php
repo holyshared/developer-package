@@ -11,16 +11,14 @@
 <link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/style.css" media="screen" />
 <script type="text/javascript">var PluginPackages = <?php echo $json; ?>;</script>
 
-
-<?php $token = Loader::helper('validation/token'); ?>
-<?php echo $token->generate("publish"); ?>
-
 <fieldset>
 	<dl>
-		<dt>name <em>optional</em></dt>
-		<dd><?php echo $form->text("name", $name, array("size" => 30)); ?></dd>
-		<dt>description <em>optional</em></dt>
+		<dt>title</dt>
+		<dd><?php echo $form->text("title", $title, array("size" => 30)); ?></dd>
+		<dt>description</dt>
 		<dd><?php echo $form->text("description", $description, array("size" => 30)); ?></dd>
+		<dt>javascript</dt>
+		<dd><?php echo $form->text("javascript", $javascript, array("size" => 30)); ?>.js</dd>
 	</dl>
 </fieldset>
 

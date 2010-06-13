@@ -3,14 +3,15 @@
 
 	<table name="btBuilder">
 		<field name="bID" type="I"><key /><unsigned /></field>
-		<field name="name" type="C" size="255"></field>
+		<field name="title" type="C" size="255"></field>
 		<field name="description" type="C" size="255"></field>
+		<field name="javascript" type="C" size="255"></field>
 	</table>
 
 	<table name="btBuilderPackage">
 		<field name="bID" type="I"><key /><unsigned /></field>
 		<field name="fsID" type="I"><key /><unsigned /></field>
-		<field name="fsOrder" type="I"><key /><unsigned /></field>
+		<field name="orderNumber" type="I"><unsigned /></field>
 	</table>
 
 </schema>
