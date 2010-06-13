@@ -7,7 +7,7 @@
 		<div class="bd">
 			<form method="post" action="<?php echo $this->action('publish'); ?>">
 				<?php $this->inc('elements/fileset.php'); ?>
-				<?php echo $form->submit('download-'.$bID, 'download'); ?>
+				<p class="control"><?php echo $form->submit('download-'.$bID, 'download'); ?></p>
 			</form>
 		</div>
 	</div>

@@ -14,9 +14,12 @@ class PluginArchive extends Archive {
 		$this->targetDirectory = DIR_APP_UPDATES;
 	}
 
-	public function install($file) {
-		$dirBase = parent::install($file, true);
-		return $this->targetDirectory.'/'.$dirBase;
+	public function unzip($file) {
+		$fh = Loader::helper('file');
+		$dirBase = parent::unzip($file);
+		$dirFull = $this->getArchiveDirectory($dirBase);
+		$dirBase = substr(strrchr($dirFull, '/'), 1);
+		return $fh->getTemporaryDirectory().'/'.$file.'/'.$dirBase;
 	}
 }
 
@@ -102,14 +105,18 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step2() {
+		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
 
 		$response = new JSONResponse();
 		$response->setStatus(false);
 
-		$url = sprintf(DashboardMootoolsImporterController::GITHUB_URL."api/v2/json/repos/show/%s/%s", $user, $repos);
-		$json = file_get_contents($url);
+		$github = new phpGitHubApi();
+		$api = $github->getRepoApi();
+		$json = $api->show($user, $repos);
+
 		if ($json === false) {
 			$response->setMessage("The repository was not able to be confirmed. Please confirm whether the repository exists.");
 			$response->flush();
@@ -121,24 +128,26 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step3() {
+		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
 
-		$url = sprintf(DashboardMootoolsImporterController::GITHUB_URL."api/v2/json/repos/show/%s/%s/tags", $user, $repos);
-		$contents = file_get_contents($url);
-		$json = @json_decode($contents);
+		$github = new phpGitHubApi();
+		$api = $github->getRepoApi();
+		$tags = $api->getRepoTags($user, $repos);
 
 		$response = new JSONResponse();
 		$response->setStatus(false);
 
-		if (!$json) {
+		if (!$tags) {
 			$response->setMessage("Bad GitHub response. Try again later.");
 			$response->flush();
 		}
 
-		$tags = array_keys((array) $json->tags);
+		$tags = array_keys((array) $tags);
 		usort($tags, 'version_compare');
-		
+
 		if (empty($tags)) {
 			$response->setMessage("GitHub repository has no tags. At least one tag is required.");
 			$response->flush();
@@ -195,13 +204,7 @@ class DashboardMootoolsImporterController extends Controller {
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
 		$file	= $this->post("file");
-
-/*
-		$user	= "holyshared";
-		$repos	= "Gradually";
-		$file	= "1275149949";
-*/
-
+		
 		$u = new User();
 		$fs = FileSet::createAndGetSet($repos, 1, $u->getUserID());
 		
@@ -230,7 +233,8 @@ class DashboardMootoolsImporterController extends Controller {
 	
 	private function _importByArchive($fs, $archive, $existsFiles) {
 		$plugin = new PluginArchive();
-		$pluginDir = $plugin->install($archive);
+		$pluginDir = $plugin->unzip($archive);
+		
 		if ($pluginDir) {
 			$dir = $pluginDir."/Source/";
 			if ($dh = opendir($dir)) {
@@ -238,7 +242,7 @@ class DashboardMootoolsImporterController extends Controller {
 				while (($file = readdir($dh)) !== false) {
 					if (filetype($dir.$file) == 'file') {
 						if (array_key_exists($file, $existsFiles)) {
-							$fv = $this->_addFile($dir.$file, $setFiles[$file]);
+							$fv = $this->_addFile($dir.$file, $existsFiles[$file]);
 						} else {
 							$fv = $this->_addFile($dir.$file);
 						}
@@ -248,6 +252,7 @@ class DashboardMootoolsImporterController extends Controller {
 			    }
 				closedir($dh);
 			}
+			@unlink($tmpArchive);
 		}
 		return $files;
 	}
@@ -255,9 +260,8 @@ class DashboardMootoolsImporterController extends Controller {
 	private function _addFile($file, $fr = false) {
 		Loader::library("file/importer");
 		Loader::library("mootools/plugin_parser", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-		//$jsh = Loader::helper("json");
+
 		$cf = Loader::helper("file");
-		//$valt = Loader::helper('validation/token');
 
 		$parser = new MootoolsPluginParser();
 		$meta = $parser->parse($dir.$file);

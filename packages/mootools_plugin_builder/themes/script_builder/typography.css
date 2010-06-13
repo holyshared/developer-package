@@ -172,3 +172,7 @@ cite {
 	display: block;
 	text-align: right;
 }
+
+.control {
+	text-align: center;
+}

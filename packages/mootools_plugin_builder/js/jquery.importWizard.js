@@ -14,8 +14,8 @@
 		},
 		
 		this.success = function(json, statusText, xhr, form){
+alert(json);
 			if (this.current < this.options.step + 1) {
-alert(this.current);
 				var response = json.response;
 				if (response.status) {
 					$(this.container).trigger('progress', [this.current]);
