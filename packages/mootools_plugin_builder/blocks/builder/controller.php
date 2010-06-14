@@ -16,7 +16,10 @@ class BuilderBlockController extends BlockController {
 	}
 
 	public function getJavaScriptStrings() {
-		return array("aaa" => "aaa");
+		return array(
+			"form-title"	=> "Please input a form title.",
+			"download-file"	=> "Please input the file name when it downloads it."
+		);
 	}
 
 	public function loadBlockInformation() {
@@ -124,7 +127,7 @@ class BuilderBlockController extends BlockController {
 			$f->attributes = $attributes;
 			$rows[] = $f;
 		}
-		return $rows;			
+		return $rows;
 	}
 
 	protected function getLoadUserFileSet() {

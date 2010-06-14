@@ -17,7 +17,7 @@ class MootoolsPluginBuilderPackage extends Package {
 	public function getPackageName() {
 		return t('Mootools Plugin Builder Package');
 	}
-	
+
 	public function install() {
 
 		Loader::library('mootools/attribute', MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
@@ -63,6 +63,7 @@ class MootoolsPluginBuilderPackage extends Package {
 		$db->Replace('atSelectSettings', array('akID' => $key->getAttributeKeyID(), 'akSelectAllowMultipleValues' => true), array('akID'), true);
 
 		BlockType::installBlockTypeFromPackage("builder", $pkg);
+		BlockType::installBlockTypeFromPackage("github_tags", $pkg);
 
 		PageTheme::add('script_builder', $pkg);
 	}
