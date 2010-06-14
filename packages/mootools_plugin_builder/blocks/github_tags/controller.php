@@ -8,7 +8,7 @@ class GithubTagsBlockController extends BlockController {
 	protected $btInterfaceHeight = "400";
 
 	public function getBlockTypeDescription() {
-		return t("The form that does the plugin of Mootools in the packaging is offered.");
+		return t("Tag list of github repository");
 	}
 
 	public function getBlockTypeName() {
@@ -17,37 +17,35 @@ class GithubTagsBlockController extends BlockController {
 
 	public function getJavaScriptStrings() {
 		return array(
-			"form-title"	=> "Please input a form title.",
-			"download-file"	=> "Please input the file name when it downloads it."
+			"title"	=> "Please input a title.",
+			"repos"	=> "Please select the repository.",
+			"display-count"	=> "Please select the display number."
 		);
 	}
 
 	public function view() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-		$github = new phpGitHubApi();
-		$api = $github->getRepoApi();
-		//$tags = $api->getRepoTags("holyshared", $this->repos);
-		$tags = $api->getRepoTags("holyshared", "MMap");
-		$this->set("tags", $tags);
+		$this->set("tags", $this->getUserRepositoryTags());
 	}
 
 	public function add() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-		$github = new phpGitHubApi();
-		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos("holyshared");
-		$this->set("repositories", $repositories);
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$this->set("userName", $userName);
+		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-		$github = new phpGitHubApi();
-		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos("holyshared");
-		$this->set("repositories", $repositories);
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$this->set("userName", $userName);
+		$this->set("repositories", $this->getUserRepositories());
 	}
 
-	public function delete(){
+	public function delete() {
 		parent::delete();
 	}
 
@@ -55,6 +53,34 @@ class GithubTagsBlockController extends BlockController {
 		parent::save($data);
 	}
 
+	protected function getUserRepositories() {
+		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$github = new phpGitHubApi();
+		$api = $github->getRepoApi();
+		$repositories = $api->getUserRepos($userName);
+
+		return $repositories;
+	}
+
+	protected function getUserRepositoryTags() {
+		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$github = new phpGitHubApi();
+		$api = $github->getRepoApi();
+		$tags = $api->getRepoTags($userName, $this->repos);
+
+		return $tags;
+	}
+	
 }
 
 ?>

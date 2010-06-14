@@ -11,7 +11,7 @@
 					$tgz = $baseURL."tarball/".$key;
 					$zip = $baseURL."zipball/".$key;
 				?>
-					<li><?php echo $key ?><br /><a title="<?php echo $key; ?> download(.tgz)" href="<?php echo $tgz; ?>">tgz</a> | <a title="<?php echo $key; ?> download(.zip)" href="<?php echo $zip; ?>">zip</a></li>
+					<li>version <?php echo $key ?><br /><a title="<?php echo $key; ?> download(.tgz)" href="<?php echo $tgz; ?>">tgz</a> | <a title="<?php echo $key; ?> download(.zip)" href="<?php echo $zip; ?>">zip</a></li>
 				<?php endforeach; ?>
 			</ul>
 		</div>
