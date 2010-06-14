@@ -28,6 +28,12 @@ em.required {
 	font-weight: bold;
 }
 
+em.warning {
+	font-style: normal;
+	font-weight: bold;
+	color: #b22222;
+}
+
 .packageList li {
 	padding: 5px 10px 5px 5px;
 	border-top: 1px solid #cccccc;

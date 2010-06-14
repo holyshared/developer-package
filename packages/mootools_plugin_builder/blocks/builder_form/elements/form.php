@@ -15,6 +15,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/style.css" media="screen" />
 <script type="text/javascript">var PluginPackages = <?php echo $json; ?>;</script>
 
+<?php if (count($packages) <= 0) : ?>
+<p><em class="warning">The plugin was not found. <br />
+Please do the plugin from the repository of github importing.</em></p>
+<p><a href="<?php echo $this->url("dashboard/mootools/importer") ?>">It moves to the import page.</a></p>
+<?php endif; ?>
+
+<p>Please select the plug-in name displayed in the list of the form.</p>
 <fieldset>
 	<legend>general</legend>
 	<p>General setting</p>
@@ -24,7 +31,7 @@
 		<dt>description of form</dt>
 		<dd><?php echo $f->text("description", $description, array("size" => 80)); ?></dd>
 		<dt>Download file name&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->text("javascript", $javascript, array("id" => "downloadFile", "size" => 60)); ?>.js</dd>
+		<dd><?php echo $f->text("javascript", $javascript, array("id" => "downloadFile", "size" => 20)); ?>.js</dd>
 	</dl>
 </fieldset>
 

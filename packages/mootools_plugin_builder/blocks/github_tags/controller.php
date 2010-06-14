@@ -54,7 +54,7 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	protected function getUserRepositories() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
 		$u = new User();
 		$ui = UserInfo::getByID($u->getUserID());
@@ -68,16 +68,19 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	protected function getUserRepositoryTags() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
+		$tags = array();
 
 		$u = new User();
 		$ui = UserInfo::getByID($u->getUserID());
 		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 
-		$github = new phpGitHubApi();
-		$api = $github->getRepoApi();
-		$tags = $api->getRepoTags($userName, $this->repos);
-
+		if (!empty($userName)) {
+			$github = new phpGitHubApi();
+			$api = $github->getRepoApi();
+			$tags = $api->getRepoTags($userName, $this->repos);
+		}
 		return $tags;
 	}
 	

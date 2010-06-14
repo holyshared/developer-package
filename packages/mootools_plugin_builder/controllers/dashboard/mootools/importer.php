@@ -105,7 +105,7 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step2() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
@@ -128,7 +128,7 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step3() {
-		Loader::library("3rdparty/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 		
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");

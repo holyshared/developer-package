@@ -20,6 +20,7 @@
 <?php endif; ?>
 
 <p>Please input a necessary item.</p>
+<?php echo $f->hidden("user", (empty($user)) ? $userName : $user); ?>
 <fieldset>
 	<legend>general</legend>
 	<p>General setting</p>
