@@ -25,6 +25,7 @@ class MootoolsPluginBuilderPackage extends Package {
 		$pkg = parent::install();
 
 		Loader::model('single_page');
+		Loader::model('attribute/categories/user');
 		Loader::model('attribute/categories/file');
 		$collection = SinglePage::add("/dashboard/mootools", $pkg);
 		if (!empty($collection)) {
@@ -35,24 +36,35 @@ class MootoolsPluginBuilderPackage extends Package {
         	$collection->update(array('cName' => 'import', 'cDescription'	=> 'Importing of repository'));
 		}
 
+		//The name of the user of github is added to the attribute.
 		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN, "akName" => "This file is a plugin of mootools.",
+			"akHandle" => MOOTOOLS_GITHUB_USER, "akName" => "Name of user of github",
+			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
+		);
+		$key = UserAttributeKey::add("text", $values, $pkg);
+
+		//The plugin of mootools is added to the attribute.
+		$values = array(
+			"akHandle" => MOOTOOLS_PLUGIN, "akName" => "This file is a plugin of mootools",
 			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
 		);
 		$key = FileAttributeKey::add("boolean", $values, $pkg);		
 
+		//The plugin of mootools is added to the attribute.
 		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN_LICENSE, "akName" => "license.",
+			"akHandle" => MOOTOOLS_PLUGIN_LICENSE, "akName" => "License of Mootools plugin",
 			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
 		);
 		$key = FileAttributeKey::add("text", $values, $pkg);
 
+		//The Mootools license is added to the attribute. 
 		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN_AUTHORS, "akName" => "authors.",
+			"akHandle" => MOOTOOLS_PLUGIN_AUTHORS, "akName" => "Authors of Mootools plugin",
 			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
 		);
 		$key = FileAttributeKey::add("text", $values, $pkg);
 
+		//The author of the Mootools plug-in is added to the attribute.
 		$values = array(
 			"akHandle" => MOOTOOLS_PLUGIN_DEPENDENCES, "akName" => "Dependence of mootools plugin",
 			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
@@ -62,7 +74,7 @@ class MootoolsPluginBuilderPackage extends Package {
 		$db = Loader::db();
 		$db->Replace('atSelectSettings', array('akID' => $key->getAttributeKeyID(), 'akSelectAllowMultipleValues' => true), array('akID'), true);
 
-		BlockType::installBlockTypeFromPackage("builder", $pkg);
+		BlockType::installBlockTypeFromPackage("builder_form", $pkg);
 		BlockType::installBlockTypeFromPackage("github_tags", $pkg);
 
 		PageTheme::add('script_builder', $pkg);

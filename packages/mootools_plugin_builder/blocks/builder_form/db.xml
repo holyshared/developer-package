@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <schema version="0.3">
 
-	<table name="btBuilder">
+	<table name="btBuilderForm">
 		<field name="bID" type="I"><key /><unsigned /></field>
 		<field name="title" type="C" size="255"></field>
 		<field name="description" type="C" size="255"></field>

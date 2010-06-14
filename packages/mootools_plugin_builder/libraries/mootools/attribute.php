@@ -1,6 +1,10 @@
 <?php
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
+if (!defined('MOOTOOLS_GITHUB_USER')) {
+	define('MOOTOOLS_GITHUB_USER', 'mootools_github_user');
+}
+
 if (!defined('MOOTOOLS_PLUGIN')) {
 	define('MOOTOOLS_PLUGIN', 'mootools_plugin');
 }

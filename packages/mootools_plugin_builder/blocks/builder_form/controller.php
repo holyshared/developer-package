@@ -1,9 +1,9 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php 
 
-class BuilderBlockController extends BlockController {
+class BuilderFormBlockController extends BlockController {
 	
-	protected $btTable = 'btBuilder';
+	protected $btTable = 'btBuilderForm';
 	protected $btInterfaceWidth = "550";
 	protected $btInterfaceHeight = "400";
 	

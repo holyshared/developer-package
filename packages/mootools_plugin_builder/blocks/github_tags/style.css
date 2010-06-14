@@ -28,6 +28,11 @@ em.required {
 	font-weight: bold;
 }
 
+em.username {
+	color: #b22222;
+	font-weight: bold;
+}
+
 .packageList li {
 	padding: 5px 10px 5px 5px;
 	border-top: 1px solid #cccccc;
