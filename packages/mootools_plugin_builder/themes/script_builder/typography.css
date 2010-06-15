@@ -1,22 +1,14 @@
 @charset "utf-8";
 /*
-10px=77%
-11px=85%
-12px=93%
-13px=100%
-14px=108%
-15px=116%
-16px=123.1%
-17px=131%
-18px=138.5%
-19px=146.5%
-20px=153.9%
-21px=161.6%
-22px=167%
-23px=174%
-24px=182%
-25px=189%
-26px=197%
+10 px : 77%   |  11 px : 85% 
+ *  12 px : 93%   |  13 px : 100%
+ *  14 px : 108%  |  15 px : 116%
+ *  16 px : 124%  |  17 px : 131%
+ *  18 px : 139%  |  19 px : 147%
+ *  20 px : 154%  |  22 px : 170%
+ *  24 px : 185%  |  26 px : 200%
+ *  28 px : 216%  |  30 px : 231%
+ *  32 px : 247%
 */
 
 body {
@@ -44,7 +36,6 @@ blockquote {
 	padding: 10px;
 }
 
-
 pre {
 	margin: 10px;
 }
@@ -66,32 +57,29 @@ strong {
 /* ====== Headings ====== */
 /* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
 h1, .h1 {
-	font-size: 197%;
+	font-size: 200%;
 	font-weight: normal;
 	font-style: normal;
 	color: #333333;
-	background: url(images/bgi_mpb.png) no-repeat left top;
 	min-height: 124px;
 	padding-left: 130px;
 	padding-top: 20px;
 }
 
 h2, .h2 {
-	font-size: 167%;
+	font-size: 231%;
 	font-weight: normal;
 	font-style: normal;
 	color: #333333;
-	background: url(images/bgi_h2.jpg) no-repeat left top;
-	padding: 10px 0px 10px 45px;
+	padding: 10px 0px 10px 0px;
 }
 
 h3, .h3 {
-	font-size: 138.5%;
+	font-size: 154%;
 	font-weight: normal;
 	font-style: normal;
 	color: #333333;
-	background: url(images/bgi_h3.jpg) no-repeat left top;
-	padding: 8px 0px 12px 45px;
+	padding: 8px 0px 12px 0px;
 }
 
 h4, .h4 {
@@ -101,7 +89,6 @@ h4, .h4 {
 	color: #333;
 	padding: 0px 0px 10px 0px;
 	background: none;
-	border-bottom: 1px solid #cccccc;
 }
 
 h5, .h5 {
@@ -150,21 +137,65 @@ ul.simpleList li {
 	margin-left: 40px;
 }
 
-
 /* ====== Tables ====== */
 table {
-	border-collapse: collapse;
+	border-collapse: separate;
+	border-spacing: 0px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border: 1px solid #cccccc;
 }
 
-th, td {
-	border: 1px solid #cccccc;
+table tr th, table tr td {
+	border-left: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
 	padding: 5px 10px;
+	vertical-align: top;
 }
+
+table tr:first-child th:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 10px;
+}
+
+table tr:first-child th:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 10px;
+}
+
+table tr:last-child td {
+	border-bottom: none;
+}
+
+table tr:last-child td:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 8px;
+}
+
+table tr:last-child td:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 8px;
+}
+
+table tr td:first-child, table tr th:first-child {
+	border-left: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 th {
 	font-weight: bold;
 	text-transform: uppercase;
-	background: url(images/bgi_th.jpg) repeat-x left center;
 }
 
 /* ====== blockquote ====== */

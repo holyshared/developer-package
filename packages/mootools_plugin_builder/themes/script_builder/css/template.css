@@ -18,18 +18,4 @@ body{_text-align:center;}/* IE5.5 */
 .gCal{width:180px;}
 .yahoo{width:240px;}
 .myYahoo{width:300px;}
-
-.page {
-	padding: 0px 0px 0px 15px;
-	border-left: 1px solid #cccccc;
-	border-right: 1px solid #cccccc;
-}
-
-.leftCol {
-	padding-right: 10px;
-}
-
-.main {
-	border-left: 1px solid #cccccc;
-	padding-left: 20px;
-}
+.mBuilder{width:190px;}

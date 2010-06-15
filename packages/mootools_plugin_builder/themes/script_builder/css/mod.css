@@ -12,7 +12,7 @@ version: 0.2
 }
 
 .mod .inner {
-	padding: 0px 15px 0px 0px;
+	padding: 10px;
 }
 
 .inner {
@@ -27,20 +27,43 @@ version: 0.2
 
 .hd {
 	margin-bottom: 5px;
-	border-bottom: 1px solid #cccccc;
 }
 
-.bd h4, .bd .h4 {
-	margin-top: 15px;
+.aside {
+	background: #DFD9BD;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
 }
 
-.bd h5, .bd .h5 {
-	margin-top: 10px;
+.aside .hd {
+	padding-left: 30px;
+}
+
+.aside ul li {
+	text-align: right;
+}
+
+.local {
+	background: #DFD9BD url(../images/bgi_nav.gif) no-repeat center top;
+	min-height: 32px;
+}
+
+.repos {
+	background: #DFD9BD url(../images/bgi_repos.gif) no-repeat center top;
+	min-height: 25px;
+}
+
+.download {
+	background: #DFD9BD url(../images/bgi_download.gif) no-repeat center top;
+	min-height: 27px;
 }
 
 
 
 
+
+
+/*
 
 .head .horizontal {
 	margin-left: 120px;
@@ -80,62 +103,5 @@ version: 0.2
 	margin-bottom: 30px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.copyright, .signin {
-	text-align: center;
-}
-
-
-
-/*============ LEAD ============*/
-.lead {
-	margin-bottom: 15px;
-}
-
-
-/*================== Navigation ====================*/
-.horizontal {
-	overflow: hidden;
-}
-
-.horizontal li {
-	float: left;
-	margin-left: 10px;
-}
-
-.topicPath {
-	margin-bottom: 15px;
-}
-
-.topicPath li {
-	margin-left: 0px;
-	margin-right: 5px;
-}
-
-
-
-/*============ Local Navigation ============*/
-.local .inner {
-	padding-right: 5px;
-}
-
-.local .nav li {
-	font-size: 93%;
-}
-
-/*============ Package Navigation ============*/
-.package .hd {
-	margin-bottom: 10px;
-}
+*/
 
