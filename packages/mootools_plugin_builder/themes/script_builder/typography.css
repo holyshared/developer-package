@@ -79,7 +79,7 @@ h3, .h3 {
 	font-weight: normal;
 	font-style: normal;
 	color: #333333;
-	padding: 8px 0px 12px 0px;
+	padding: 0px;
 }
 
 h4, .h4 {
@@ -87,7 +87,7 @@ h4, .h4 {
 	font-weight: normal;
 	font-style: normal;
 	color: #333;
-	padding: 0px 0px 10px 0px;
+	padding: 0px;
 	background: none;
 }
 
@@ -146,6 +146,14 @@ table {
 	border: 1px solid #cccccc;
 }
 
+table tr th {
+	background: #ededed;
+}
+
+table tr td {
+	background: #ffffff;
+}
+
 table tr th, table tr td {
 	border-left: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
@@ -182,21 +190,6 @@ table tr td:first-child, table tr th:first-child {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-th {
-	font-weight: bold;
-	text-transform: uppercase;
-}
 
 /* ====== blockquote ====== */
 cite {

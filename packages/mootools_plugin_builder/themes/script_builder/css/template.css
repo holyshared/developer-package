@@ -18,4 +18,7 @@ body{_text-align:center;}/* IE5.5 */
 .gCal{width:180px;}
 .yahoo{width:240px;}
 .myYahoo{width:300px;}
-.mBuilder{width:190px;}
+.mBuilder{width:190px; padding-right: 50px; }
+
+.page {background: #F4F2EA; padding: 0px 15px;}
+

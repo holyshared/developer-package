@@ -36,7 +36,7 @@ version: 0.2
 }
 
 .aside .hd {
-	padding-left: 30px;
+	padding-left: 35px;
 }
 
 .aside ul li {
@@ -45,20 +45,50 @@ version: 0.2
 
 .local {
 	background: #DFD9BD url(../images/bgi_nav.gif) no-repeat center top;
-	min-height: 32px;
+	min-height: 29px;
+	padding-top: 3px;
 }
 
 .repos {
 	background: #DFD9BD url(../images/bgi_repos.gif) no-repeat center top;
-	min-height: 25px;
+	min-height: 32px;
 }
 
 .download {
 	background: #DFD9BD url(../images/bgi_download.gif) no-repeat center top;
-	min-height: 27px;
+	min-height: 29px;
+	padding-top: 3px;
 }
 
 
+/*
+.line {
+}
+
+.line .unit {
+	padding: 0px 10px 0px 0px;
+}
+
+.line .lastUnit {
+	padding: 0px;
+}
+*/
+
+.line .unit .mod {
+	margin: 0px 5px;
+}
+
+.line .unit:first-child .mod,
+.line .lastUnit .mod {
+	margin: 0px;
+}
+
+
+.line .unit .mod {
+	background: #DFD9BD;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
 
 
 
