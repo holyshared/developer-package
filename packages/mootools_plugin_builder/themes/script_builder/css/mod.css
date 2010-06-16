@@ -8,7 +8,7 @@ version: 0.2
 
 /* mod */
 .mod {
-	margin: 0px 0px 10px 0px;
+	margin: 0px 5px 10px 5px;
 }
 
 .mod .inner {
@@ -33,6 +33,8 @@ version: 0.2
 	background: #DFD9BD;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 
 .aside .hd {
@@ -58,36 +60,6 @@ version: 0.2
 	background: #DFD9BD url(../images/bgi_download.gif) no-repeat center top;
 	min-height: 29px;
 	padding-top: 3px;
-}
-
-
-/*
-.line {
-}
-
-.line .unit {
-	padding: 0px 10px 0px 0px;
-}
-
-.line .lastUnit {
-	padding: 0px;
-}
-*/
-
-.line .unit .mod {
-	margin: 0px 5px;
-}
-
-.line .unit:first-child .mod,
-.line .lastUnit .mod {
-	margin: 0px;
-}
-
-
-.line .unit .mod {
-	background: #DFD9BD;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
 }
 
 
