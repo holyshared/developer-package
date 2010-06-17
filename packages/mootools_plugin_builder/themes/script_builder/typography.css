@@ -27,6 +27,10 @@ ul, ol, dl, p, th, td {
 	line-height: 160%;
 }
 
+p, ul, ol, dl {
+	margin-bottom: 10px;
+}
+
 h1, h2, h3, h4, h5, h6, img {
 	padding-bottom: 0px;
 }
@@ -71,7 +75,8 @@ h2, .h2 {
 	font-weight: normal;
 	font-style: normal;
 	color: #333333;
-	padding: 10px 0px 10px 0px;
+	padding: 10px 0px 0px 0px;
+	margin-bottom: 20px;
 }
 
 h3, .h3 {
@@ -80,6 +85,7 @@ h3, .h3 {
 	font-style: normal;
 	color: #333333;
 	padding: 0px;
+	margin-bottom: 10px;
 }
 
 h4, .h4 {
@@ -87,13 +93,13 @@ h4, .h4 {
 	font-weight: normal;
 	font-style: normal;
 	color: #333;
-	padding: 0px;
+	padding: 3px 0px 5px 0px;
 	background: none;
 }
 
 h5, .h5 {
 	font-size: 108%;
-	font-weight: bold;
+	font-weight: normal;
 	font-style: normal;
 	color: #AE0345;
 }
