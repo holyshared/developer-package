@@ -2,8 +2,9 @@
 /* **************** TEMPLATE ***************** */
 /* ====== Page Head, Body, and Foot ====== */
 body{_text-align:center;}/* IE5.5 */
-.main{display:table-cell;*display:block;width:auto;}
-.body,.main{*zoom:1;}
+.main{display:table-cell;*display:block;width:auto; }
+.body { background: url(../images/bgi_sep.gif) repeat-y 255px top; }
+.body,.main{*zoom:1; }
 .body:after,.main:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";}
 .page{margin:0 auto;width:950px;_text-align:left;} /* wraps other template elems to set width */ /* text-align IE5.5 */
 /* "old school" and "liquid" extend page to allow for different page widths */
@@ -18,5 +19,19 @@ body{_text-align:center;}/* IE5.5 */
 .gCal{width:180px;}
 .yahoo{width:240px;}
 .myYahoo{width:300px;}
-.mBuilder{ width:190px; background: #add8e6; }
-.page {background: #F4F2EA; padding: 0px 15px;}
+.mBuilder{ width:220px; margin-right: 60px; }
+
+
+.page {
+	
+padding-top: 178px;
+}
+
+.head {
+	background: #573A00;
+	position: absolute;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	border-bottom: 5px solid #D8CFAB;
+}
