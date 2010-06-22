@@ -18,7 +18,7 @@ version: 0.2
 }
 
 .aside ul li {
-	text-align: right;
+	text-align: left;
 }
 
 .corner {
@@ -28,20 +28,14 @@ version: 0.2
 	padding: 15px 15px 5px 15px;
 }
 
-.local {
-	background: #DFD9BD url(../images/bgi_nav.gif) no-repeat left top;
+.local { background: #DFD9BD url(../images/bgi_nav.gif) no-repeat left top; }
+.repos { background: #DFD9BD url(../images/bgi_repos.gif) no-repeat left top; }
+.download { background: #DFD9BD url(../images/bgi_download.gif) no-repeat left top; }
+.issues { background: #DFD9BD url(../images/bgi_issues.gif) no-repeat left top; }
 
-}
 
-.repos {
-	background: #DFD9BD url(../images/bgi_repos.gif) no-repeat left top;
 
-}
 
-.download {
-	background: #DFD9BD url(../images/bgi_download.gif) no-repeat left top;
-
-}
 
 .pgdesc {
 	margin: 0px auto 0px auto;
@@ -53,6 +47,28 @@ version: 0.2
 	padding-left: 160px;
 	background: url(../images/bgi_logo.png) no-repeat left top;
 }
+
+.sitemap {
+	margin: 0px auto 0px auto;
+}
+.sitemap .mod {
+	color: #ffffff;
+}
+
+
+.category h3,
+.category h4,
+.category .h3,
+.category .h4 {
+	color: #ffffff;
+}
+
+.category .nav a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+
 
 .logo {
 	position: absolute;
@@ -79,6 +95,77 @@ version: 0.2
 	color: #ffffff;
 }
 
+
+
+
+.separator li {
+	overflow: hidden;
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.separator li:last-child {
+	border-bottom: none;
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+
+
+
+
+
+/*
+.versionList li {
+	overflow: hidden;
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.versionList li:last-child {
+	border-bottom: none;
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+*/
+.versionList em {
+	font-size: 139%;
+}
+
+
+
+.taskList {
+	overflow: hidden;	
+}
+/*
+.taskList li {
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.taskList li:last-child {
+	border-bottom: none;
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+*/
+.taskList .image {
+	float: left;
+}
+
+.image {
+	padding: 1px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.aFiles {
+	float: right;
+}
 
 
 

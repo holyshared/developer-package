@@ -23,7 +23,6 @@ body{_text-align:center;}/* IE5.5 */
 
 
 .page {
-	
 padding-top: 178px;
 }
 
@@ -34,4 +33,22 @@ padding-top: 178px;
 	left: 0px;
 	top: 0px;
 	border-bottom: 5px solid #D8CFAB;
+}
+
+.body {
+	margin-bottom: 30px;
+}
+
+.foot {
+	border-top: 5px solid #D8CFAB;
+	padding-top: 20px;
+	background: #996600;
+
+	position: absolute;
+	width: 100%;
+	left: 0px;
+/*	left: 0px;
+	top: 0px;
+*/
+
 }
