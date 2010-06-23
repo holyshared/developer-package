@@ -141,6 +141,81 @@ ul.simpleList li {
 	margin-left: 40px;
 }
 
+
+
+
+
+
+
+
+
+.nav-header {
+	margin-top: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.nav-header li {
+	float: left;
+	margin-right: 10px;
+}
+
+.nav-header li a {
+	text-transform: uppercase;
+	display: block;
+	padding: 7px 20px;
+	background: #7D5500;
+	color: #ffffff;
+}
+
+.nav-header li.nav-selected a {
+	background: #d07300;
+}
+
+.separator li {
+	overflow: hidden;
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.separator li:last-child {
+	border-bottom: none;
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+
+.versionList em {
+	font-size: 139%;
+}
+
+.taskList {
+	overflow: hidden;	
+}
+
+.taskList .image {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ====== Tables ====== */
 table {
 	border-collapse: separate;
@@ -157,6 +232,11 @@ table tr th {
 table tr td {
 	background: #ffffff;
 }
+
+table tr.selected td {
+	background: #d4edf0;
+}
+
 
 table tr th, table tr td {
 	border-left: 1px solid #cccccc;
@@ -193,6 +273,29 @@ table tr td:first-child, table tr th:first-child {
 	border-left: none;
 }
 
+
+
+
+
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+
+
+.image {
+	padding: 1px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.aFiles {
+	float: right;
+}
 
 
 /* ====== blockquote ====== */

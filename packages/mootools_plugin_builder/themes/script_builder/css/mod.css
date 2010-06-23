@@ -12,6 +12,16 @@ version: 0.2
 .hd, .bd, .ft { overflow: hidden; _overflow: visible; _zoom: 1;}
 .hd { margin-bottom: 0px; }
 
+
+/*================== styles =====================*/
+.corner {
+	background: #EDEADA;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	padding: 15px 15px 5px 15px;
+}
+
+/*================== aside =====================*/
 .aside .hd {
 	padding-left: 38px;
 	padding-top: 3px;
@@ -19,13 +29,6 @@ version: 0.2
 
 .aside ul li {
 	text-align: left;
-}
-
-.corner {
-	background: #EDEADA;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	padding: 15px 15px 5px 15px;
 }
 
 .local { background: #DFD9BD url(../images/bgi_nav.gif) no-repeat left top; }
@@ -37,6 +40,7 @@ version: 0.2
 
 
 
+/*================== page description =====================*/
 .pgdesc {
 	margin: 0px auto 0px auto;
 	color: #ffffff;
@@ -48,13 +52,14 @@ version: 0.2
 	background: url(../images/bgi_logo.png) no-repeat left top;
 }
 
+
+/*================== sitemap =====================*/
 .sitemap {
 	margin: 0px auto 0px auto;
 }
 .sitemap .mod {
 	color: #ffffff;
 }
-
 
 .category h3,
 .category h4,
@@ -70,144 +75,21 @@ version: 0.2
 
 
 
-.logo {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
+/*================== credit =====================*/
+.credit { text-align: center; color: #ffffff; }
+.credit h4 { color: #ffffff; }
 
-.nav-header {
-	margin-top: 10px;
+/*================== package =====================*/
+.package .hd {
 	overflow: hidden;
-	margin-bottom: 10px;
 }
 
-.nav-header li {
-	float: left;
-	margin-right: 10px;
-}
-
-.nav-header li a {
-	text-transform: uppercase;
-	display: block;
-	padding: 7px 20px;
-	background: #7D5500;
-	color: #ffffff;
-}
-
-
-
-
-.separator li {
-	overflow: hidden;
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.separator li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-
-
-
-
-
-/*
-.versionList li {
-	overflow: hidden;
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.versionList li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-*/
-.versionList em {
-	font-size: 139%;
-}
-
-
-
-.taskList {
-	overflow: hidden;	
-}
-/*
-.taskList li {
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.taskList li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-*/
-.taskList .image {
+.package .hd h3 {
 	float: left;
 }
 
-.image {
-	padding: 1px;
-	background: #ffffff;
-	border: 1px solid #cccccc;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-.aFiles {
+.package .hd .reposURL {
+	display: inline;
+	text-align: right;
 	float: right;
 }
-
-
-
-/*
-
-.head .horizontal {
-	margin-left: 120px;
-	position: absolute;
-	margin-top: -50px;
-}
-
-.head .horizontal li a {
-	display: block;
-	padding: 5px 15px;
-	background: #4682b4;
-	color: #ffffff;
-}
-
-.head .description {
-	margin-left: 130px;
-	position: absolute;
-	margin-top: -90px;
-}
-
-.foot .horizontal {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-}
-
-.foot .horizontal li {
-	display: inline;
-	text-align: center;
-}
-
-.foot {
-	padding-bottom: 15px;
-}
-
-.body {
-	margin-bottom: 30px;
-}
-
-*/
-
