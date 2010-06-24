@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/* ====== Tables ====== */
+table {
+	border-collapse: separate;
+	border-spacing: 0px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border: 1px solid #cccccc;
+}
+
+table tr th {
+	background: #ededed;
+}
+
+table tr td {
+	background: #ffffff;
+}
+
+table tr th, table tr td {
+	border-left: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 5px 10px;
+	vertical-align: top;
+}
+
+table tr:first-child th:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 10px;
+}
+
+table tr:first-child th:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 10px;
+}
+
+table tr:last-child td {
+	border-bottom: none;
+}
+
+table tr:last-child td:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 8px;
+}
+
+table tr:last-child td:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 8px;
+}
+
+table tr td:first-child, table tr th:first-child {
+	border-left: none;
+}
+
+table tr.selected td {
+	background: #eaf6f8;	
+}
+
+
+/* ====== list ====== */
+
+
+/* navigation header */
+.nav-header {
+	margin-top: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.nav-header li {
+	float: left;
+	margin-right: 10px;
+}
+
+.nav-header li a {
+	text-transform: uppercase;
+	display: block;
+	padding: 7px 20px;
+	background: #7D5500;
+	color: #ffffff;
+}
+
+
+.nav-topic li {
+	display: inline-block;
+	padding-right: 5px;
+}
+
+
+/* version list */
+.versionList li em {
+	font-size: 139%;
+}
+
+/* task list */
+.taskList {
+	overflow: hidden;	
+}
+
+.taskList li .image {
+	float: left;
+}
+
+/* ====== inline ====== */
+/* links */
+a {
+	color: #036;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #005a9c;
+}
+
+.image {
+	padding: 1px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.aFiles {
+	float: right;
+}
+
+/* ====== blockquote ====== */
+cite {
+	display: block;
+	text-align: right;
+}
+
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.control {
+	text-align: center;
+}
+
