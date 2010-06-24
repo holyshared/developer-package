@@ -16,14 +16,15 @@
 		<link rel="stylesheet" href="/packages/mootools_plugin_builder/themes/script_builder/style.css" type="text/css" media="screen" />
 	</head>
 	<body>
-		<div class="page gs960">
-			<div class="head">
-				<h1 class="logo"><a href="<?php echo DIR_REL?>/"><?php echo ($block && $block->bID) ? $block->display() : SITE; ?></a></h1>
-				<p class="description"><?php echo $description; ?></p>
-				<?php
-					$ah = new Area('Header');
-					$ah->display($c);			
-				?>
+		<div class="page">
+
+<div class="head">
+	<div class="mod hdDesc gs960">
+		<div class="inner">
+			<div class="hd"><h1>Mootools Plugin Builder</h1></div>
+			<div class="bd">
+				<p>Mootools Plugin Builder</p>
+				<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/mootools_plugin_builder/themes/script_builder/images/img_logo.png" alt="" /></a></p>
 				<div class="nav">
 					<?php
 						$nav = new Area('Header Nav');
@@ -31,3 +32,7 @@
 					?>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+<!-- /head -->

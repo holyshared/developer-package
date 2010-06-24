@@ -12,14 +12,8 @@ version: 0.2
 .hd, .bd, .ft { overflow: hidden; _overflow: visible; _zoom: 1;}
 .hd { margin-bottom: 0px; }
 
-.aside .hd {
-	padding-left: 38px;
-	padding-top: 3px;
-}
-
-.aside ul li {
-	text-align: left;
-}
+.aside .hd { padding-left: 38px; padding-top: 3px; }
+.aside .bd ul li { text-align: left; }
 
 .corner {
 	background: #EDEADA;
@@ -33,181 +27,40 @@ version: 0.2
 .download { background: #DFD9BD url(../images/bgi_download.gif) no-repeat left top; }
 .issues { background: #DFD9BD url(../images/bgi_issues.gif) no-repeat left top; }
 
-
-
-
-
-.pgdesc {
+.hdDesc {
 	margin: 0px auto 0px auto;
 	color: #ffffff;
 }
 
-.pgdesc .inner {
+.hdDesc .inner {
 	padding-top: 7px;
 	padding-left: 160px;
 	background: url(../images/bgi_logo.png) no-repeat left top;
 }
 
-.sitemap {
+.ftNav {
 	margin: 0px auto 0px auto;
 }
-.sitemap .mod {
+
+.ftNav .mod {
 	color: #ffffff;
 }
 
-
-.category h3,
-.category h4,
-.category .h3,
-.category .h4 {
+.idx h3,
+.idx h4,
+.idx .h3,
+.idx .h4 {
 	color: #ffffff;
 }
 
-.category .nav a {
+.idx .nav a {
 	color: #ffffff;
 	text-decoration: underline;
 }
 
+.credit { text-align: center; color: #ffffff; }
+.credit h4 { color: #ffffff; }
 
-
-.logo {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
-
-.nav-header {
-	margin-top: 10px;
-	overflow: hidden;
-	margin-bottom: 10px;
-}
-
-.nav-header li {
-	float: left;
-	margin-right: 10px;
-}
-
-.nav-header li a {
-	text-transform: uppercase;
-	display: block;
-	padding: 7px 20px;
-	background: #7D5500;
-	color: #ffffff;
-}
-
-
-
-
-.separator li {
-	overflow: hidden;
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.separator li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-
-
-
-
-
-/*
-.versionList li {
-	overflow: hidden;
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.versionList li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-*/
-.versionList em {
-	font-size: 139%;
-}
-
-
-
-.taskList {
-	overflow: hidden;	
-}
-/*
-.taskList li {
-	border-bottom: 1px dotted #cccccc;
-	padding-bottom: 5px;
-	margin-bottom: 5px;
-}
-
-.taskList li:last-child {
-	border-bottom: none;
-	padding-bottom: 5px;
-	margin-bottom: 0px;
-}
-*/
-.taskList .image {
-	float: left;
-}
-
-.image {
-	padding: 1px;
-	background: #ffffff;
-	border: 1px solid #cccccc;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-.aFiles {
-	float: right;
-}
-
-
-
-/*
-
-.head .horizontal {
-	margin-left: 120px;
-	position: absolute;
-	margin-top: -50px;
-}
-
-.head .horizontal li a {
-	display: block;
-	padding: 5px 15px;
-	background: #4682b4;
-	color: #ffffff;
-}
-
-.head .description {
-	margin-left: 130px;
-	position: absolute;
-	margin-top: -90px;
-}
-
-.foot .horizontal {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
-}
-
-.foot .horizontal li {
-	display: inline;
-	text-align: center;
-}
-
-.foot {
-	padding-bottom: 15px;
-}
-
-.body {
-	margin-bottom: 30px;
-}
-
-*/
-
+.package .hd { overflow: hidden; }
+.package .hd h3 { float: left; }
+.package .hd .reposURL { display: inline; text-align: right; float: right; }

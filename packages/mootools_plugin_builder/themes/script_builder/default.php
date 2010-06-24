@@ -1,7 +1,7 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php $this->inc('elements/header.php'); ?>
 <div class="body">
-	<div class="leftCol gMail">
+	<div class="leftCol mBuilder">
 		<?php 
 			$sidebar = new Area('Sidebar');
 			$sidebar->display($c);
