@@ -76,6 +76,8 @@ class MootoolsPluginBuilderPackage extends Package {
 
 		BlockType::installBlockTypeFromPackage("builder_form", $pkg);
 		BlockType::installBlockTypeFromPackage("github_tags", $pkg);
+		BlockType::installBlockTypeFromPackage("github_issues", $pkg);
+		BlockType::installBlockTypeFromPackage("github_repository", $pkg);
 
 		PageTheme::add('script_builder', $pkg);
 	}
