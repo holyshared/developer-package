@@ -2,7 +2,7 @@
 	defined('C5_EXECUTE') or die(_("Access Denied."));
 	$aBlocks = $controller->generateNav();
 	$c = Page::getCurrentPage();
-	echo("<ul class=\"nav horizontal\">");
+	echo("<ul class=\"nav-header\">");
 
 	$nh = Loader::helper('navigation');
 
@@ -42,9 +42,9 @@
 			}	
 			
 			echo('</li>');
-			$isFirst = false;			
+			$isFirst = false;
 		}
 	}
-	
+
 	echo('</ul>');
 ?>
