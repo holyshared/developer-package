@@ -19,7 +19,7 @@
 		<div class="page">
 
 <div class="head">
-	<div class="mod hdDesc gs960">
+	<div class="mod pgdesc gs960">
 		<div class="inner">
 			<div class="hd"><h1>Mootools Plugin Builder</h1></div>
 			<div class="bd">

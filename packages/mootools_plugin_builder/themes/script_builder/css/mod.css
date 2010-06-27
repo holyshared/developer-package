@@ -4,6 +4,7 @@ Copyright (c) 2009, Nicole Sullivan. All rights reserved.
 Code licensed under the BSD License:
 version: 0.2
 */
+
 /* **************** BLOCK STRUCTURES ***************** */
 
 /* mod */
@@ -12,14 +13,23 @@ version: 0.2
 .hd, .bd, .ft { overflow: hidden; _overflow: visible; _zoom: 1;}
 .hd { margin-bottom: 0px; }
 
-.aside .hd { padding-left: 38px; padding-top: 3px; }
-.aside .bd ul li { text-align: left; }
 
+/*================== styles =====================*/
 .corner {
-	background: #EDEADA;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	padding: 15px 15px 5px 15px;
+background: #EDEADA;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+padding: 15px 15px 5px 15px;
+}
+
+/*================== aside =====================*/
+.aside .hd {
+padding-left: 38px;
+padding-top: 3px;
+}
+
+.aside ul li {
+text-align: left;
 }
 
 .local { background: #DFD9BD url(../images/bgi_nav.gif) no-repeat left top; }
@@ -27,40 +37,60 @@ version: 0.2
 .download { background: #DFD9BD url(../images/bgi_download.gif) no-repeat left top; }
 .issues { background: #DFD9BD url(../images/bgi_issues.gif) no-repeat left top; }
 
-.hdDesc {
-	margin: 0px auto 0px auto;
-	color: #ffffff;
+
+
+
+
+/*================== page description =====================*/
+.pgdesc {
+margin: 0px auto 0px auto;
+color: #ffffff;
 }
 
-.hdDesc .inner {
-	padding-top: 7px;
-	padding-left: 160px;
-	background: url(../images/bgi_logo.png) no-repeat left top;
+.pgdesc .inner {
+padding-top: 7px;
+padding-left: 160px;
+background: url(../images/bgi_logo.png) no-repeat left top;
 }
 
-.ftNav {
-	margin: 0px auto 0px auto;
+
+/*================== sitemap =====================*/
+.sitemap {
+margin: 0px auto 0px auto;
+}
+.sitemap .mod {
+color: #ffffff;
 }
 
-.ftNav .mod {
-	color: #ffffff;
+.category h3,
+.category h4,
+.category .h3,
+.category .h4 {
+color: #ffffff;
 }
 
-.idx h3,
-.idx h4,
-.idx .h3,
-.idx .h4 {
-	color: #ffffff;
+.category .nav a {
+color: #ffffff;
+text-decoration: underline;
 }
 
-.idx .nav a {
-	color: #ffffff;
-	text-decoration: underline;
-}
 
+
+/*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
 .credit h4 { color: #ffffff; }
 
-.package .hd { overflow: hidden; }
-.package .hd h3 { float: left; }
-.package .hd .reposURL { display: inline; text-align: right; float: right; }
+/*================== package =====================*/
+.package .hd {
+overflow: hidden;
+}
+
+.package .hd h3 {
+float: left;
+}
+
+.package .hd .reposURL {
+display: inline;
+text-align: right;
+float: right;
+}
