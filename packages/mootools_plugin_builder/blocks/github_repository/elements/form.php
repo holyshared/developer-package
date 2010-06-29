@@ -1,24 +1,28 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php
-//	$html = Loader::helper("html");
-//	$this->addHeaderItem($html->css("style.css", MootoolsPluginBuilderPackage::PACKAGE_HANDLE));
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');
 
-	$userRepos = array();
+	$selectOptions = array();
 	foreach ($repositories as $key => $repo) {
-		$userRepos[$repo["name"]] = $repo["name"];
+		$selectOptions[$key] = $repo["name"];
+	}
+
+	$values = array();
+	if ($items) {
+		foreach ($items as $key => $item) {
+			$values[] = $item["repos"];
+		}
 	}
 ?>
-<link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo $t->entities($this->getBlockURL()) ?>/style.css" media="screen" />
 
 <?php if (empty($userName)) : ?>
 	<p><em>Please input the name of the user for your github.</em></p>
 <?php else: ?>
-	<p>It tries to register the content of the repository list of <em class="username"><?php echo $userName ?></em>.<br />
+	<p>It tries to register the content of the repository list of <em class="username"><?php echo $t->entities($userName) ?></em>.<br />
 	Please correct it from the change screen of user information when differing if you register.</p>
 <?php endif; ?>
-
 <p>Please input a necessary item.</p>
 <fieldset>
 	<legend>general</legend>
@@ -31,6 +35,13 @@
 		<dd><?php echo $f->text("user", $userName, array("id" => "user", "size" => 60)); ?></dd>
 
 		<dt>Repository of github&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->select("repos[]", $userRepos, $repos, array("multiple" => "multiple")); ?></dd>
+		<dd>
+			<select name="repos[]" multiple="multiple">
+				<?php foreach ($selectOptions as $key => $value) : ?>
+					<?php $selected = (in_array($value, $values)) ? "selected=\"selected\"" : ""; ?>
+					<option value="<?php echo $t->entities($key) ?>"<?php echo $t->entities($selected) ?>><?php echo $t->entities($value) ?></option>
+				<?php endforeach; ?>
+			</select>
+		</dd>
 	</dl>
 </fieldset>

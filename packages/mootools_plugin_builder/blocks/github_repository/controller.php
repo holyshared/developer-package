@@ -26,6 +26,7 @@ class GithubRepositoryBlockController extends BlockController {
 	}
 
 	public function view() {
+		$this->set("items", $this->loadRepositories());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
@@ -44,6 +45,7 @@ class GithubRepositoryBlockController extends BlockController {
 		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 
 		$this->set("userName", $userName);
+		$this->set("items", $this->loadRepositories());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
@@ -80,9 +82,21 @@ class GithubRepositoryBlockController extends BlockController {
 		$api = $github->getRepoApi();
 		$repositories = $api->getUserRepos($userName);
 
-		return $repositories;
+		$rows = array();
+		foreach ($repositories as $repos) {
+			$key = $repos["name"];
+			$rows[$key] = $repos;
+		}
+		return $rows;
 	}
 
+	protected function loadRepositories() {
+		$db = Loader::db();
+		$sql = "SELECT * FROM btGithubRepositories WHERE bID = ?";
+		$repositories = $db->getAll($sql, array(intval($this->bID))); 
+		return $repositories;
+	}
+	
 }
 
 ?>
