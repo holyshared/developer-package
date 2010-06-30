@@ -5,9 +5,9 @@
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');
 
-	$userRepos = array();
+	$items = array();
 	foreach ($repositories as $key => $repo) {
-		$userRepos[$repo["name"]] = $repo["name"];
+		$items[$repo["name"]] = $repo["name"];
 	}
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/style.css" media="screen" />
@@ -28,7 +28,7 @@
 		<dt>Title of tag list&nbsp;<em class="required">required</em></dt>
 		<dd><?php echo $f->text("title", $title, array("id" => "title", "size" => 60)); ?></dd>
 		<dt>Repository of github&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->select("repos", $userRepos, $repos, array("repos" => "title")); ?></dd>
+		<dd><?php echo $f->select("repos", $items, $repos, array("repos" => "title")); ?></dd>
 		<dt>Number of displayed tag&nbsp;<em class="required">required</em></dt>
 		<dd><?php echo $f->text("displayCount", $displayCount, array("id" => "displayCount", "size" => 5)); ?></dd>
 	</dl>

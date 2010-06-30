@@ -24,7 +24,7 @@ class GithubIssuesBlockController extends BlockController {
 	}
 
 	public function view() {
-		$this->set("tags", $this->getUserRepositoryTags());
+		$this->set("issues", $this->getUserRepositoryIssues());
 	}
 
 	public function add() {
@@ -32,8 +32,8 @@ class GithubIssuesBlockController extends BlockController {
 		$ui = UserInfo::getByID($u->getUserID());
 		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 
-		$this->set("userName", $userName);
 		$this->set("repositories", $this->getUserRepositories());
+		$this->set("userName", $userName);
 	}
 
 	public function edit() {
@@ -41,8 +41,8 @@ class GithubIssuesBlockController extends BlockController {
 		$ui = UserInfo::getByID($u->getUserID());
 		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 
-		$this->set("userName", $userName);
 		$this->set("repositories", $this->getUserRepositories());
+		$this->set("userName", $userName);
 	}
 
 	public function delete() {
@@ -53,6 +53,23 @@ class GithubIssuesBlockController extends BlockController {
 		parent::save($data);
 	}
 
+	
+	protected function getUserRepositoryIssues() {
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$github = new phpGitHubApi();
+		$api = $github->getIssueApi();
+		$issues = $api->getList($this->user, $this->repos);
+
+		return $issues;
+	}
+	
+	
+	
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
@@ -64,25 +81,18 @@ class GithubIssuesBlockController extends BlockController {
 		$api = $github->getRepoApi();
 		$repositories = $api->getUserRepos($userName);
 
-		return $repositories;
-	}
-
-	protected function getUserRepositoryTags() {
-		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-
-		$tags = array();
-
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		if (!empty($userName)) {
-			$github = new phpGitHubApi();
-			$api = $github->getRepoApi();
-			$tags = $api->getRepoTags($userName, $this->repos);
+		$rows = array();
+		foreach ($repositories as $repos) {
+			$key = $repos["name"];
+			$rows[$key] = $repos;
 		}
-		return $tags;
+		return $rows;
 	}
+	
+	
+	
+	
+	
 	
 }
 
