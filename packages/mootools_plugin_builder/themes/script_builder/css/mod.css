@@ -94,3 +94,26 @@ display: inline;
 text-align: right;
 float: right;
 }
+
+.ticket {
+	overflow: hidden;
+	border-bottom: 1px solid #cccccc;
+	padding: 10px 10px 0px 10px;
+}
+
+.ticket .avater {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,5 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php
-//	$html = Loader::helper("html");
-//	$this->addHeaderItem($html->css("style.css", MootoolsPluginBuilderPackage::PACKAGE_HANDLE));
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');
 
