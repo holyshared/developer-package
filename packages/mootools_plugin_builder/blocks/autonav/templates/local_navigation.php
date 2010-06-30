@@ -28,7 +28,7 @@
 			<h3 class="h4">Module Default</h3>
 		</div>
 		<div class="bd">
-<?
+<?php
 
 	foreach($aBlocks as $ni) {
 		$_c = $ni->getCollectionObject();
