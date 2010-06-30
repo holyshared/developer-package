@@ -31,20 +31,12 @@ class GithubRepositoryBlockController extends BlockController {
 	}
 
 	public function add() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		$this->set("userName", $userName);
+		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		$this->set("userName", $userName);
+		$this->set("userName", $this->getUserName());
 		$this->set("items", $this->loadRepositories());
 		$this->set("repositories", $this->getUserRepositories());
 	}
@@ -74,13 +66,11 @@ class GithubRepositoryBlockController extends BlockController {
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
+		$username = $this->getUserName();
+		
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos($userName);
+		$repositories = $api->getUserRepos($username);
 
 		$rows = array();
 		foreach ($repositories as $repos) {
@@ -96,7 +86,17 @@ class GithubRepositoryBlockController extends BlockController {
 		$repositories = $db->getAll($sql, array(intval($this->bID))); 
 		return $repositories;
 	}
-	
+
+	protected function getUserName() {
+		$username = $this->user;
+		if (User::isLoggedIn()) {
+			$u = new User();
+			$ui = UserInfo::getByID($u->getUserID());
+			$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		}
+		return $username;
+	}
+
 }
 
 ?>

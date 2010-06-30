@@ -24,15 +24,13 @@
 	Please correct it from the change screen of user information when differing if you register.</p>
 <?php endif; ?>
 <p>Please input a necessary item.</p>
+<?php echo $f->hidden("user", (empty($user)) ? $userName : $user); ?>
 <fieldset>
 	<legend>general</legend>
 	<p>General setting</p>
 	<dl>
 		<dt>Title of tag list&nbsp;<em class="required">required</em></dt>
 		<dd><?php echo $f->text("title", $title, array("id" => "title", "size" => 60)); ?></dd>
-
-		<dt>User name of github&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->text("user", $userName, array("id" => "user", "size" => 60)); ?></dd>
 
 		<dt>Repository of github&nbsp;<em class="required">required</em></dt>
 		<dd>
