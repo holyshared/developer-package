@@ -9,14 +9,19 @@
 		<div class="bd">
 			<ul class="nav separator taskList">
 <?php
-	foreach($issues as $key => $issue) :
-		$url  = "http://www.gravatar.com/avatar/";
-		$url .= $issue["gravatar_id"];
-		$url .= "?s=30";
-?>
+foreach($issues as $key => $issue) :
 
-<li><a href="http://github.com/<?php echo $t->entities($user) ?>/"><img src="<?php echo $t->entities($url) ?>" alt="<?php echo $t->entities($user) ?>" class="image" /></a><a href="http://github.com/holyshared/MMap/issues"><?php echo $t->entities($issue["title"]) ?></a>
-<br /><?php echo $t->entities($issue["updated_at"]) ?></li>
+$url  = "http://www.gravatar.com/avatar/";
+$url .= $issue["gravatar_id"];
+$url .= "?s=30";
+
+$ticket  = "http://github.com/".$t->entities($user)."/".$t->entities($repos);
+$ticket .= "/issues#issues/".$t->entities($issue["position"]);
+
+$updateAt = date("Y-m-d H:i", strtotime($issue["updated_at"]));
+?>
+<li><a href="http://github.com/<?php echo $t->entities($user) ?>/"><img src="<?php echo $t->entities($url) ?>" alt="<?php echo $t->entities($user) ?>" class="image" /></a><a href="<?php echo $ticket ?>"><?php echo $t->entities($issue["title"]) ?></a>
+<br /><?php echo $t->entities($updateAt) ?></li>
 
 <?php endforeach; ?>
 

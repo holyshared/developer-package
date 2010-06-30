@@ -28,21 +28,13 @@ class GithubIssuesBlockController extends BlockController {
 	}
 
 	public function add() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
+		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
-		$this->set("userName", $userName);
 	}
 
 	public function edit() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
+		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
-		$this->set("userName", $userName);
 	}
 
 	public function delete() {
@@ -52,34 +44,27 @@ class GithubIssuesBlockController extends BlockController {
 	public function save($data) {
 		parent::save($data);
 	}
-
 	
 	protected function getUserRepositoryIssues() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		$username = $this->getUserName();
 
 		$github = new phpGitHubApi();
 		$api = $github->getIssueApi();
-		$issues = $api->getList($this->user, $this->repos);
+		$issues = $api->getList($username, $this->repos);
 
 		return $issues;
 	}
 	
-	
-	
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		$username = $this->getUserName();
 
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos($userName);
+		$repositories = $api->getUserRepos($username);
 
 		$rows = array();
 		foreach ($repositories as $repos) {
@@ -89,10 +74,15 @@ class GithubIssuesBlockController extends BlockController {
 		return $rows;
 	}
 	
-	
-	
-	
-	
+	protected function getUserName() {
+		$username = $this->user;
+		if (User::isLoggedIn()) {
+			$u = new User();
+			$ui = UserInfo::getByID($u->getUserID());
+			$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		}
+		return $username;
+	}
 	
 }
 
