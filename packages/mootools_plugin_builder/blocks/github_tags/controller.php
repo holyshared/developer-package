@@ -28,20 +28,12 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	public function add() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		$this->set("userName", $userName);
+		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		$this->set("userName", $userName);
+		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
@@ -55,15 +47,10 @@ class GithubTagsBlockController extends BlockController {
 
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
+		$username = $this->getUserName();
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos($userName);
-
+		$repositories = $api->getUserRepos($username);
 		return $repositories;
 	}
 
@@ -71,17 +58,24 @@ class GithubTagsBlockController extends BlockController {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
 		$tags = array();
+		$username = $this->getUserName();
 
-		$u = new User();
-		$ui = UserInfo::getByID($u->getUserID());
-		$userName = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-
-		if (!empty($userName)) {
+		if (!empty($username)) {
 			$github = new phpGitHubApi();
 			$api = $github->getRepoApi();
-			$tags = $api->getRepoTags($userName, $this->repos);
+			$tags = $api->getRepoTags($username, $this->repos);
 		}
 		return $tags;
+	}
+
+	protected function getUserName() {
+		$username = $this->user;
+		if (User::isLoggedIn()) {
+			$u = new User();
+			$ui = UserInfo::getByID($u->getUserID());
+			$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		}
+		return $username;
 	}
 	
 }
