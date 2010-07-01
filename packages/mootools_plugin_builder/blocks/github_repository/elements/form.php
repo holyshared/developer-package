@@ -18,23 +18,22 @@
 <link rel="stylesheet" type="text/css" href="<?php echo $t->entities($this->getBlockURL()) ?>/style.css" media="screen" />
 
 <?php if (empty($userName)) : ?>
-	<p><em>Please input the name of the user for your github.</em></p>
+	<p><em><?php echo t("Please input the name of the user for your github.") ?></em></p>
 <?php else: ?>
-	<p>It tries to register the content of the repository list of <em class="username"><?php echo $t->entities($userName) ?></em>.<br />
-	Please correct it from the change screen of user information when differing if you register.</p>
+	<p><?php echo t("It tries to register the content of the repository list of") ?><em class="username"><?php echo $t->entities($userName) ?></em>.<br />
+	<?php echo t("Please correct it from the change screen of user information when differing if you register.") ?></p>
 <?php endif; ?>
-<p>Please input a necessary item.</p>
+<p><?php echo t("Please input a necessary item.") ?></p>
 <?php echo $f->hidden("user", (empty($user)) ? $userName : $user); ?>
 <fieldset>
-	<legend>general</legend>
-	<p>General setting</p>
+	<legend><?php echo t("General setting") ?></legend>
 	<dl>
-		<dt>Title of tag list&nbsp;<em class="required">required</em></dt>
+		<dt><?php echo t("Title of tag list") ?>&nbsp;<em class="required"><?php echo t("required") ?></em></dt>
 		<dd><?php echo $f->text("title", $title, array("id" => "title", "size" => 60)); ?></dd>
 
-		<dt>Repository of github&nbsp;<em class="required">required</em></dt>
+		<dt><?php echo t("Repository of github") ?>&nbsp;<em class="required"><?php echo t("required") ?></em></dt>
 		<dd>
-			<select name="repos[]" multiple="multiple">
+			<select id="repos" name="repos[]" multiple="multiple">
 				<?php foreach ($selectOptions as $key => $value) : ?>
 					<?php $selected = (in_array($value, $values)) ? "selected=\"selected\"" : ""; ?>
 					<option value="<?php echo $t->entities($key) ?>"<?php echo $t->entities($selected) ?>><?php echo $t->entities($value) ?></option>

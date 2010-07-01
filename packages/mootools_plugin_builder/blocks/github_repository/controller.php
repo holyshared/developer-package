@@ -10,7 +10,7 @@ class GithubRepositoryBlockController extends BlockController {
 	protected $btInterfaceHeight = "400";
 
 	public function getBlockTypeDescription() {
-		return t("Tag list of github repository");
+		return t("The repository list of github is displayed. ");
 	}
 
 	public function getBlockTypeName() {
@@ -19,9 +19,8 @@ class GithubRepositoryBlockController extends BlockController {
 
 	public function getJavaScriptStrings() {
 		return array(
-			"title"	=> "Please input a title.",
-			"repos"	=> "Please select the repository.",
-			"display-count"	=> "Please select the display number."
+			"title"	=> t("Please input a title."),
+			"repos"	=> t("Please select the repository.")
 		);
 	}
 
@@ -59,7 +58,6 @@ class GithubRepositoryBlockController extends BlockController {
 		foreach ($repos as $key => $rp) {
 			$db->query("INSERT INTO btGithubRepositories (bID, repos) VALUES (?, ?)", array($this->bID, $rp));
 		}
-
 		parent::save($repository);
 	}
 

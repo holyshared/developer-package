@@ -1,25 +1,19 @@
-var GithubTags = {};
+var GithubRepository = {};
 
-GithubTags.Validater = {
+GithubRepository.Validater = {
 
 	validate: function() {
 		var failed = false;
 
 		var formTitle = $('#title');
-		if (formTitle.val() == '') {
+		if (formTitle.val() == null || formTitle.val() == '') {
 			alert(ccm_t('title'));
 			failed = true;
 		}
-	
-		var downloadFile = $('#repos');
-		if (downloadFile.val() == '') {
-			alert(ccm_t('repos'));
-			failed = true;
-		}
 
-		var displayCount = $('#displayCount');
-		if (displayCount.val() == '') {
-			alert(ccm_t('display-count'));
+		var repository = $('#repos');
+		if (repository.val() == null || repository.val() == '') {
+			alert(ccm_t('repos'));
 			failed = true;
 		}
 
@@ -31,4 +25,4 @@ GithubTags.Validater = {
 	}
 };
 
-ccmValidateBlockForm = function() { return GithubTags.Validater.validate(); }
+ccmValidateBlockForm = function() { return GithubRepository.Validater.validate(); }
