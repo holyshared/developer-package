@@ -20,7 +20,7 @@
 <?php if (empty($userName)) : ?>
 	<p><em><?php echo t("Please input the name of the user for your github.") ?></em></p>
 <?php else: ?>
-	<p><?php echo t("It tries to register the content of the repository list of") ?><em class="username"><?php echo $t->entities($userName) ?></em>.<br />
+	<p><?php echo t("It tries to register the content of the repository list of ") ?><em class="username"><?php echo $t->entities($userName) ?></em>.<br />
 	<?php echo t("Please correct it from the change screen of user information when differing if you register.") ?></p>
 <?php endif; ?>
 <p><?php echo t("Please input a necessary item.") ?></p>

@@ -12,7 +12,7 @@ GithubTags.Validater = {
 		}
 	
 		var downloadFile = $('#repos');
-		if (downloadFile.val() == '') {
+		if (downloadFile.val() == null || downloadFile.val() == '') {
 			alert(ccm_t('repos'));
 			failed = true;
 		}
