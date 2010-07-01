@@ -8,7 +8,7 @@ class GithubIssuesBlockController extends BlockController {
 	protected $btInterfaceHeight = "400";
 
 	public function getBlockTypeDescription() {
-		return t("Tag list of github repository");
+		return t("The ticket of the github repository is displayed.");
 	}
 
 	public function getBlockTypeName() {
