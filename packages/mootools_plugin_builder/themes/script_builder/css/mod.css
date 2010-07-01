@@ -16,20 +16,20 @@ version: 0.2
 
 /*================== styles =====================*/
 .corner {
-background: #EDEADA;
--webkit-border-radius: 7px;
--moz-border-radius: 7px;
-padding: 15px 15px 5px 15px;
+	background: #EDEADA;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	padding: 15px 15px 5px 15px;
 }
 
 /*================== aside =====================*/
 .aside .hd {
-padding-left: 38px;
-padding-top: 3px;
+	padding-left: 38px;
+	padding-top: 3px;
 }
 
 .aside ul li {
-text-align: left;
+	text-align: left;
 }
 
 .local { background: #DFD9BD url(../images/bgi_nav.gif) no-repeat left top; }
@@ -43,35 +43,36 @@ text-align: left;
 
 /*================== page description =====================*/
 .pgdesc {
-margin: 0px auto 0px auto;
-color: #ffffff;
+	margin: 0px auto 0px auto;
+	color: #ffffff;
 }
 
 .pgdesc .inner {
-padding-top: 7px;
-padding-left: 160px;
-background: url(../images/bgi_logo.png) no-repeat left top;
+	padding-top: 7px;
+	padding-left: 160px;
+	background: url(../images/bgi_logo.png) no-repeat left top;
 }
 
 
 /*================== sitemap =====================*/
 .sitemap {
-margin: 0px auto 0px auto;
+	margin: 0px auto 0px auto;
 }
+
 .sitemap .mod {
-color: #ffffff;
+	color: #ffffff;
 }
 
 .category h3,
 .category h4,
 .category .h3,
 .category .h4 {
-color: #ffffff;
+	color: #ffffff;
 }
 
 .category .nav a {
-color: #ffffff;
-text-decoration: underline;
+	color: #ffffff;
+	text-decoration: underline;
 }
 
 
@@ -90,11 +91,12 @@ float: left;
 }
 
 .package .hd .reposURL {
-display: inline;
-text-align: right;
-float: right;
+	display: inline;
+	text-align: right;
+	float: right;
 }
 
+/*================== isuuse =====================*/
 .ticket {
 	overflow: hidden;
 	border-bottom: 1px solid #cccccc;
@@ -103,17 +105,5 @@ float: right;
 
 .ticket .avater {
 	float: left;
+	margin-right: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
