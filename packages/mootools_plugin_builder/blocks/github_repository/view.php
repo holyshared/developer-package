@@ -2,10 +2,12 @@
 <?php $t = Loader::helper('text'); ?>
 <div class="mod corner aside">
 	<div class="inner">
-		<div class="hd repos">
+ 		<div class="hd repos">
 			<h3 class="h4"><?php echo $t->entities($title); ?></h3>
 		</div>
+
 		<div class="bd">
+ 
 			<ul class="nav separator">
 <?php
 foreach($items as $key => $rp) {
@@ -18,6 +20,7 @@ foreach($items as $key => $rp) {
 	</li>
 <?php } ?>
 			</ul>
+
 		</div>
 	</div>
 </div>
