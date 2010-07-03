@@ -7,6 +7,7 @@ table {
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
 	border: 1px solid #cccccc;
+	margin-bottom: 15px;
 }
 
 table tr th {

@@ -81,20 +81,10 @@ version: 0.2
 .credit { text-align: center; color: #ffffff; }
 .credit h4 { color: #ffffff; }
 
-/*================== package =====================*/
-.package .hd {
-	overflow: hidden;
-}
-
-.package .hd h3 {
-	float: left;
-}
-
-.package .hd .reposURL {
-	display: inline;
-	text-align: right;
-	float: right;
-}
+/*================== packages =====================*/
+.packages table { width: 100%; }
+.packages table .check { width: 10px; }
+.packages table .name { width: 150px; }
 
 /*================== isuuse =====================*/
 .ticket {
