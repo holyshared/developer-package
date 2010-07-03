@@ -16,3 +16,35 @@
 #progressbar strong.complete {
 	background: url(../images/bgi_progressbar.jpg) no-repeat left top;
 }
+
+.warning {
+	color: #b22222;
+	display: inline-block;
+}
+
+.username {
+	color: #b22222;
+}
+
+.warnMessage {
+	background: url(../images/bgi_warning.gif) no-repeat 15px 15px;
+	border: 1px solid #cccccc;
+	padding: 5px 15px 5px 51px;
+}
+
+
+#main {
+	overflow: hidden;
+	padding: 15px;
+}
+
+.repositories {
+	float: left;
+	width: 14%;
+	margin-right: 20px;
+}
+
+.importer {
+	float: left;
+	width: 84%;
+}

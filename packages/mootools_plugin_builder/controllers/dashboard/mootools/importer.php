@@ -79,27 +79,40 @@ class DashboardMootoolsImporterController extends Controller {
 		$this->addHeaderItem($html->css('style.css', $handle));
 		$this->addHeaderItem($html->javascript("jquery.importWizard.js", $handle));
 		$this->addHeaderItem($html->javascript("jquery.progressbar.js", $handle));
+
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$this->set("uID", $u->getUserID());
+		$this->set("username", $username);
 	}
 
 	public function step1() {
-		$url	= $this->post("repository");
+		$repos	= $this->post("repository");
+
+		$u = new User();
+		$ui = UserInfo::getByID($u->getUserID());
+		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+
+		$url = "http://github.com/".$username."/".$repos;
 
 		$response = new JSONResponse();
 		$response->setStatus(false);
-
+/*
 		$query	= str_replace(DashboardMootoolsImporterController::GITHUB_URL, "", $url);
 
 		$query	= explode("/", $query);
 		$user	= array_shift($query);
 		$repos	= array_shift($query);
-
+*/
 		$result = array();
 		if (empty($url)) {
 			$response->setMessage("URL is not effective. Please confirm it.");
 			$response->flush();
 		}
 		$response->setMessage("URL is effective.");
-		$response->setParameters(array("user" => $user, "repos" => $repos));
+		$response->setParameters(array("user" => $username, "repos" => $repos));
 		$response->setStatus(true);
 		$response->flush();
 	}

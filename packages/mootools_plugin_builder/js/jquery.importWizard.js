@@ -14,7 +14,6 @@
 		},
 		
 		this.success = function(json, statusText, xhr, form){
-alert(json);
 			if (this.current < this.options.step + 1) {
 				var response = json.response;
 				if (response.status) {
@@ -36,7 +35,7 @@ alert(json);
 				$("#message").html(response.message);
 			}
 		},
-		
+
 		this.send = function(){
 			var self = this;
 			var options = {
@@ -49,12 +48,12 @@ alert(json);
 			$(this.container).ajaxForm(options);
 			$(this.container).trigger("submit");
 		}
-		
+
 		this.next = function(){
 			this.current++;
 			return this.current;
 		}
-		
+
 		this.initialize.apply(this, [container, options]);
 		
 		return this;
