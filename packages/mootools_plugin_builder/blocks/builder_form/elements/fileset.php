@@ -5,7 +5,7 @@
 	<h4><?php echo $t->entities($fileset->name); ?></h4>
 	<table>
 		<tr>
-			<th></th>
+			<th>&nbsp;</th>
 			<th>name</th>
 			<th>description</th>
 		</tr>
@@ -25,9 +25,9 @@
 				}
 			?>
 			<tr>
-				<td><input type="checkbox" name="module[]" value="<?php echo $t->entities($file->id) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
-				<td><?php echo $t->entities($file->name); ?></td>
-				<td><?php echo $t->entities($file->description); ?></td>
+				<td class="check"><input type="checkbox" name="module[]" value="<?php echo $t->entities($file->id) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
+				<td class="name"><?php echo $t->entities($file->name); ?></td>
+				<td class="description"><?php echo $t->entities($file->description); ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</table>

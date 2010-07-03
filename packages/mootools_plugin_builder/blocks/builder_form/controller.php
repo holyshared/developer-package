@@ -17,8 +17,8 @@ class BuilderFormBlockController extends BlockController {
 
 	public function getJavaScriptStrings() {
 		return array(
-			"form-title"	=> "Please input a form title.",
-			"download-file"	=> "Please input the file name when it downloads it."
+			"form-title"	=> t("Please input a form title."),
+			"download-file"	=> t("Please input the file name when it downloads it.")
 		);
 	}
 
@@ -51,7 +51,7 @@ class BuilderFormBlockController extends BlockController {
 		$db->query("DELETE FROM btBuilderPackage WHERE bID = ?", array(intval($this->bID)));
 		$fsIDs = $this->post("fsID");
 		foreach ($fsIDs as $key => $fsID) {
-			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?, ?)", array($fsID, $this->bID, $key));
+			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?, ?)", array($this->bID, $fsID, $key));
 		}
 		parent::save($data);
 	}

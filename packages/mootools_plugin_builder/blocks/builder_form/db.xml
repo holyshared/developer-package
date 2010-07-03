@@ -11,7 +11,7 @@
 	<table name="btBuilderPackage">
 		<field name="bID" type="I"><key /><unsigned /></field>
 		<field name="fsID" type="I"><key /><unsigned /></field>
-		<field name="orderNumber" type="I"><unsigned /></field>
+		<field name="orderNumber" type="I"></field>
 	</table>
 
 </schema>
