@@ -2,7 +2,7 @@
 <schema version="0.3">
 
 	<table name="btGithubRepository">
-		<field name="bID" type="I"><key /><unsigned /><autoincrement /></field>
+		<field name="bID" type="I"><key /><unsigned /></field>
 		<field name="title" type="C" size="255"></field>
 		<field name="user" type="C" size="255"></field>
 	</table>
