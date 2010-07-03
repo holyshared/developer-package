@@ -26,10 +26,13 @@ class BuilderFormBlockController extends BlockController {
 	}
 
 	public function view() {
+		$html  = Loader::helper('html');
+		$this->addHeaderItem($html->css('style.css', "builder_form"));	
+
 		$this->set("bID", $this->bID);
 		$this->set("filesets", $this->getBuildFileSets());
 	}
-
+	
 	public function add() {
 		$this->set("current", $this->getLoadFileSet());
 		$this->set("filesets", $this->getLoadUserFileSet());
@@ -58,9 +61,11 @@ class BuilderFormBlockController extends BlockController {
 
 	public function action_publish() {
 		$filesets = $this->post("module");
-
+		$packType = $this->post("packType");
+		
 		Loader::model('file_list');
-
+		Loader::library("3rdparty/jsminify/JSMin", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		
 		$u = new User();
 		$fl = new FileList();
 		$fl->filterByMootoolsPlugin(true);
@@ -73,7 +78,12 @@ class BuilderFormBlockController extends BlockController {
 		foreach ($files as $key => $file)  {
 			$output .= file_get_contents($file->getPath())."\n";
 		}
-
+		
+		switch($packType) {
+			case 2: $output = JSMin::minify($output); break;
+			case 3: break;
+		}
+		
 		$file = $this->javascript.".js";
 		header("Content-disposition: attachment; filename=".$file);
 		header("Content-type: application/octet-stream; name=".$file);

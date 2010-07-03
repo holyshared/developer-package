@@ -74,6 +74,8 @@ class DashboardMootoolsImporterController extends Controller {
 	const GITHUB_URL = "http://github.com/";
 
 	public function view() {
+		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
 		$handle = MootoolsPluginBuilderPackage::PACKAGE_HANDLE;
 		$html  = Loader::helper('html');
 		$this->addHeaderItem($html->css('style.css', $handle));
@@ -83,9 +85,21 @@ class DashboardMootoolsImporterController extends Controller {
 		$u = new User();
 		$ui = UserInfo::getByID($u->getUserID());
 		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
+		
 
+		$github = new phpGitHubApi();
+		$api = $github->getRepoApi();
+		$repositories = $api->getUserRepos($username);
+
+		$rows = array();
+		foreach ($repositories as $repos) {
+			$key = $repos["name"];
+			$rows[$key] = $repos;
+		}
+		
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
+		$this->set("repos", $rows);
 	}
 
 	public function step1() {

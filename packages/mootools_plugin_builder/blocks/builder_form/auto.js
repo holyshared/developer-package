@@ -1,5 +1,4 @@
 var PluginPackage = {};
-
 PluginPackage.PackageList = {
 
 	initialize: function(list) {
@@ -41,15 +40,15 @@ PluginPackage.Validater = {
 
 	validate: function() {
 		var failed = false;
-	
-		var formTitle = $('#formTitle');
-		if (formTitle.val() == '') {
+
+		var formTitle = $('#title');
+		if (formTitle.val() == undefined || formTitle.val() == '') {
 			alert(ccm_t('form-title'));
 			failed = true;
 		}
 	
-		var downloadFile = $('#downloadFile');
-		if (downloadFile.val() == '') {
+		var downloadFile = $('#javascript');
+		if (downloadFile.val() == undefined || downloadFile.val() == '') {
 			alert(ccm_t('download-file'));
 			failed = true;
 		}

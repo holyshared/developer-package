@@ -27,11 +27,11 @@ Please do the plugin from the repository of github importing.</em></p>
 	<p>General setting</p>
 	<dl>
 		<dt>form title&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->text("title", $title, array("id" => "formTitle", "size" => 60)); ?></dd>
+		<dd><?php echo $f->text("title", $title, array("size" => 60)); ?></dd>
 		<dt>description of form</dt>
 		<dd><?php echo $f->text("description", $description, array("size" => 80)); ?></dd>
 		<dt>Download file name&nbsp;<em class="required">required</em></dt>
-		<dd><?php echo $f->text("javascript", $javascript, array("id" => "downloadFile", "size" => 20)); ?>.js</dd>
+		<dd><?php echo $f->text("javascript", $javascript, array("size" => 20)); ?>.js</dd>
 	</dl>
 </fieldset>
 

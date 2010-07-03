@@ -8,10 +8,6 @@
 	$fileTypes = (!$fileTypes)
 	? $fl->unserializeUploadFileExtensions(UPLOAD_FILE_EXTENSIONS_ALLOWED)
 	: $fileTypes = $fl->unserializeUploadFileExtensions($fileTypes);
-
-	
-	
-	
 ?>
 <script type="text/javascript">
 $(document.body).ready(function() {
@@ -38,11 +34,10 @@ $(document.body).ready(function() {
 			<div class="ccm-search-advanced-fields"> 
 				<h2><?php echo t("Your Repository") ?></h2> 
 				<div class="ccm-search-field">
-					<ul>
-						<li><a href="#">aaaa</a></li>
-						<li><a href="#">aaaa</a></li>
-						<li><a href="#">aaaa</a></li>
-						<li><a href="#">aaaa</a></li>
+					<ul class="userRepository">
+<?php foreach($repos as $rp) : ?>
+	<li><a title="<?php echo $rp["name"]; ?>" href="#<?php echo $rp["name"]; ?>"><?php echo $rp["name"]; ?></a></li>
+<?php endforeach; ?>
 					</ul>
 				</div> 
 			</div>
@@ -88,7 +83,7 @@ $(document.body).ready(function() {
 					<?php echo $t->output('import'); ?>
 					<p>
 						<?php //echo $f->text('repository', 'http://github.com/holyshared/Exhibition', array("size" => "80")); ?>
-						http://github.com/<strong class="username">holyshared</strong>/&nbsp;&nbsp;<?php echo $f->text('repository', 'Exhibition', array("size" => "20")); ?>
+						http://github.com/<strong class="username">holyshared</strong>/&nbsp;&nbsp;<?php echo $f->text('repository', '', array("size" => "20")); ?>
 						<input id="startImport" type="button" name="import" value="import" />
 					</p>
 				</form>

@@ -32,6 +32,30 @@
 	padding: 5px 15px 5px 51px;
 }
 
+.ccm-search-field .userRepository {
+	list-style: none;
+}
+
+.ccm-search-field .userRepository li {
+	font-size: 108%;
+	margin: 0px 0px 5px 0px;
+}
+
+.ccm-search-field .userRepository li a {
+	padding: 5px 15px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	display: block;
+}
+
+.ccm-search-field .userRepository li a:hover {
+	font-weight: bold;
+	color: #3a546d;
+	background: #bfd0e0;
+}
+
+
+
 
 #main {
 	overflow: hidden;
