@@ -7,19 +7,22 @@
 		</div>
 
 		<div class="bd">
- 
-			<ul class="nav separator">
-<?php
-foreach($items as $key => $rp) {
-	$name = $rp["repos"];
-	$current = $repositories[$name];
-?>
-	<li>
-<a title="<?php echo $t->entities($current["description"]); ?>" href="<?php echo $t->entities($current["url"]); ?>">github@<?php echo $t->entities($current["name"]); ?></a><br />
-<em><?php echo $t->entities(date("Y-m-d H:i", strtotime($current["pushed_at"]))); ?></em>
-	</li>
-<?php } ?>
-			</ul>
+
+<?php if (!empty($items)) : ?>
+	<ul class="nav separator">
+		<?php foreach($items as $key => $rp) : ?>
+		<?php
+			$name = $rp["repos"];
+			$current = $repositories[$name];
+		?>
+			<li><a title="<?php echo $t->entities($current["description"]); ?>" href="<?php echo $t->entities($current["url"]); ?>">github@<?php echo $t->entities($current["name"]); ?></a>
+			<br /><em><?php echo $t->entities(date("Y-m-d H:i", strtotime($current["pushed_at"]))); ?></em>
+			</li>
+		<?php endforeach; ?>
+	</ul>
+<?php else: ?>
+	<p><?php echo t("There is no repository.") ?></p>
+<?php endif; ?>
 
 		</div>
 	</div>
