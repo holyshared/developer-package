@@ -7,7 +7,9 @@
 		<div class="hd"><h3><?php echo $t->entities($title); ?></h3></div>
 		<div class="bd">
 			<p><?php echo $t->entities($description); ?></p>
-			<form method="post" action="<?php echo $this->action('publish'); ?>">
+			<?php echo ($error) ? $error->output() : ""; ?>
+ 			<form method="post" action="<?php echo $this->action('publish'); ?>">
+				<?php $v->output(''); ?>
 				<?php $this->inc('elements/fileset.php'); ?>
 				<ul class="packtypeList">
 					<li><label class="compression"><input type="radio" name="packType" value="1" checked="checked" />&nbsp;YUI Compressor</label><br />Uses YUI Compressor by Julien Lecomte, to clean whitespace and rename internal variables to shorter values. Highest compression ratio.</li>

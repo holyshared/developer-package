@@ -63,46 +63,32 @@ class BuilderFormBlockController extends BlockController {
 	}
 
 	public function action_publish() {
-		$pkgHandle = MootoolsPluginBuilderPackage::PACKAGE_HANDLE;
-
-		Loader::model('file_list');
-		Loader::library("3rdparty/jsminify/JSMin", $pkgHandle);
-		Loader::library("3rdparty/jsminify/Minify/YUICompressor", $pkgHandle);
-		$fh = Loader::helper('file');
-
-		$filesets = $this->post("module");
-		$packType = $this->post("packType");
-
-		$fl = new FileList();
-		$fl->filterByMootoolsPlugin(true);
-		$fl->filterByExtension("js");
-		$fl->filter('u.uID', $this->uID, '=');
-		$fl->filter('f.fID', $filesets, '=');
-		$files = $fl->get();
-
-		$output = "";
-		foreach ($files as $key => $file)  {
-			$output .= file_get_contents($file->getPath())."\n";
-		}
 		
-		switch($packType) {
-			case 2: $output = JSMin::minify($output); break;
-			case 3: break;
-			case 1:
-			default:
-				$yui = DIR_PACKAGES.'/'.$pkgHandle.'/'.DIRNAME_LIBRARIES.'/'.'3rdparty/yui/yuicompressor-2.4.2.jar';
-				$tmp = $fh->getTemporaryDirectory().'/';
-
-				Minify_YUICompressor::$jarFile = $yui;
-				Minify_YUICompressor::$tempDir = $tmp;
-				$output = Minify_YUICompressor::minifyJs($output); 			
+		$ip = Loader::helper('validation/ip');
+		if (!$ip->check()) {
+			$e = Loader::helper('validation/error');
+			$e->add($ip->getErrorMessage());
+			$this->set("error", $e);			
+			return;
 		}
 
-		$file = $this->javascript.".js";
-		header("Content-disposition: attachment; filename=".$file);
-		header("Content-type: application/octet-stream; name=".$file);
-		echo $output;
-		exit;
+		$v = Loader::helper("validation/form");
+		$v->setData($this->post());
+		$v->addRequired("module", t("Please select a necessary module."));
+		$v->addRequired("packType", t("Please select the compressed method."));
+		if (!$v->test()) {
+			$this->set("error", $v->getError());
+			return;
+		}
+
+		$t = Loader::helper("validation/token");
+		if (!$t->validate()) {
+			$e = Loader::helper('validation/error');
+			$e->add($t->getErrorMessage());
+			$this->set("error", $e);			
+			return;
+		}
+		$this->buildScript();
 	}
 
 	protected function getBuildFileSets() {
@@ -184,7 +170,51 @@ class BuilderFormBlockController extends BlockController {
 		}
 		return $fsets;
 	}
-	
+
+	protected function buildScript() {
+
+		$pkgHandle = MootoolsPluginBuilderPackage::PACKAGE_HANDLE;
+		
+		Loader::library("3rdparty/jsminify/JSMin", $pkgHandle);
+		Loader::library("3rdparty/jsminify/Minify/YUICompressor", $pkgHandle);
+		Loader::model('file_list');
+		$fh = Loader::helper('file');
+
+		$filesets = $this->post("module");
+		$packType = $this->post("packType");
+
+		$fl = new FileList();
+		$fl->filterByMootoolsPlugin(true);
+		$fl->filterByExtension("js");
+		$fl->filter('u.uID', $this->uID, '=');
+		$fl->filter('f.fID', $filesets, '=');
+		$files = $fl->get();
+
+		$output = "";
+		foreach ($files as $key => $file)  {
+			$output .= file_get_contents($file->getPath())."\n";
+		}
+		
+		switch($packType) {
+			case 2: $output = JSMin::minify($output); break;
+			case 3: break;
+			case 1:
+			default:
+				$yui = DIR_PACKAGES.'/'.$pkgHandle.'/'.DIRNAME_LIBRARIES.'/'.'3rdparty/yui/yuicompressor-2.4.2.jar';
+				$tmp = $fh->getTemporaryDirectory().'/';
+
+				Minify_YUICompressor::$jarFile = $yui;
+				Minify_YUICompressor::$tempDir = $tmp;
+				$output = Minify_YUICompressor::minifyJs($output); 			
+		}
+
+		$file = $this->javascript.".js";
+		header("Content-disposition: attachment; filename=".$file);
+		header("Content-type: application/octet-stream; name=".$file);
+		echo $output;
+		exit;
+	}
+
 }
 
 ?>
