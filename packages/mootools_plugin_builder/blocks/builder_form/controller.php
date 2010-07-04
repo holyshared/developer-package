@@ -60,12 +60,16 @@ class BuilderFormBlockController extends BlockController {
 	}
 
 	public function action_publish() {
+		$pkgHandle = MootoolsPluginBuilderPackage::PACKAGE_HANDLE;
+
+		Loader::model('file_list');
+		Loader::library("3rdparty/jsminify/JSMin", $pkgHandle);
+		Loader::library("3rdparty/jsminify/Minify/YUICompressor", $pkgHandle);
+		$fh = Loader::helper('file');
+
 		$filesets = $this->post("module");
 		$packType = $this->post("packType");
-		
-		Loader::model('file_list');
-		Loader::library("3rdparty/jsminify/JSMin", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
-		
+
 		$u = new User();
 		$fl = new FileList();
 		$fl->filterByMootoolsPlugin(true);
@@ -82,8 +86,16 @@ class BuilderFormBlockController extends BlockController {
 		switch($packType) {
 			case 2: $output = JSMin::minify($output); break;
 			case 3: break;
+			case 1:
+			default:
+				$yui = DIR_PACKAGES.'/'.$pkgHandle.'/'.DIRNAME_LIBRARIES.'/'.'3rdparty/yui/yuicompressor-2.4.2.jar';
+				$tmp = $fh->getTemporaryDirectory().'/';
+
+				Minify_YUICompressor::$jarFile = $yui;
+				Minify_YUICompressor::$tempDir = $tmp;
+				$output = Minify_YUICompressor::minifyJs($output); 			
 		}
-		
+
 		$file = $this->javascript.".js";
 		header("Content-disposition: attachment; filename=".$file);
 		header("Content-type: application/octet-stream; name=".$file);
