@@ -17,12 +17,17 @@ class GithubTagsBlockController extends BlockController {
 
 	public function getJavaScriptStrings() {
 		return array(
-			"title"	=> "Please input a title.",
-			"repos"	=> "Please select the repository.",
-			"display-count"	=> "Please select the display number."
+			"title"	=> t("Please input a title."),
+			"repos"	=> t("Please select the repository."),
+			"display-count"	=> t("Please select the display number.")
 		);
 	}
 
+	public function on_start(){
+		$html  = Loader::helper('html');
+		$this->addHeaderItem($html->css('style.css', "github_tags"));
+	}	
+	
 	public function view() {
 		$this->set("tags", $this->getUserRepositoryTags());
 	}

@@ -12,7 +12,7 @@
 	}
 	$json = json_encode($packages);
 ?>
-<link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/style.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getBlockURL() ?>/css/style.css" media="screen" />
 <script type="text/javascript">var PluginPackages = <?php echo $json; ?>;</script>
 
 <?php if (count($packages) <= 0) : ?>

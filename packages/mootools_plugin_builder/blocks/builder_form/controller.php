@@ -22,13 +22,12 @@ class BuilderFormBlockController extends BlockController {
 		);
 	}
 
-	public function loadBlockInformation() {
+	public function on_start(){
+		$html  = Loader::helper('html');
+		$this->addHeaderItem($html->css('style.css', "builder_form"));	
 	}
 
 	public function view() {
-		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('style.css', "builder_form"));	
-
 		$this->set("bID", $this->bID);
 		$this->set("filesets", $this->getBuildFileSets());
 	}
@@ -56,6 +55,10 @@ class BuilderFormBlockController extends BlockController {
 		foreach ($fsIDs as $key => $fsID) {
 			$db->query("INSERT INTO btBuilderPackage VALUES (?, ?, ?)", array($this->bID, $fsID, $key));
 		}
+
+		$u = new User();
+		$data["uID"] = $u->getUserID();
+
 		parent::save($data);
 	}
 
@@ -70,11 +73,10 @@ class BuilderFormBlockController extends BlockController {
 		$filesets = $this->post("module");
 		$packType = $this->post("packType");
 
-		$u = new User();
 		$fl = new FileList();
 		$fl->filterByMootoolsPlugin(true);
 		$fl->filterByExtension("js");
-		$fl->filter('u.uID', $u->getUserID(), '=');
+		$fl->filter('u.uID', $this->uID, '=');
 		$fl->filter('f.fID', $filesets, '=');
 		$files = $fl->get();
 
@@ -155,7 +157,7 @@ class BuilderFormBlockController extends BlockController {
 	protected function getLoadUserFileSet() {
 		Loader::model('file_set');
 		Loader::model('file_list');
-
+		
 		$u = new User();
 		$fl = new FileList();
 		$fl->filterByMootoolsPlugin(true);

@@ -24,6 +24,11 @@ class GithubRepositoryBlockController extends BlockController {
 		);
 	}
 
+	public function on_start(){
+		$html  = Loader::helper('html');
+		$this->addHeaderItem($html->css('style.css', "github_repository"));	
+	}
+	
 	public function view() {
 		$this->set("items", $this->loadRepositories());
 		$this->set("repositories", $this->getUserRepositories());

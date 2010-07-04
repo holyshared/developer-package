@@ -67,11 +67,11 @@ em.warning {
 }
 
 .packageList li {
-	background: url(images/img_check_off.gif) no-repeat 5px center;
+	background: url(../images/img_check_off.gif) no-repeat 5px center;
 }
 
 .packageList li.selected {
-	background: #f0ffdd url(images/img_check_on.gif) no-repeat 5px center;
+	background: #f0ffdd url(../images/img_check_on.gif) no-repeat 5px center;
 }
 
 
