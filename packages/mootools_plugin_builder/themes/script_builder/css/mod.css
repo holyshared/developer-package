@@ -55,13 +55,9 @@ version: 0.2
 
 
 /*================== sitemap =====================*/
-.sitemap {
-	margin: 0px auto 0px auto;
-}
+.sitemap { margin: 0px auto 0px auto; color: #ffffff; }
+.sitemap .nav a { color: #ffffff; text-decoration: underline }
 
-.sitemap .mod {
-	color: #ffffff;
-}
 
 .category h3,
 .category h4,
@@ -80,6 +76,7 @@ version: 0.2
 /*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
 .credit h4 { color: #ffffff; }
+.credit a { color: #ffffff; text-decoration: underline }
 
 /*================== packages =====================*/
 .packages table { width: 100%; }
@@ -87,13 +84,5 @@ version: 0.2
 .packages table .name { width: 150px; }
 
 /*================== isuuse =====================*/
-.ticket {
-	overflow: hidden;
-	border-bottom: 1px solid #cccccc;
-	padding: 10px 10px 0px 10px;
-}
-
-.ticket .avater {
-	float: left;
-	margin-right: 10px;
-}
+.ticket { overflow: hidden; border-bottom: 1px solid #cccccc; padding: 10px 10px 0px 10px; }
+.ticket .avater { float: left; margin-right: 10px; }
