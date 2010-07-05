@@ -16,7 +16,7 @@
 					<li><label class="compression"><input type="radio" name="packType" value="2" />&nbsp;JsMin Compression</label><br />Uses JSMin by Douglas Crockford. Cleans comments and whitespace.</li>
 					<li><label class="compression"><input type="radio" name="packType" value="3" />&nbsp;No Compression</label><br />Uncompressed source. Recommended in testing phase.</li>
 				</ul>
-				<p class="control"><?php echo $f->submit('download-'.$bID, 'download'); ?></p>
+				<p class="control"><input id="download-.<?php echo $bID ?>" type="image" name="download" src="<?php echo $this->getBlockURL() ?>/images/img_download.jpg" /></p>
 			</form>
 		</div>
 	</div>

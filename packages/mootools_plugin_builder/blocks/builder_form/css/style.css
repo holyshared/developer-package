@@ -77,6 +77,10 @@ em.warning {
 
 /* View
 ----------------------------------*/
+.packtypeList {
+	margin-bottom: 20px;
+}
+
 .packtypeList li {
 	margin-bottom: 10px;
 	text-indent: -8px;
