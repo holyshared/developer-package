@@ -33,11 +33,15 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	public function add() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
@@ -53,6 +57,11 @@ class GithubTagsBlockController extends BlockController {
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 		$username = $this->getUserName();
+
+		if (empty($username)) {
+			return null;
+		}
+
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
 		$repositories = $api->getUserRepos($username);
