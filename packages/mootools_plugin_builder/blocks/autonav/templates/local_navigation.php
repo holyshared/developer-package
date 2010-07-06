@@ -25,7 +25,7 @@
 <div class="mod corner aside">
 	<div class="inner">
 		<div class="hd local">
-			<h3 class="h4">Module Default</h3>
+			<h3 class="h4">Index</h3>
 		</div>
 		<div class="bd">
 <?php

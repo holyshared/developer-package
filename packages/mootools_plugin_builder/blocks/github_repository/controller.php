@@ -24,9 +24,9 @@ class GithubRepositoryBlockController extends BlockController {
 		);
 	}
 
-	public function on_start(){
-		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('style.css', "github_repository"));	
+	public function on_start() {
+		$html = Loader::helper('html');
+		$this->addHeaderItem($html->css('form.css', MootoolsPluginBuilderPackage::PACKAGE_HANDLE));	
 	}
 	
 	public function view() {

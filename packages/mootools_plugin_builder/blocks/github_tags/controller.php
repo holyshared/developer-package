@@ -23,9 +23,9 @@ class GithubTagsBlockController extends BlockController {
 		);
 	}
 
-	public function on_start(){
+	public function on_start() {
 		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('style.css', "github_tags"));
+		$this->addHeaderItem($html->css('form.css', MootoolsPluginBuilderPackage::PACKAGE_HANDLE));
 	}	
 	
 	public function view() {
@@ -53,7 +53,7 @@ class GithubTagsBlockController extends BlockController {
 	public function save($data) {
 		parent::save($data);
 	}
-
+	
 	protected function getUserRepositories() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 		$username = $this->getUserName();
