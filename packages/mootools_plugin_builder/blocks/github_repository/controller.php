@@ -35,11 +35,15 @@ class GithubRepositoryBlockController extends BlockController {
 	}
 
 	public function add() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("items", $this->loadRepositories());
 		$this->set("repositories", $this->getUserRepositories());
