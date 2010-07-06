@@ -34,11 +34,15 @@ $(document.body).ready(function() {
 			<div class="ccm-search-advanced-fields"> 
 				<h2><?php echo t("Your Repository") ?></h2> 
 				<div class="ccm-search-field">
-					<ul class="userRepository">
-<?php foreach($repos as $rp) : ?>
-	<li><a title="<?php echo $rp["name"]; ?>" href="#<?php echo $rp["name"]; ?>"><?php echo $rp["name"]; ?></a></li>
-<?php endforeach; ?>
-					</ul>
+					<?php if ($repos) : ?>
+						<ul class="userRepository">
+							<?php foreach($repos as $rp) : ?>
+								<li><a title="<?php echo $rp["name"]; ?>" href="#<?php echo $rp["name"]; ?>"><?php echo $rp["name"]; ?></a></li>
+							<?php endforeach; ?>
+						</ul>
+					<?php else: ?>
+						<p><?php echo t("There is no repository of you.") ?></p>
+					<?php endif; ?>
 				</div> 
 			</div>
 		</div>
@@ -57,7 +61,7 @@ $(document.body).ready(function() {
 						</strong>
 					</p>
 					<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-					<p><a title="<?php echo t("It moves to user's profile page.") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
+					<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
 					</div>
 			<?php
 				//
