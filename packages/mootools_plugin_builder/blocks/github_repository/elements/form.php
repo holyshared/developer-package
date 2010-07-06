@@ -3,11 +3,6 @@
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');
 
-	$selectOptions = array();
-	foreach ($repositories as $key => $repo) {
-		$selectOptions[$key] = $repo["name"];
-	}
-
 	$values = array();
 	if ($items) {
 		foreach ($items as $key => $item) {
@@ -25,9 +20,16 @@
 		</strong>
 	</p>
 	<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-	<p><a title="<?php echo t("It moves to user's profile page.") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
+	<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
 
 <?php else: ?>
+
+	<?php 
+		$selectOptions = array();
+		foreach ($repositories as $key => $repo) {
+			$selectOptions[$key] = $repo["name"];
+		}
+	?>
 
 	<p><?php echo t("It tries to register the content of the repository list of ") ?><em class="username"><?php echo $t->entities($userName) ?></em>.<br />
 	<?php echo t("Please correct it from the change screen of user information when differing if you register.") ?></p>

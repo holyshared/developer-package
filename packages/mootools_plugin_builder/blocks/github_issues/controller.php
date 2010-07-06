@@ -70,6 +70,9 @@ class GithubIssuesBlockController extends BlockController {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
 		$username = $this->getUserName();
+		if (empty($username)) {
+			return null;
+		}
 
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();

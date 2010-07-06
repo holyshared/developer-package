@@ -2,11 +2,6 @@
 <?php
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');
-
-	$items = array();
-	foreach ($repositories as $key => $repo) {
-		$items[$repo["name"]] = $repo["name"];
-	}
 ?>
 
 <?php if (empty($userName)) : ?>
@@ -18,9 +13,16 @@
 		</strong>
 	</p>
 	<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-	<p><a title="<?php echo t("It moves to user's profile page.") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
+	<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
 
 <?php else: ?>
+
+	<?php 
+		$items = array();
+		foreach ($repositories as $key => $repo) {
+			$items[$repo["name"]] = $repo["name"];
+		}
+	?>
 
 	<p><?php echo t("It tries to register the content of the repository list of ") ?><em class="username"><?php echo $userName ?></em>.<br />
 	<?php echo t("Please correct it from the change screen of user information when differing if you register.") ?></p>
