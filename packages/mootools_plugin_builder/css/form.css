@@ -21,19 +21,21 @@ dl dd {
 	margin-bottom: 10px;
 }
 
-em.username {
+.username {
 	color: #b22222;
 	font-weight: bold;
 }
 
-em.required {
+.required {
 	text-transform: uppercase;
 	color: #b22222;
 	font-style: normal;
 	font-weight: bold;
 }
 
-em.warning {
+.warning,
+.ccm-pane-controls .warning,
+.ccm-dialog-window .warning {
 	font-style: normal;
 	font-weight: bold;
 	color: #b22222;
@@ -76,10 +78,3 @@ em.warning {
 .packageList li.selected {
 	background: #f0ffdd url(../images/img_check_on.gif) no-repeat 5px center;
 }
-
-
-
-
-
-
-

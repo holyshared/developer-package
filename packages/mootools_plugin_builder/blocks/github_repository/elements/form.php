@@ -20,7 +20,7 @@
 		</strong>
 	</p>
 	<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-	<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
+	<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page &gt;&gt;") ?></a></p>
 
 <?php else: ?>
 
