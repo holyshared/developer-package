@@ -97,6 +97,7 @@ class DashboardMootoolsImporterController extends Controller {
 				$rows[$key] = $repos;
 			}
 		}
+		$this->set("pkgHandle", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
 		$this->set("repos", $rows);

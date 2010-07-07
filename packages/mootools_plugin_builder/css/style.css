@@ -17,16 +17,6 @@
 	background: url(../images/bgi_progressbar.jpg) no-repeat left top;
 }
 
-/*
-.warning {
-	color: #b22222;
-	display: inline-block;
-}
-
-.username {
-	color: #b22222;
-}
-*/
 .warnMessage {
 	background: url(../images/bgi_warning.gif) no-repeat 15px 15px;
 	border: 1px solid #cccccc;
@@ -57,19 +47,63 @@
 
 
 
-
-#main {
+#ccm-dashboard-content-inner .mainCol  {
 	overflow: hidden;
 	padding: 15px;
 }
 
-.repositories {
+.leftCol {
 	float: left;
 	width: 228px;
 	margin-right: 20px;
 }
 
-.importer {
+.rightCol {
 	float: left;
 	width: 80%;
+}
+
+
+/* Package
+-----------------------------*/
+.package {
+	margin-bottom: 15px;
+}
+
+.package h3 {
+	margin-bottom: 10px;
+}
+
+.package table {
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.package table th,
+.package table td {
+	border: 1px solid #cccccc;
+	padding: 5px 10px;
+}
+
+.package table tbody tr:hover {
+	background: #e2e9f3;
+}
+
+.package table th {
+	text-align: left;
+	background: #f1f1f1;
+}
+
+.package table .no {
+	width: 20px;
+}
+
+.package table .name {
+	width: 200px;
+}
+
+.package table .authors,
+.package table .license {
+	width: 100px;
 }

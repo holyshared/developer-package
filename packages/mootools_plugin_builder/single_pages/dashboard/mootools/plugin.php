@@ -9,71 +9,78 @@
 	? $fl->unserializeUploadFileExtensions(UPLOAD_FILE_EXTENSIONS_ALLOWED)
 	: $fileTypes = $fl->unserializeUploadFileExtensions($fileTypes);
 ?>
+
 <script type="text/javascript">
+
+$(function(){
+	$(".a tbody").sortable().disableSelection();
+});
+
 </script>
+
+
+<style type="text/css">
+
+table {
+	border: 1px solid #cccccc;
+}
+
+table th,
+table td {
+	border: 1px solid #cccccc;
+}
+
+
+</style>
+
 <?php $fp = FilePermissions::getGlobal(); ?>
 <?php if ($fp->canSearchFiles()) : ?>
 
-	<h1><span>Mootools Plugin Manager</span></h1>
-	<div id="main" class="ccm-dashboard-inner">
+	<h1><span>Plugin Manager</span></h1>
+	<div class="ccm-dashboard-inner mainCol">
 
-		<div class="repositories">
+		<div class="leftCol">
 			<div class="ccm-search-advanced-fields"> 
-				<h2><?php echo t("Your Plugin") ?></h2> 
+				<h2><?php echo t("Your Plugins") ?></h2> 
 				<div class="ccm-search-field">
-					<?php if ($repos) : ?>
-						<ul id="yourRepos" class="userRepository">
-							<?php foreach($repos as $rp) : ?>
-								<li><a title="<?php echo $rp["name"]; ?>" href="#<?php echo $rp["name"]; ?>"><?php echo $rp["name"]; ?></a></li>
-							<?php endforeach; ?>
-						</ul>
-					<?php else: ?>
-						<p><?php echo t("There is no repository of you.") ?></p>
-					<?php endif; ?>
+
+<?php if ($plugins) : ?>
+	<ul id="yourRepos" class="userRepository">
+		<?php foreach($plugins as $plugin) : ?>
+			<li><a title="<?php echo $plugin->getFileSetName() ?>" href="#"><?php echo $plugin->getFileSetName() ?></a></li>
+		<?php endforeach; ?>
+	</ul>
+<?php else: ?>
+	<p><?php echo t("There is no plugin of you.") ?></p>
+<?php endif; ?>
+
 				</div> 
 			</div>
 		</div>
 
-		<div class="importer">
-
-			<?php
-				//The name of the user of github is confirmed.  
-				if (empty($username)) : ?>
-					<div class="warnMessage">
-					<p>
-						<strong class="warning">
-							<?php echo t("The name of the user of github is not input.") ?><br />
-							<?php echo t("Please input the name of the user of github by user's edit display.") ?>
-						</strong>
-					</p>
-					<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-					<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page &gt;&gt;") ?></a></p>
-					</div>
-			<?php
-				//
-				elseif (!in_array("js", $fileTypes)) : ?>
-					<div class="warnMessage">
-					<p>
-					<strong class="warning">
-					<?php echo t("There is no taking permission of the javascript file.") ?><br />
-					<?php echo t("Please permit taking the javascript file by setting file management.") ?>
-					</strong>
-					</p>
-					<p><a title="<?php echo t("It moves to the file management page.") ?>" href="<?php echo $this->url("dashboard/files/access") ?>"><?php echo t("It moves to the file management page. &gt;&gt;") ?></a></p>
-				</div>
+		<div class="rightCol">
+			<?php if (empty($username)) : ?>
+				<?php echo Loader::packageElement("username_empty", $pkgHandle, array("uID" => $uID)) ?>
+			<?php elseif (!in_array("js", $fileTypes)) : ?>
+				<?php echo Loader::packageElement("javascript_permission", $pkgHandle, array("uID" => $uID)) ?>
 			<?php else: ?>
-				<h3><?php echo t('Plugin importing of mootools')?>:</h3>
+				<h3><?php echo t('Plugin list that does import')?></h3>
 				<p>
-					<?php echo t("Please input repository URL of github, and click the import button.") ?><br />
-					<?php echo t("The plugin of the latest version is taken from the repository.") ?>
+<?php echo t("A plugin file that does the import is displayed.") ?><br />
+<?php echo t("Please permute the file in drag and drop.") ?><br />
+<?php echo t("When the javascript file is downloaded by a form builder, it is output as shown in this order of the row.") ?>
 				</p>
-
+				<?php if (!empty($filesets)) : ?>
+					<?php echo Loader::packageElement("plugin-files", $pkgHandle, array("filesets" => $filesets)) ?>
+				<?php endif; ?>
 			<?php endif; ?>
 		</div>
 	</div>
 
 <?php else: ?>
+
 	<div class="ccm-dashboard-inner">
 		<?php echo t('Unable to access file manager.'); ?>
 	</div>
+
 <?php endif; ?>

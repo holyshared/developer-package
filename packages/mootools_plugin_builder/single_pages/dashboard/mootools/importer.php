@@ -43,10 +43,10 @@ $(document.body).ready(function() {
 <?php $fp = FilePermissions::getGlobal(); ?>
 <?php if ($fp->canSearchFiles()) : ?>
 
-	<h1><span>Mootools Plugin Manager</span></h1>
-	<div id="main" class="ccm-dashboard-inner">
+	<h1><span>Plugin Import</span></h1>
+	<div class="ccm-dashboard-inner mainCol">
 
-		<div class="repositories">
+		<div class="leftCol">
 			<div class="ccm-search-advanced-fields"> 
 				<h2><?php echo t("Your Repository") ?></h2> 
 				<div class="ccm-search-field">
@@ -63,34 +63,11 @@ $(document.body).ready(function() {
 			</div>
 		</div>
 
-		<div class="importer">
-
-
-			<?php
-				//The name of the user of github is confirmed.  
-				if (empty($username)) : ?>
-					<div class="warnMessage">
-					<p>
-						<strong class="warning">
-							<?php echo t("The name of the user of github is not input.") ?><br />
-							<?php echo t("Please input the name of the user of github by user's edit display.") ?>
-						</strong>
-					</p>
-					<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-					<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page &gt;&gt;") ?></a></p>
-					</div>
-			<?php
-				//
-				elseif (!in_array("js", $fileTypes)) : ?>
-					<div class="warnMessage">
-					<p>
-					<strong class="warning">
-					<?php echo t("There is no taking permission of the javascript file.") ?><br />
-					<?php echo t("Please permit taking the javascript file by setting file management.") ?>
-					</strong>
-					</p>
-					<p><a title="<?php echo t("It moves to the file management page.") ?>" href="<?php echo $this->url("dashboard/files/access") ?>"><?php echo t("It moves to the file management page. &gt;&gt;") ?></a></p>
-				</div>
+		<div class="rightCol">
+			<?php if (empty($username)) : ?>
+				<?php echo Loader::packageElement("username_empty", $pkgHandle, array("uID" => $uID)) ?>
+			<?php elseif (!in_array("js", $fileTypes)) : ?>
+				<?php echo Loader::packageElement("javascript_permission", $pkgHandle, array("uID" => $uID)) ?>
 			<?php else: ?>
 				<h3><?php echo t('Plugin importing of mootools')?>:</h3>
 				<p>
