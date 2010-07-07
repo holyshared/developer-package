@@ -22,12 +22,17 @@ class BuilderFormBlockController extends BlockController {
 		);
 	}
 
-	public function on_start(){
+	public function on_start() {
+		Loader::model('package');
 		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('style.css', "builder_form"));	
+		$this->addHeaderItem($html->css('form.css', MootoolsPluginBuilderPackage::PACKAGE_HANDLE));	
 	}
 
 	public function view() {
+		$urls = Loader::helper('concrete/urls');
+		$pkg = Package::getByHandle(MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+		$this->set("pkg", $pkg);
+		$this->set("url", $urls);
 		$this->set("bID", $this->bID);
 		$this->set("filesets", $this->getBuildFileSets());
 	}

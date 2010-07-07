@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+.packtypeList {
+	margin-bottom: 20px;
+}
+
+.packtypeList li {
+	margin-bottom: 10px;
+	text-indent: -8px;
+	padding-left: 27px;
+}
+
+.compression {
+	font-weight: bold;
+	width: 180px;
+	display: inline-block;
+	margin-right: 10px;
+}

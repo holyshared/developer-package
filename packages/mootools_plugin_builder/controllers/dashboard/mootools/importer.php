@@ -85,18 +85,18 @@ class DashboardMootoolsImporterController extends Controller {
 		$u = new User();
 		$ui = UserInfo::getByID($u->getUserID());
 		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
-		
-
-		$github = new phpGitHubApi();
-		$api = $github->getRepoApi();
-		$repositories = $api->getUserRepos($username);
 
 		$rows = array();
-		foreach ($repositories as $repos) {
-			$key = $repos["name"];
-			$rows[$key] = $repos;
+		if (!empty($username)) {
+			$github = new phpGitHubApi();
+			$api = $github->getRepoApi();
+			$repositories = $api->getUserRepos($username);
+	
+			foreach ($repositories as $repos) {
+				$key = $repos["name"];
+				$rows[$key] = $repos;
+			}
 		}
-
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
 		$this->set("repos", $rows);

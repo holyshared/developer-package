@@ -24,8 +24,8 @@ class GithubIssuesBlockController extends BlockController {
 	}
 
 	public function on_start() {
-		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('style.css', "github_issues"));	
+		$html = Loader::helper('html');
+		$this->addHeaderItem($html->css('form.css', MootoolsPluginBuilderPackage::PACKAGE_HANDLE));	
 	}	
 	
 	public function view() {
@@ -33,11 +33,15 @@ class GithubIssuesBlockController extends BlockController {
 	}
 
 	public function add() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
 
 	public function edit() {
+		$u = new User();
+		$this->set("uID", $u->getUserID());
 		$this->set("userName", $this->getUserName());
 		$this->set("repositories", $this->getUserRepositories());
 	}
@@ -49,7 +53,7 @@ class GithubIssuesBlockController extends BlockController {
 	public function save($data) {
 		parent::save($data);
 	}
-	
+
 	protected function getUserRepositoryIssues() {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
@@ -66,6 +70,9 @@ class GithubIssuesBlockController extends BlockController {
 		Loader::library("3rdparty/github/phpGitHubApi", MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
 
 		$username = $this->getUserName();
+		if (empty($username)) {
+			return null;
+		}
 
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
