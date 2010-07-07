@@ -96,7 +96,7 @@ class DashboardMootoolsImporterController extends Controller {
 			$key = $repos["name"];
 			$rows[$key] = $repos;
 		}
-		
+
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
 		$this->set("repos", $rows);
