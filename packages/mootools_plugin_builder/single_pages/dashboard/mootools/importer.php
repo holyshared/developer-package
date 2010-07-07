@@ -17,11 +17,27 @@ $(document.body).ready(function() {
 		progressbar.set(persent);
 	}
 
+	var complete = function() {
+		alert("complete");
+	}
+
 	$("#startImport").click(function(event) {
 		event.preventDefault();
-		var wizard = $.fn.importWizard($('#importer'), {"step" : 5, "progress": progress});
+		progressbar.reset();
+		var wizard = $.fn.importWizard($('#importer'), {
+			"step" : 5,
+			"progress": progress,
+			"complete": complete
+		});
 		wizard.start();
 	});
+
+	$("#yourRepos").click(function(event) {
+		event.preventDefault();
+		var href = $(event.target).attr("href").replace("#", "");
+		$("#repository").val(href);
+	});
+
 });
 </script>
 <?php $fp = FilePermissions::getGlobal(); ?>
@@ -35,7 +51,7 @@ $(document.body).ready(function() {
 				<h2><?php echo t("Your Repository") ?></h2> 
 				<div class="ccm-search-field">
 					<?php if ($repos) : ?>
-						<ul class="userRepository">
+						<ul id="yourRepos" class="userRepository">
 							<?php foreach($repos as $rp) : ?>
 								<li><a title="<?php echo $rp["name"]; ?>" href="#<?php echo $rp["name"]; ?>"><?php echo $rp["name"]; ?></a></li>
 							<?php endforeach; ?>
@@ -61,7 +77,7 @@ $(document.body).ready(function() {
 						</strong>
 					</p>
 					<?php $url = $this->url("dashboard/users/search?uID=".$uID); ?>
-					<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page. &gt;&gt;") ?></a></p>
+					<p><a title="<?php echo t("It moves to user's profile page") ?>" href="<?php echo $url ?>"><?php echo t("It moves to user's profile page &gt;&gt;") ?></a></p>
 					</div>
 			<?php
 				//

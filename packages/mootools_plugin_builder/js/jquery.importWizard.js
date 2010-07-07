@@ -7,6 +7,7 @@
 			this.container = container;
 			this.current = 1;
 			$(this.container).bind('progress', this.options.progress);
+			$(this.container).bind('complete', this.options.complete);
 		},
 		
 		this.start = function(){
@@ -14,7 +15,7 @@
 		},
 		
 		this.success = function(json, statusText, xhr, form){
-			if (this.current < this.options.step + 1) {
+			if (this.current <= this.options.step) {
 				var response = json.response;
 				if (response.status) {
 					$(this.container).trigger('progress', [this.current]);
@@ -23,16 +24,23 @@
 					var nextAction = "step" + this.next().toString();
 					var action = $(this.container).attr("action").replace(prevAction, nextAction);
 					$(this.container).attr("action", action);
-					
+
 					$(".stepParameter").remove();
 					var parameters = response.parameters;
 					for (var name in parameters) {
-						var input = $("<input/>").attr("type", "hidden").attr("name", name).attr("value", parameters[name]).attr("class", "stepParameter");
+						var input = $("<input/>")
+						.attr("type", "hidden")
+						.attr("name", name)
+						.attr("value", parameters[name])
+						.attr("class", "stepParameter");
 						$(this.container).append(input);
 					}
 					this.send();
 				}
 				$("#message").html(response.message);
+			} else {
+				this.current = 1;
+				$(this.container).trigger("complete");
 			}
 		},
 
