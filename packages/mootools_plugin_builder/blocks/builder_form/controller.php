@@ -1,6 +1,8 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php 
 
+Loader::library('mootools/plugin_list', MootoolsPluginBuilderPackage::PACKAGE_HANDLE);
+
 class BuilderFormBlockController extends BlockController {
 	
 	protected $btTable = 'btBuilderForm';
@@ -38,13 +40,15 @@ class BuilderFormBlockController extends BlockController {
 	}
 	
 	public function add() {
+		$pl = new MootoolsPluginList();
+		$filesets = $pl->getMootoolsPluginPackage();
+
 		$this->set("current", $this->getLoadFileSet());
-		$this->set("filesets", $this->getLoadUserFileSet());
+		$this->set("filesets", $filesets);
 	}
 
 	public function edit() {
-		$this->set("current", $this->getLoadFileSet());
-		$this->set("filesets", $this->getLoadUserFileSet());
+		$this->add();
 	}
 
 	public function delete(){
@@ -100,70 +104,19 @@ class BuilderFormBlockController extends BlockController {
 		Loader::model('file_set');
 		Loader::model('file_list');
 
+		$pl = new MootoolsPluginList();
+		
 		$rows = array();
 		$fsets = $this->getLoadFileSet();
 		foreach($fsets as $key => $fsID) {
 			$fs = FileSet::getByID($fsID);
+			$name = $fs->getFileSetName();
+			
+			$files = $pl->getMootoolsPluginFiles($fs);
+			$rows[$name] = $files;
 
-			$fileset = new stdClass();
-			$fileset->id = $fs->fsID;
-			$fileset->name = $fs->fsName;
-			$fileset->files = $this->getFilesetFiles($fs);
-			$rows[$fileset->id] = $fileset;
 		}
 		return $rows;
-	}
-
-	private function getFilesetFiles($fs) {
-		$fl = new FileList();
-		$fl->filterBySet($fs);
-		$fl->filterByExtension("js");
-		$files = $fl->get();
-
-		$rows = array();
-		foreach ($files as $file) {
-			$attributes = array();
-			$fv = $file->getVersion();
-			$fa = $fv->getAttributeList();
-			while ($fa->valid()) {
-				$attribute = $fa->current();
-				$attributes[$fa->key()] = $attribute;
-				$fa->next();
-			}
-
-			$f = new stdClass();
-			$f->id = $fv->getFileID();
-			$f->name = $fv->getFileName();
-			$f->title = $fv->getTitle();
-			$f->tags = $fv->getTags();
-			$f->author = $fv->getAuthorName();
-			$f->dateAdded = $fv->getDateAdded();
-			$f->description = $fv->getDescription();
-			$f->attributes = $attributes;
-			$rows[] = $f;
-		}
-		return $rows;
-	}
-
-	protected function getLoadUserFileSet() {
-		Loader::model('file_set');
-		Loader::model('file_list');
-		
-		$u = new User();
-		$fl = new FileList();
-		$fl->filterByMootoolsPlugin(true);
-		$fl->filterByExtension("js");
-		$fl->filter('u.uID', $u->getUserID(), '=');
-		$files = $fl->get();
-
-		$ufsets = array();
-		foreach($files as $file) {
-			$fsets = $file->getFileSets();
-			foreach ($fsets as $fset) {
-				$ufsets[$fset->getFileSetID()] = $fset;
-			}
-		}
-		return $ufsets;
 	}
 
 	protected function getLoadFileSet() {
@@ -185,21 +138,16 @@ class BuilderFormBlockController extends BlockController {
 		Loader::model('file_list');
 		$fh = Loader::helper('file');
 
-		$filesets = $this->post("module");
+		$files = $this->post("module");
 		$packType = $this->post("packType");
 
-		$fl = new FileList();
-		$fl->filterByMootoolsPlugin(true);
-		$fl->filterByExtension("js");
-		$fl->filter('u.uID', $this->uID, '=');
-		$fl->filter('f.fID', $filesets, '=');
-		$files = $fl->get();
-
 		$output = "";
-		foreach ($files as $key => $file)  {
+		$pl = new MootoolsPluginList();
+		foreach ($files as $key => $fID) {
+			$file = File::getByID($fID);
 			$output .= file_get_contents($file->getPath())."\n";
 		}
-		
+
 		switch($packType) {
 			case 2: $output = JSMin::minify($output); break;
 			case 3: break;

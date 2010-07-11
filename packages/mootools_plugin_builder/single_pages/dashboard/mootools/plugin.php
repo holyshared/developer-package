@@ -11,13 +11,27 @@
 ?>
 
 <script type="text/javascript">
-
 $(function(){
-	$(".a tbody").sortable().disableSelection();
+	$("#fileList tbody").sortable({
+		'update': function(event, ui) {
+			var rows = $("#fileList tbody tr").get();
+			$(rows).each(function(key, row) {
+				var no = $(row).find('.no');
+				no.html(key + 1);
+			});
+		//no
+		}
+	}).disableSelection();
+
+	$("#yourRepos").click(function(event) {
+		var fs = $(event.target).attr("href").replace('#', '');
+		$.post('<?php echo $this->action("package") ?>', {'package': fs}, function(response) {
+			$("#fileList").html(response);
+			$("#fileList tbody").sortable().disableSelection();
+		});
+	});
 });
-
 </script>
-
 
 <style type="text/css">
 
@@ -29,7 +43,6 @@ table th,
 table td {
 	border: 1px solid #cccccc;
 }
-
 
 </style>
 
@@ -47,7 +60,7 @@ table td {
 <?php if ($plugins) : ?>
 	<ul id="yourRepos" class="userRepository">
 		<?php foreach($plugins as $plugin) : ?>
-			<li><a title="<?php echo $plugin->getFileSetName() ?>" href="#"><?php echo $plugin->getFileSetName() ?></a></li>
+			<li><a title="<?php echo $plugin->getFileSetName() ?>" href="#<?php echo $plugin->getFileSetName() ?>"><?php echo $plugin->getFileSetName() ?></a></li>
 		<?php endforeach; ?>
 	</ul>
 <?php else: ?>
@@ -71,7 +84,12 @@ table td {
 <?php echo t("When the javascript file is downloaded by a form builder, it is output as shown in this order of the row.") ?>
 				</p>
 				<?php if (!empty($filesets)) : ?>
-					<?php echo Loader::packageElement("plugin-files", $pkgHandle, array("filesets" => $filesets)) ?>
+					<form action="<?php echo $this->action("update") ?>" method="post">
+						<div id="fileList">
+							<?php echo Loader::packageElement("plugin_files", $pkgHandle, array("filesets" => $filesets)) ?>
+						</div>
+					<?php echo $f->submit("send", "Update"); ?>
+					</form>
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>

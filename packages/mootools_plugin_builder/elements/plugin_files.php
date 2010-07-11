@@ -2,7 +2,7 @@
 
 <div id="<?php echo $key; ?>" class="package">
 	<h3><?php echo $key; ?></h3>
-	<table class="a">
+	<table>
 		<thead>
 			<tr>
 				<th class="no">no.</th>
@@ -33,7 +33,7 @@
 				}
 			?>
 			<tr>
-				<td><?php echo $no; ?></td>
+				<td><span class="no"><?php echo $no + 1; ?></span><input type="hidden" name="fID[]" value="<?php echo $file->getFileID(); ?>" /></td>
 				<td><?php echo $file->getFileName(); ?></td>
 				<td><?php echo $at->getAttribute(MOOTOOLS_PLUGIN_AUTHORS); ?></td>
 				<td><?php echo $at->getAttribute(MOOTOOLS_PLUGIN_LICENSE); ?></td>

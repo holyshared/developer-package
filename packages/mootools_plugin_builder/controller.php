@@ -48,22 +48,7 @@ class MootoolsPluginBuilderPackage extends Package {
 	        	$collection->update($page);
 			}
 		}
-/*		
-		$collection = SinglePage::add("/dashboard/mootools", $pkg);
-		if (!empty($collection)) {
-        	$collection->update(array('cName' => 'Mootools Plugin Manager', 'cDescription'	=> 'Management of mootools plugin'));
-		}
 
-		$collection = SinglePage::add("/dashboard/mootools/plugin", $pkg);
-		if (!empty($collection)){
-			$collection->update(array('cName' => 'plugin', 'cDescription'	=> 'plugin'));
-		}
-
-		$collection = SinglePage::add("/dashboard/mootools/importer", $pkg);
-		if (!empty($collection)){
-        	$collection->update(array('cName' => 'import', 'cDescription'	=> 'Importing of repository'));
-		}
-*/
 		//The name of the user of github is added to the attribute.
 		$values = array(
 			"akHandle" => MOOTOOLS_GITHUB_USER, "akName" => "Name of user of github",
@@ -116,48 +101,37 @@ class MootoolsPluginBuilderPackage extends Package {
 					"akIsAutoCreated" => true,
 					"akIsEditable" => true
 				)
+			),
+			array(
+				"type" => "number",
+				"values" => array(
+					"akHandle" => MOOTOOLS_PLUGIN_DISPLAY_ORDER,
+					"akName" => "displayOrder",
+					"akIsSearchable" => true,
+					"akIsSearchableIndexed" => true,
+					"akIsAutoCreated" => true,
+					"akIsEditable" => true
+				)
 			)
 		);
 
+		$attributesKeys = array();
 		foreach ($fileAttributes as $key => $attr) {
-			FileAttributeKey::add($attr["type"], $attr["values"], $pkg);	
+			$type = $attr["type"];
+			$values = $attr["values"];
+			$handle = $values["akHandle"];
+			$attributesKeys[$handle] =	FileAttributeKey::add($type, $values, $pkg);	
+		}
+
+		if (!empty($attributesKeys[MOOTOOLS_PLUGIN_DEPENDENCES])) {
+			$key = $attributesKeys[MOOTOOLS_PLUGIN_DEPENDENCES];
+			$db = Loader::db();
+			$db->Replace('atSelectSettings', array(
+				'akID' => $key->getAttributeKeyID(),
+				'akSelectAllowMultipleValues' => true
+			), array('akID'), true);
 		}
 		
-		
-/*
-		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN, "akName" => "This file is a plugin of mootools",
-			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
-		);
-		$key = FileAttributeKey::add("boolean", $values, $pkg);	
-
-		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN_LICENSE, "akName" => "License of Mootools plugin",
-			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
-		);
-		$key = FileAttributeKey::add("text", $values, $pkg);
-
-		//The Mootools license is added to the attribute. 
-		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN_AUTHORS, "akName" => "Authors of Mootools plugin",
-			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
-		);
-		$key = FileAttributeKey::add("text", $values, $pkg);
-
-		//The author of the Mootools plug-in is added to the attribute.
-		$values = array(
-			"akHandle" => MOOTOOLS_PLUGIN_DEPENDENCES, "akName" => "Dependence of mootools plugin",
-			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
-		);
-		$key = FileAttributeKey::add("select", $values, $pkg);
-*/
-
-		$db = Loader::db();
-		$db->Replace('atSelectSettings', array(
-			'akID' => $key->getAttributeKeyID(),
-			'akSelectAllowMultipleValues' => true
-		), array('akID'), true);
-
 		BlockType::installBlockTypeFromPackage("builder_form", $pkg);
 		BlockType::installBlockTypeFromPackage("github_tags", $pkg);
 		BlockType::installBlockTypeFromPackage("github_issues", $pkg);

@@ -114,13 +114,7 @@ class DashboardMootoolsImporterController extends Controller {
 
 		$response = new JSONResponse();
 		$response->setStatus(false);
-/*
-		$query	= str_replace(DashboardMootoolsImporterController::GITHUB_URL, "", $url);
 
-		$query	= explode("/", $query);
-		$user	= array_shift($query);
-		$repos	= array_shift($query);
-*/
 		$result = array();
 		if (empty($url)) {
 			$response->setMessage("URL is not effective. Please confirm it.");
@@ -326,6 +320,7 @@ class DashboardMootoolsImporterController extends Controller {
 		$fv->setAttribute(MOOTOOLS_PLUGIN_LICENSE, $license);
 		$fv->setAttribute(MOOTOOLS_PLUGIN_AUTHORS, $authors);
 		$fv->setAttribute(MOOTOOLS_PLUGIN_DEPENDENCES, null);
+		$fv->setAttribute(MOOTOOLS_PLUGIN_DISPLAY_ORDER, 0);
 		$fv->updateDescription($meta["description"]);
 		$fv->updateTags("mootools\nplugin");
 

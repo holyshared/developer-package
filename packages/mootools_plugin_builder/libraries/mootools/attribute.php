@@ -20,3 +20,8 @@ if (!defined('MOOTOOLS_PLUGIN_LICENSE')) {
 if (!defined('MOOTOOLS_PLUGIN_AUTHORS')) {
 	define('MOOTOOLS_PLUGIN_AUTHORS', 'mootools_plugin_authors');
 }
+
+if (!defined('MOOTOOLS_PLUGIN_DISPLAY_ORDER')) {
+	define('MOOTOOLS_PLUGIN_DISPLAY_ORDER', 'mootools_plugin_display_order');
+}
+

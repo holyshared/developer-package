@@ -1,16 +1,20 @@
 <?php $t = Loader::helper('text'); ?>
 
-<?php foreach($filesets as $fileset) : ?>
+<?php foreach($filesets as $name => $files) : ?>
 
-	<h4><?php echo $t->entities($fileset->name); ?></h4>
+	<h4><?php echo $t->entities($name); ?></h4>
 	<table>
 		<tr>
 			<th>&nbsp;</th>
 			<th>name</th>
 			<th>description</th>
 		</tr>
-		<?php foreach($fileset->files as $file) : ?>
+		<?php foreach($files as $file) : ?>
 			<?php
+				$fv = $file->getVersion();
+				$fa = $fv->getAttributeList();
+				$dependences = $fa->getAttribute(MOOTOOLS_PLUGIN_DEPENDENCES);	
+				
 				$attributes = $file->attributes;
 				$modules = array();
 				$dependences = $attributes["mootools_plugin_dependences"];
@@ -25,9 +29,9 @@
 				}
 			?>
 			<tr>
-				<td class="check"><input type="checkbox" name="module[]" value="<?php echo $t->entities($file->id) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
-				<td class="name"><?php echo $t->entities($file->name); ?></td>
-				<td class="description"><?php echo $t->entities($file->description); ?></td>
+				<td class="check"><input type="checkbox" name="module[]" value="<?php echo $t->entities($file->getFileID()) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
+				<td class="name"><?php echo $t->entities($fv->getFileName()); ?></td>
+				<td class="description"><?php echo $t->entities($fv->getDescription()); ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</table>
