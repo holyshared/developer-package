@@ -137,7 +137,7 @@ class MootoolsPluginDeveloperPackage extends Package {
 		BlockType::installBlockTypeFromPackage("github_issues", $pkg);
 		BlockType::installBlockTypeFromPackage("github_repository", $pkg);
 
-		PageTheme::add('script_builder', $pkg);
+		PageTheme::add('small_project', $pkg);
 	}
 
 	public function uninstall() {
