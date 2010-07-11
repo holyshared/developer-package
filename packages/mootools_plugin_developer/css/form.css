@@ -21,12 +21,14 @@ dl dd {
 	margin-bottom: 10px;
 }
 
-.username {
+.ccm-pane-controls .username,
+.ccm-dialog-window .username {
 	color: #b22222;
 	font-weight: bold;
 }
 
-.required {
+.ccm-pane-controls .required,
+.ccm-dialog-window .required {
 	text-transform: uppercase;
 	color: #b22222;
 	font-style: normal;

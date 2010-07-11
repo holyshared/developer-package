@@ -18,11 +18,12 @@ class DashboardMootoolsPluginController extends Controller {
 		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 		$plugins = $pl->getMootoolsPluginPackage();
 
-		$fs = array_slice($plugins, 0, 1);
-		$fs = array_shift($fs);
-		$files = $pl->getMootoolsPluginFiles($fs);
-		$filesets[$fs->getFileSetName()] = $files;
-
+		if (is_array($plugins) && count($plugins) > 0) {
+			$fs = array_slice($plugins, 0, 1);
+			$fs = array_shift($fs);
+			$files = $pl->getMootoolsPluginFiles($fs);
+			$filesets[$fs->getFileSetName()] = $files;
+		}
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
 		$this->set("pkgHandle", MootoolsPluginDeveloperPackage::PACKAGE_HANDLE);
@@ -55,6 +56,9 @@ class DashboardMootoolsPluginController extends Controller {
 	}
 
 	public function update() {
+		Loader::model('file');
+		Loader::model('attribute/categories/file');
+		
 		$fIDs = $this->post("fID");
 		foreach ($fIDs as $key => $id) {
 			$f = File::getByID($id);
