@@ -1,0 +1,56 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-02 00:51+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Noritaka Horio <holy.shared.design@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\controller.php:3
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\autonav\view.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\autonav\templates\header_navigation.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\autonav\templates\local_navigation.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\autonav\templates\topic_navigation.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\builder_form\add.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\builder_form\controller.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\builder_form\edit.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\builder_form\view.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\builder_form\elements\form.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\content\view.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\content\templates\footer_line.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\content\templates\line.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\content\templates\module.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\add.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\controller.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\edit.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\view.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\elements\form.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_issues\templates\list.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_repository\add.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_repository\controller.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_repository\edit.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_repository\view.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_repository\elements\form.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_tags\add.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_tags\controller.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_tags\edit.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_tags\view.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\blocks\github_tags\elements\form.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\controllers\dashboard\mootools\controller.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\controllers\dashboard\mootools\importer.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\libraries\mootools\attribute.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\single_pages\dashboard\mootools\importer.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\single_pages\dashboard\mootools\view.php:2
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\default.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\full.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\left_sidebar.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\view.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\elements\footer.php:1
+#: C:\var\www\git\mpb-concrete5\packages\mootools_plugin_builder\themes\script_builder\elements\header.php:1
+msgid "Access Denied."
+msgstr ""
+
