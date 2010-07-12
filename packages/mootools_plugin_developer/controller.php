@@ -131,7 +131,7 @@ class MootoolsPluginDeveloperPackage extends Package {
 				'akSelectAllowMultipleValues' => true
 			), array('akID'), true);
 		}
-		
+
 		BlockType::installBlockTypeFromPackage("mootools_plugin_build_form", $pkg);
 		BlockType::installBlockTypeFromPackage("github_tags", $pkg);
 		BlockType::installBlockTypeFromPackage("github_issues", $pkg);

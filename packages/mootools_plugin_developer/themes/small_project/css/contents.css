@@ -81,6 +81,9 @@ table tr.selected td {
 	color: #ffffff;
 }
 
+.nav-topic {
+	margin-left: 10px;
+}
 
 .nav-topic li {
 	display: inline-block;

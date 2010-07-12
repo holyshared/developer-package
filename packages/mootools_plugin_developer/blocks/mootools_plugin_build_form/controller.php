@@ -116,7 +116,6 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 			$rows[$name] = $files;
 
 		}
-//var_dump($rows);
 		return $rows;
 	}
 
