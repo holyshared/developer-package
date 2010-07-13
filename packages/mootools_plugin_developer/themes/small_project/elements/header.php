@@ -19,17 +19,19 @@
 		<div class="page">
 
 <div class="head">
-	<div class="mod pgdesc gs960">
-		<div class="inner">
-			<div class="hd"><h1>Mootools Plugin Builder</h1></div>
-			<div class="bd">
-				<p>Mootools Plugin Builder</p>
-				<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/mootools_plugin_developer/themes/small_project/images/img_logo.png" alt="" /></a></p>
-				<div class="nav">
-					<?php
-						$nav = new Area('Header Nav');
-						$nav->display($c);
-					?>
+	<div class="inner gs960">
+		<div class="mod pgdesc">
+			<div class="inner">
+				<div class="hd"><h1>Mootools Plugin Builder</h1></div>
+				<div class="bd">
+					<p>Mootools Plugin Builder</p>
+					<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/mootools_plugin_developer/themes/small_project/images/img_logo.png" alt="" /></a></p>
+					<div class="nav">
+						<?php
+							$nav = new Area('Header Nav');
+							$nav->display($c);
+						?>
+					</div>
 				</div>
 			</div>
 		</div>

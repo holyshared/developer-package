@@ -18,14 +18,12 @@
 			$selectedPathCIDs[]=$cParentID;
 			$inspectC=Page::getById($cParentID);
 		}
-	} 	
+	}
 ?>
-
-
 <div class="mod corner aside">
 	<div class="inner">
 		<div class="hd local">
-			<h3 class="h4">Index</h3>
+			<h3 class="h4"><?php echo $c->getCollectionName() ?></h3>
 		</div>
 		<div class="bd">
 <?php
@@ -35,7 +33,7 @@
 		if (!$_c->getCollectionAttributeValue('exclude_nav')) {
 			if (!$containsPages) {
 				// this is the first time we've entered the loop so we print out the UL tag
-				echo("<ul class=\"nav\">");
+				echo("<ul class=\"nav-local\">");
 			}
 			
 			$containsPages = true;

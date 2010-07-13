@@ -21,9 +21,8 @@ body{_text-align:center;}/* IE5.5 */
 .myYahoo{width:300px;}
 .mBuilder{ width:220px; margin-right: 60px; }
 
-
 .page {
-padding-top: 178px;
+	padding-top: 178px;
 }
 
 .head {
@@ -35,20 +34,17 @@ padding-top: 178px;
 	border-bottom: 5px solid #D8CFAB;
 }
 
-.body {
-	margin-bottom: 30px;
-}
+.head .inner { margin: 0px auto; }
+
+.body { margin-bottom: 30px; }
 
 .foot {
 	border-top: 5px solid #D8CFAB;
 	padding-top: 20px;
 	background: #996600;
-
 	position: absolute;
 	width: 100%;
 	left: 0px;
-/*	left: 0px;
-	top: 0px;
-*/
-
 }
+
+.foot .inner { margin: 0px auto; }

@@ -69,21 +69,22 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 231%;
+	font-size: 247%;
 	font-weight: normal;
 	font-style: normal;
-	color: #333333;
-	padding: 10px 0px 0px 0px;
+	color: #815120;
+	padding: 0px 0px 10px 0px;
 	margin-bottom: 20px;
 }
 
 h3, .h3 {
-	font-size: 154%;
+	font-size: 185%;
 	font-weight: normal;
 	font-style: normal;
-	color: #333333;
-	padding: 0px;
+	color: #851616;
+	padding: 0px 0px 10px 0px;
 	margin-bottom: 10px;
+	background: url(images/bgi_h3.jpg) repeat-x left bottom;
 }
 
 h4, .h4 {

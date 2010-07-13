@@ -90,6 +90,10 @@ table tr.selected td {
 	padding-right: 5px;
 }
 
+.nav-local .nav-selected {
+	font-weight: bold;
+}
+
 
 /* version list */
 .versionList li em {
