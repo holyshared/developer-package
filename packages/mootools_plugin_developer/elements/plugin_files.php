@@ -32,9 +32,9 @@
 					}
 				}
 			?>
-			<tr>
+			<tr id="f<?php echo $file->getFileID(); ?>" class="record">
 				<td><span class="no"><?php echo $no + 1; ?></span><input type="hidden" name="fID[]" value="<?php echo $file->getFileID(); ?>" /></td>
-				<td><?php echo $file->getFileName(); ?></td>
+				<td><a class="pluginEdit" href="/files/properties?searchInstance=<?php echo $searchInstance ?>&fID=<?php echo $file->getFileID(); ?>"><?php echo $file->getFileName(); ?></a></td>
 				<td><?php echo $at->getAttribute(MOOTOOLS_PLUGIN_AUTHORS); ?></td>
 				<td><?php echo $at->getAttribute(MOOTOOLS_PLUGIN_LICENSE); ?></td>
 				<td><?php echo join(", ", $values) ?></td>

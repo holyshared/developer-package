@@ -29,6 +29,7 @@ class DashboardMootoolsPluginController extends Controller {
 		$this->set("pkgHandle", MootoolsPluginDeveloperPackage::PACKAGE_HANDLE);
 		$this->set("plugins", $plugins);
 		$this->set("filesets", $filesets);
+		$this->set("searchInstance", 'file'.time());
 	}
 
 	public function package() {

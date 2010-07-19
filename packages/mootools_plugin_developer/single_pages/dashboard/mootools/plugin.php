@@ -30,6 +30,19 @@ $(function(){
 			$("#fileList tbody").sortable().disableSelection();
 		});
 	});
+
+	$(".pluginEdit").live("click", function(event) {
+		event.preventDefault();
+		var trriger = $(event.target);
+		var url = CCM_TOOLS_PATH + trriger.attr("href");
+		jQuery.fn.dialog.open({
+			width: 630,
+			height: 450,
+			modal: false,
+			href: url,
+			title: ccmi18n.properties				
+		});
+	});
 });
 </script>
 
@@ -86,7 +99,7 @@ table td {
 				<?php if (!empty($filesets)) : ?>
 					<form action="<?php echo $this->action("update") ?>" method="post">
 						<div id="fileList">
-							<?php echo Loader::packageElement("plugin_files", $pkgHandle, array("filesets" => $filesets)) ?>
+							<?php echo Loader::packageElement("plugin_files", $pkgHandle, array("filesets" => $filesets, "searchInstance" => $searchInstance)) ?>
 						</div>
 					<?php echo $f->submit("send", "Update"); ?>
 					</form>
