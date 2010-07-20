@@ -19,7 +19,6 @@ $(function(){
 				var no = $(row).find('.no');
 				no.html(key + 1);
 			});
-		//no
 		}
 	}).disableSelection();
 
