@@ -13,7 +13,7 @@
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 <!--		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('style.css'); ?>" type="text/css" media="screen" /> -->
-		<link rel="stylesheet" href="/packages/mootools_plugin_developer/themes/small_project/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="/packages/frontend_developer/themes/small_project/style.css" type="text/css" media="screen" />
 	</head>
 	<body>
 		<div class="page">
