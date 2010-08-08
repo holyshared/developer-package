@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+#progressbar {
+	border: 1px solid #cccccc;
+	padding: 1px;
+	width: 296px;
+}
+
+#progressbar strong {
+	display: block;
+	padding: 5px 0px;
+	text-indent: 15px;
+	background: url(../images/bgi_progressbar.jpg) no-repeat -300px top;
+}
+
+#progressbar strong.complete {
+	background: url(../images/bgi_progressbar.jpg) no-repeat left top;
+}
+
+.warnMessage {
+	background: url(../images/bgi_warning.gif) no-repeat 15px 15px;
+	border: 1px solid #cccccc;
+	padding: 5px 15px 5px 51px;
+}
+
+.ccm-search-field .userRepository {
+	list-style: none;
+}
+
+.ccm-search-field .userRepository li {
+	font-size: 108%;
+	margin: 0px 0px 5px 0px;
+}
+
+.ccm-search-field .userRepository li a {
+	padding: 5px 15px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	display: block;
+}
+
+.ccm-search-field .userRepository li a:hover {
+	font-weight: bold;
+	color: #3a546d;
+	background: #bfd0e0;
+}
+
+
+
+#ccm-dashboard-content-inner .mainCol {
+	overflow: hidden;
+	padding: 15px;
+}
+
+.leftCol {
+	float: left;
+	width: 228px;
+	margin-right: 20px;
+}
+
+.rightCol {
+	float: left;
+	width: 80%;
+}
+
+
+/* Package
+-----------------------------*/
+.package {
+	margin-bottom: 15px;
+}
+
+.package h3 {
+	margin-bottom: 10px;
+}
+
+.package table {
+	border: 1px solid #cccccc;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.package table th,
+.package table td {
+	border: 1px solid #cccccc;
+	padding: 5px 10px;
+}
+
+.package table tbody tr:hover {
+	background: #e2e9f3;
+}
+
+.package table th {
+	text-align: left;
+	background: #f1f1f1;
+}
+
+.package table .no {
+	width: 20px;
+}
+
+.package table .name {
+	width: 200px;
+}
+
+.package table .authors,
+.package table .license {
+	width: 100px;
+}

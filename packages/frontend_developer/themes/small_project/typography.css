@@ -1,0 +1,310 @@
+@charset "utf-8";
+/*
+10 px : 77%   |  11 px : 85% 
+ *  12 px : 93%   |  13 px : 100%
+ *  14 px : 108%  |  15 px : 116%
+ *  16 px : 124%  |  17 px : 131%
+ *  18 px : 139%  |  19 px : 147%
+ *  20 px : 154%  |  22 px : 170%
+ *  24 px : 185%  |  26 px : 200%
+ *  28 px : 216%  |  30 px : 231%
+ *  32 px : 247%
+*/
+
+body {
+	font-family: Georgia, Garamond, "Times New Roman", serif;
+}
+
+/* **************** CONTENT OBJECTS ***************** */
+
+/* ====== Default spacing ====== */
+h1, h2, h3, h4, h5, h6, ul, ol, dl, p {
+	padding: 0px;
+}
+
+ul, ol, dl, p, th, td {
+	font-size: 108%;
+	line-height: 160%;
+}
+
+p, ul, ol, dl {
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, img {
+	padding-bottom: 0px;
+}
+
+blockquote {
+	font-size: 108%;
+	padding: 10px;
+}
+
+pre {
+	margin: 10px;
+}
+
+/* ====== Elements ====== */
+img {
+	vertical-align: bottom;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+
+/* ====== Headings ====== */
+/* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
+h1, .h1 {
+	font-size: 200%;
+	font-weight: normal;
+	font-style: normal;
+	color: #ffffff;
+	padding-top: 20px;
+}
+
+h2, .h2 {
+	font-size: 247%;
+	font-weight: normal;
+	font-style: normal;
+	color: #815120;
+	padding: 0px 0px 10px 0px;
+	margin-bottom: 20px;
+}
+
+h3, .h3 {
+	font-size: 185%;
+	font-weight: normal;
+	font-style: normal;
+	color: #851616;
+	padding: 0px 0px 10px 0px;
+	margin-bottom: 10px;
+	background: url(images/bgi_h3.jpg) repeat-x left bottom;
+}
+
+h4, .h4 {
+	font-size: 139%;
+	font-weight: normal;
+	font-style: normal;
+	color: #333;
+	padding: 3px 0px 5px 0px;
+	background: none;
+}
+
+h5, .h5 {
+	font-size: 108%;
+	font-weight: normal;
+	font-style: normal;
+	color: #AE0345;
+}
+
+h6, .h6 {
+	font-size: 108%;
+	font-weight: normal;
+	font-style: italic;
+	color:#333;
+}
+
+/* links */
+a {
+	color: #036;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #005a9c;
+}
+
+
+
+/* ====== Lists ======*/
+
+.simpleList {}
+
+/* numbered list */
+ol.simpleList li {
+	list-style-type: decimal;
+	margin-left: 40px;
+}
+
+/* standard list */
+ul.simpleList li {
+	list-style-type: disc;
+	margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+.nav-header {
+	margin-top: 10px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.nav-header li {
+	float: left;
+	margin-right: 10px;
+}
+
+.nav-header li a {
+	text-transform: uppercase;
+	display: block;
+	padding: 7px 20px;
+	background: #7D5500;
+	color: #ffffff;
+}
+
+.nav-header li.nav-selected a {
+	background: #d07300;
+}
+
+.separator li {
+	overflow: hidden;
+	border-bottom: 1px dotted #cccccc;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.separator li:last-child {
+	border-bottom: none;
+	padding-bottom: 5px;
+	margin-bottom: 0px;
+}
+
+.versionList em {
+	font-size: 139%;
+}
+
+.taskList {
+	overflow: hidden;	
+}
+
+.taskList .image {
+	float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Tables ====== */
+table {
+	border-collapse: separate;
+	border-spacing: 0px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border: 1px solid #cccccc;
+}
+
+table tr th {
+	background: #ededed;
+}
+
+table tr td {
+	background: #ffffff;
+}
+
+table tr.selected td {
+	background: #d4edf0;
+}
+
+
+table tr th, table tr td {
+	border-left: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	padding: 5px 10px;
+	vertical-align: top;
+}
+
+table tr:first-child th:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 10px;
+}
+
+table tr:first-child th:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 10px;
+}
+
+table tr:last-child td {
+	border-bottom: none;
+}
+
+table tr:last-child td:first-child {
+	-moz-border-radius-topleft: 8px;
+	-webkit-border-radius-topleft: 8px;
+}
+
+table tr:last-child td:last-child {
+	-moz-border-radius-topright: 8px;
+	-webkit-border-radius-topright: 8px;
+}
+
+table tr td:first-child, table tr th:first-child {
+	border-left: none;
+}
+
+
+
+
+
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+
+
+.image {
+	padding: 1px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.aFiles {
+	float: right;
+}
+
+
+/* ====== blockquote ====== */
+cite {
+	display: block;
+	text-align: right;
+}
+
+.control {
+	text-align: center;
+}
