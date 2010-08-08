@@ -53,6 +53,14 @@ version: 0.2
 	background: url(../images/bgi_logo.png) no-repeat left top;
 }
 
+.pgdesc .bd {
+	height: 75px;
+}
+
+.pgdesc .bd p {
+	font-size: 93%;
+}
+
 
 /*================== sitemap =====================*/
 .sitemap { margin: 0px auto 0px auto; color: #ffffff; }
@@ -76,7 +84,9 @@ version: 0.2
 /*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
 .credit h4 { color: #ffffff; }
-.credit a { color: #ffffff; text-decoration: underline }
+.credit a { color: #ffffff; text-decoration: underline; }
+.credit a:hover { color: #f0e68c; text-decoration: underline; }
+
 
 /*================== packages =====================*/
 .packages table { width: 100%; }

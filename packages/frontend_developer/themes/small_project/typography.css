@@ -66,6 +66,7 @@ h1, .h1 {
 	font-style: normal;
 	color: #ffffff;
 	padding-top: 20px;
+	margin-bottom: 5px;
 }
 
 h2, .h2 {
@@ -111,17 +112,14 @@ h6, .h6 {
 }
 
 /* links */
-a {
-	color: #036;
-	text-decoration: none;
+h1 a, .h1 a,
+h1 a:visited, .h1 a:visited,
+h1 a:active, .h1 a:active {
+	color: #ffffff;
 }
 
-a:focus, a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: #005a9c;
+h1 a:hover, .h1 a:hover {
+	color: #f0e68c;
 }
 
 
@@ -169,6 +167,7 @@ ul.simpleList li {
 	color: #ffffff;
 }
 
+.nav-header li a:hover,
 .nav-header li.nav-selected a {
 	background: #d07300;
 }
@@ -218,6 +217,7 @@ ul.simpleList li {
 
 
 /* ====== Tables ====== */
+/*
 table {
 	border-collapse: separate;
 	border-spacing: 0px;
@@ -273,18 +273,7 @@ table tr:last-child td:last-child {
 table tr td:first-child, table tr th:first-child {
 	border-left: none;
 }
-
-
-
-
-
-.logo {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
-
-
+*/
 
 .image {
 	padding: 1px;
@@ -292,19 +281,4 @@ table tr td:first-child, table tr th:first-child {
 	border: 1px solid #cccccc;
 	margin-right: 10px;
 	margin-bottom: 10px;
-}
-
-.aFiles {
-	float: right;
-}
-
-
-/* ====== blockquote ====== */
-cite {
-	display: block;
-	text-align: right;
-}
-
-.control {
-	text-align: center;
 }
