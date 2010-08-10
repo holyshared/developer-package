@@ -23,7 +23,6 @@ class PluginArchive extends Archive {
 	}
 }
 
-
 class JSONResponse {
 
 	private $message = "";

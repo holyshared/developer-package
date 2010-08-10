@@ -15,9 +15,10 @@
 		},
 		
 		this.success = function(json, statusText, xhr, form){
-			if (this.current <= this.options.step) {
+			if (this.current < this.options.step) {
 				var response = json.response;
 				if (response.status) {
+					alert(this.current);
 					$(this.container).trigger('progress', [this.current]);
 
 					var prevAction = "step" + this.current.toString();
@@ -39,8 +40,9 @@
 				}
 				$("#message").html(response.message);
 			} else {
-				this.current = 1;
+				$(this.container).trigger('progress', [this.current]);
 				$(this.container).trigger("complete");
+				this.current = 1;
 			}
 		},
 
