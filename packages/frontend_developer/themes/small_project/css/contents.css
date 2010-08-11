@@ -61,9 +61,17 @@ table tr.selected td {
 /* ====== list ====== */
 
 
-/* navigation header */
 
-/*
+.nav-topic {
+	margin-left: 10px;
+}
+
+.nav-topic li {
+	display: inline-block;
+	padding-right: 5px;
+}
+
+
 .nav-header {
 	margin-top: 10px;
 	overflow: hidden;
@@ -82,28 +90,46 @@ table tr.selected td {
 	background: #7D5500;
 	color: #ffffff;
 }
-*/
 
-
-
-
-.nav-topic {
-	margin-left: 10px;
+.nav-header li a:hover,
+.nav-header li.nav-selected a {
+	background: #d07300;
 }
 
-.nav-topic li {
+
+.nav-footer {
+	text-align: center;
+}
+	
+.nav-footer li {
 	display: inline-block;
-	padding-right: 5px;
+	margin: 0px 5px;
+}
+
+.nav-footer li a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.nav-footer li a:hover {
+	color: #f0e68c;
+	text-decoration: underline;
+}
+
+
+.nav-local ul {
+	margin-bottom: 5px;
+	margin-left: 15px;
+}
+
+.nav-local li {
+	margin-bottom: 5px;
 }
 
 .nav-local a.nav-selected {
 	font-weight: bold;
 }
 
-
-.nav-local ul {
-	margin-left: 15px;
-}
 
 
 
@@ -158,4 +184,3 @@ cite {
 .control {
 	text-align: center;
 }
-

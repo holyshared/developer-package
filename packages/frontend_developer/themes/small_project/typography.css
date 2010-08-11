@@ -148,29 +148,7 @@ ul.simpleList li {
 
 
 
-.nav-header {
-	margin-top: 10px;
-	overflow: hidden;
-	margin-bottom: 10px;
-}
 
-.nav-header li {
-	float: left;
-	margin-right: 10px;
-}
-
-.nav-header li a {
-	text-transform: uppercase;
-	display: block;
-	padding: 7px 20px;
-	background: #7D5500;
-	color: #ffffff;
-}
-
-.nav-header li a:hover,
-.nav-header li.nav-selected a {
-	background: #d07300;
-}
 
 .separator li {
 	overflow: hidden;
@@ -196,84 +174,6 @@ ul.simpleList li {
 .taskList .image {
 	float: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ====== Tables ====== */
-/*
-table {
-	border-collapse: separate;
-	border-spacing: 0px;
-	-webkit-border-radius: 7px;
-	-moz-border-radius: 7px;
-	border: 1px solid #cccccc;
-}
-
-table tr th {
-	background: #ededed;
-}
-
-table tr td {
-	background: #ffffff;
-}
-
-table tr.selected td {
-	background: #d4edf0;
-}
-
-
-table tr th, table tr td {
-	border-left: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
-	padding: 5px 10px;
-	vertical-align: top;
-}
-
-table tr:first-child th:first-child {
-	-moz-border-radius-topleft: 8px;
-	-webkit-border-radius-topleft: 10px;
-}
-
-table tr:first-child th:last-child {
-	-moz-border-radius-topright: 8px;
-	-webkit-border-radius-topright: 10px;
-}
-
-table tr:last-child td {
-	border-bottom: none;
-}
-
-table tr:last-child td:first-child {
-	-moz-border-radius-topleft: 8px;
-	-webkit-border-radius-topleft: 8px;
-}
-
-table tr:last-child td:last-child {
-	-moz-border-radius-topright: 8px;
-	-webkit-border-radius-topright: 8px;
-}
-
-table tr td:first-child, table tr th:first-child {
-	border-left: none;
-}
-*/
 
 .image {
 	padding: 1px;
