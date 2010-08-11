@@ -152,11 +152,8 @@ class DashboardMootoolsImporterController extends Controller {
 	public function step3() {
 		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
 		
-		//$user	= $this->post("user");
-		//$repos	= $this->post("repos");
-
-		$user	= "holyshared";
-		$repos	= "Gradually";
+		$user	= $this->post("user");
+		$repos	= $this->post("repos");
 
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();

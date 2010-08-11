@@ -160,6 +160,7 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 				Minify_YUICompressor::$tempDir = $tmp;
 				$output = Minify_YUICompressor::minifyJs($output); 			
 		}
+		$output = $this->header."\n".$output;
 
 		$file = $this->javascript.".js";
 		header("Content-disposition: attachment; filename=".$file);
