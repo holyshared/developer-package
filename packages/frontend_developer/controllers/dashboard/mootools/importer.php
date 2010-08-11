@@ -152,8 +152,11 @@ class DashboardMootoolsImporterController extends Controller {
 	public function step3() {
 		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
 		
-		$user	= $this->post("user");
-		$repos	= $this->post("repos");
+		//$user	= $this->post("user");
+		//$repos	= $this->post("repos");
+
+		$user	= "holyshared";
+		$repos	= "Gradually";
 
 		$github = new phpGitHubApi();
 		$api = $github->getRepoApi();
@@ -168,7 +171,8 @@ class DashboardMootoolsImporterController extends Controller {
 		}
 
 		$tags = array_keys((array) $tags);
-		usort($tags, 'version_compare');
+//		usort($tags, 'version_compare');
+		rsort($tags);
 
 		if (empty($tags)) {
 			$response->setMessage("GitHub repository has no tags. At least one tag is required.");
@@ -210,8 +214,7 @@ class DashboardMootoolsImporterController extends Controller {
 		}
 
 		$response->setMessage("The archive was able to be downloaded.");
-		$response->setParameters(array("user" => $user, "repos" => $repos,
-			"file" => $file));
+		$response->setParameters(array("user" => $user, "repos" => $repos, "file" => $file));
 		$response->setStatus(true);
 		$response->flush();
 	}
