@@ -7,23 +7,32 @@
 	$nh = Loader::helper('navigation');
 	
 	//this will create an array of parent cIDs 
-	$inspectC=$c;
-	$selectedPathCIDs=array( $inspectC->getCollectionID() );
-	$parentCIDnotZero=true;	
-	while($parentCIDnotZero){
-		$cParentID=$inspectC->cParentID;
-		if(!intval($cParentID)){
-			$parentCIDnotZero=false;
+	$inspectC = $c;
+	$selectedPathCIDs = array( $inspectC->getCollectionID() );
+	$parentCIDnotZero = true;	
+	while ($parentCIDnotZero) {
+		$cParentID = $inspectC->cParentID;
+		if(!intval($cParentID)) {
+			$parentCIDnotZero = false;
 		}else{
-			$selectedPathCIDs[]=$cParentID;
-			$inspectC=Page::getById($cParentID);
+			$selectedPathCIDs[] = $cParentID;
+			$inspectC = Page::getById($cParentID);
 		}
+	}
+
+	$pageTitle = "";
+	$parentID = $c->getCollectionParentID();
+	if ($parentID > 1) {
+		$page = Page::getById($parentID);
+		$pageTitle = $page->getCollectionName();
+	} else {
+		$pageTitle = $c->getCollectionName();
 	}
 ?>
 <div class="mod corner aside">
 	<div class="inner">
 		<div class="hd local">
-			<h3 class="h4"><?php echo $c->getCollectionName() ?></h3>
+			<h3 class="h4"><?php echo $pageTitle ?></h3>
 		</div>
 		<div class="bd">
 <?php

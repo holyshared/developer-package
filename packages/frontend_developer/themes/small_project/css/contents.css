@@ -96,9 +96,15 @@ table tr.selected td {
 	padding-right: 5px;
 }
 
-.nav-local .nav-selected {
+.nav-local a.nav-selected {
 	font-weight: bold;
 }
+
+
+.nav-local ul {
+	margin-left: 15px;
+}
+
 
 
 /* version list */
