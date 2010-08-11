@@ -16,6 +16,7 @@
 				<?php
 					$fv = $file->getVersion();
 					$fa = $fv->getAttributeList();
+
 					$dependences = $fa->getAttribute(MOOTOOLS_PLUGIN_DEPENDENCES);	
 
 					$modules = $options = array();
