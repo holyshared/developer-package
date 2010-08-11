@@ -11,11 +11,13 @@
 		},
 		
 		this.start = function(){
+			var action = "step" + this.current.toString();
+			$(this.container).attr("action", action);
 			this.send();
 		},
-		
+
 		this.success = function(json, statusText, xhr, form){
-			if (this.current <= this.options.step) {
+			if (this.current < this.options.step) {
 				var response = json.response;
 				if (response.status) {
 					$(this.container).trigger('progress', [this.current]);
@@ -39,8 +41,9 @@
 				}
 				$("#message").html(response.message);
 			} else {
-				this.current = 1;
+				$(this.container).trigger('progress', [this.current]);
 				$(this.container).trigger("complete");
+				this.current = 1;
 			}
 		},
 
@@ -60,6 +63,10 @@
 		this.next = function(){
 			this.current++;
 			return this.current;
+		}
+
+		this.reset = function() {
+			this.current = 1;
 		}
 
 		this.initialize.apply(this, [container, options]);
