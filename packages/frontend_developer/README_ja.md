@@ -1,10 +1,14 @@
 Frontend Developer Package 1.0b
 ===============================
 
+Frontend Developer Packageは**小規模なオープンソースソフトウェア開発者向けのパッケージ**です。
+主にフロントエンド開発者(HTML、CSS、javascript、Design)を対象にしています。
+オープンソースソフトウェア開発者にとって、面倒なプロジェクトサイトをできるだけ早く公開できるような必要なブロック、テーマを含んでいます。
+このパッケージを利用することにより、プロジェクトサイトをconcrete5で早く構築できるようになります。
+
 **author** - [Noritaka Horio](http://sharedhat.com)
-
 **licence** - [The MIT Licence](http://www.opensource.org/licenses/mit-license.php)
-
+**contact** - [Contact](mailto:holy.shared.design@gmail.com)
 
 インストールの仕方
 --------------------------------
@@ -136,8 +140,7 @@ tinymceのプラグインにテンプレートというものがあります。
 3. 記事ブロックエディタの設定で「カスタム」をクリックします。
 4. 入力欄にカスタム設定を記述します。
 
-**設定例**
-
+	**JS**
 	//プラグインにtemplateを追加する
 	plugins: "inlinepopups,spellchecker,safari,advlink,template",
 
