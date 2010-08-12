@@ -63,7 +63,7 @@ githubのユーザー名を入力する必要があります。
 
 このパッケージに含まれるのブロックの説明です。
 
-### Mootools Plugin Build Gorm
+### Mootools Plugin Build Form
 mootools.netの[Core Builder](http://mootools.net/core)、[More Builder](http://mootools.net/more)のようなカスタマイズダウンロード可能なフォームを提供します。
 また、ダウンロードの際の圧縮形式に、YUI Compressor、JSMin、無圧縮を選択できます。
 
@@ -101,15 +101,15 @@ concrete5のデフォルトブロック用のカスタムテンプレートも�
 
 ##### オートナビ
 
-**Small Project Topic Menu** - パンくずリスト用のテンプレート
-**Small Project Local Menu** - ローカルナビゲーション用のテンプレート
-**Small Project Header Menu** - ヘッダーナビゲーション用のテンプレート
-**Small Project Dooter Menu** - フッターナビゲーション用のテンプレート
+* **Small Project Topic Menu** - パンくずリスト用のテンプレート
+* **Small Project Local Menu** - ローカルナビゲーション用のテンプレート
+* **Small Project Header Menu** - ヘッダーナビゲーション用のテンプレート
+* **Small Project Dooter Menu** - フッターナビゲーション用のテンプレート
 
 ##### コンテンツ
 
-**Small Project Module** - モジュール用のテンプレート
-**Small Project Line** - グリッド用のテンプレート
+* **Small Project Module** - モジュール用のテンプレート
+* **Small Project Line** - グリッド用のテンプレート
 
 モジュール、グリッドに関しては、[oocss](http://wiki.github.com/stubbornella/oocss/)を参考にしてください。
 
@@ -122,11 +122,11 @@ tinymceのプラグインにテンプレートというものがあります。
 
 このパッケージに含まれるテンプレートは下記の通りです。
 
-**module_lead** - ページの冒頭に記述するリード文テンプレート
-**module_default** - モジュールテンプレート
-**grid_5columns(20percent)** - 5カラムテンプレート
-**grid_3columns(33percent)** - 3カラムテンプレート
-**grid_2columns(50percent)** - 2カラムテンプレート
+* **module_lead** - ページの冒頭に記述するリード文テンプレート
+* **module_default** - モジュールテンプレート
+* **grid_5columns(20percent)** - 5カラムテンプレート
+* **grid_3columns(33percent)** - 3カラムテンプレート
+* **grid_2columns(50percent)** - 2カラムテンプレート
 
 
 ##### 設定例
