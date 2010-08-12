@@ -56,7 +56,6 @@ class FrontendDeveloperPackage extends Package {
 		);
 		$key = UserAttributeKey::add("text", $values, $pkg);
 
-		
 		$fileAttributes = array(
 			array(
 				"type" => "boolean",
