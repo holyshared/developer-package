@@ -26,7 +26,10 @@
 					<h1><a title="<?php echo ($block && $block->bID) ? $block->display() : SITE; ?>" href="<?php echo DIR_REL?>/"><?php echo ($block && $block->bID) ? $block->display() : SITE; ?></a></h1>
 				</div>
 				<div class="bd">
-					<p><?php echo $description ?></p>
+					<?php if ($description) : ?>
+						<p><?php echo $description ?></p>
+					<?php endif; ?>
+
 					<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/frontend_developer/themes/small_project/images/img_logo.png" alt="" /></a></p>
 					<div class="nav">
 						<?php
