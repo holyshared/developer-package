@@ -6,148 +6,148 @@ Frontend Developer Package 1.0b
 **licence** - [The MIT Licence](http://www.opensource.org/licenses/mit-license.php)
 
 
-ƒCƒ“ƒXƒg[ƒ‹‚ÌŽd•û
+ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã®ä»•æ–¹
 --------------------------------
 
-1. packagesƒfƒBƒŒƒNƒgƒŠ‚Ì‰º‚É‰ð“€‚µ‚½ƒtƒHƒ‹ƒ_‚ðƒRƒs[‚µ‚Ü‚·B
-2. ƒTƒCƒg‚ÉƒƒOƒCƒ“‚µ‚Ü‚·B
-3. u‹@”\‚ð’Ç‰Ávƒƒjƒ…[‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-4. ‰E‰º‚ÌƒCƒ“ƒXƒg[ƒ‹‰Â”\‚ÈƒpƒbƒP[ƒW‚©‚çuFrontend Developer Packagev‚ÌƒCƒ“ƒXƒg[ƒ‹ƒ{ƒ^ƒ“‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-5. uV‚µ‚¢ƒpƒbƒP[ƒW‚ªƒCƒ“ƒXƒg[ƒ‹‚³‚ê‚Ü‚µ‚½Bv‚ÌƒƒbƒZ[ƒW‚ª•\Ž¦‚³‚ê‚ê‚ÎAƒCƒ“ƒXƒg[ƒ‹Š®—¹‚Å‚·B
+1. packagesãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã®ä¸‹ã«è§£å‡ã—ãŸãƒ•ã‚©ãƒ«ãƒ€ã‚’ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
+2. ã‚µã‚¤ãƒˆã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚
+3. ã€Œæ©Ÿèƒ½ã‚’è¿½åŠ ã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+4. å³ä¸‹ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å¯èƒ½ãªãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‹ã‚‰ã€ŒFrontend Developer Packageã€ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+5. ã€Œæ–°ã—ã„ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã•ã‚Œã¾ã—ãŸã€‚ã€ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¡¨ç¤ºã•ã‚Œã‚Œã°ã€ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å®Œäº†ã§ã™ã€‚
 
 
-—˜—p‚·‚é‘O‚ÌÝ’è
+åˆ©ç”¨ã™ã‚‹å‰ã®è¨­å®š
 --------------------------------
 
-‚±‚ÌƒpƒbƒP[ƒW‚ð—˜—p‚·‚éÛ‚ÉÝ’è‚ª•K—v‚Å‚·B
-—˜—p‚µ‚½‚¢ƒuƒƒbƒNAƒVƒ“ƒOƒ‹ƒy[ƒW‚ðŠm”F‚µ‚ÄÝ’è‚ðs‚Á‚Ä‚­‚¾‚³‚¢B
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’åˆ©ç”¨ã™ã‚‹éš›ã«è¨­å®šãŒå¿…è¦ã§ã™ã€‚
+åˆ©ç”¨ã—ãŸã„ãƒ–ãƒ­ãƒƒã‚¯ã€ã‚·ãƒ³ã‚°ãƒ«ãƒšãƒ¼ã‚¸ã‚’ç¢ºèªã—ã¦è¨­å®šã‚’è¡Œã£ã¦ãã ã•ã„ã€‚
 
 
-### javascript‚ÌƒAƒNƒZƒX‹–‰Â
+### javascriptã®ã‚¢ã‚¯ã‚»ã‚¹è¨±å¯
 
-**Mootools Plugin Build FormƒuƒƒbƒN**‚ð—˜—p‚·‚éê‡Ajavascriptƒtƒ@ƒCƒ‹‚ÌƒAƒNƒZƒX‚ð‹–‰Â‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
-‹–‰Â‚ð‚µ‚È‚¢‚ÆAgithub‚ÌƒŠƒ|ƒWƒgƒŠ‚©‚çƒtƒ@ƒCƒ‹ƒ}ƒl[ƒWƒƒ‚Éjavascriptƒtƒ@ƒCƒ‹‚ðƒCƒ“ƒ|[ƒg‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB
-‚Å‚·‚Ì‚ÅA•K‚¸‹–‰Â‚ðs‚¤‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B
+**Mootools Plugin Build Formãƒ–ãƒ­ãƒƒã‚¯**ã‚’åˆ©ç”¨ã™ã‚‹å ´åˆã€javascriptãƒ•ã‚¡ã‚¤ãƒ«ã®ã‚¢ã‚¯ã‚»ã‚¹ã‚’è¨±å¯ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+è¨±å¯ã‚’ã—ãªã„ã¨ã€githubã®ãƒªãƒã‚¸ãƒˆãƒªã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«ãƒžãƒãƒ¼ã‚¸ãƒ£ã«javascriptãƒ•ã‚¡ã‚¤ãƒ«ã‚’ã‚¤ãƒ³ãƒãƒ¼ãƒˆã™ã‚‹ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚
+ã§ã™ã®ã§ã€å¿…ãšè¨±å¯ã‚’è¡Œã†ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚
 
-#### Žè‡
+#### æ‰‹é †
 
-1. ƒtƒ@ƒCƒ‹ƒ}ƒl[ƒWƒƒƒƒjƒ…[‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-2. ƒAƒNƒZƒXŒ ŒÀ‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-3. ‹–‰Â‚³‚ê‚½ƒtƒ@ƒCƒ‹Šg’£Žq‚Éujsv‚ð’Ç‰Á‚µ‚Ü‚·B
-4. “ü—Í‚µ‚½“à—e‚ª•\Ž¦‚³‚ê‚ê‚ÎŠ®—¹‚Å‚·B
-
-
-### githubƒ†[ƒU[–¼‚Ì’Ç‰Á
-
-**Mootools Plugin Build FormAGithub IssuesAGithub RepositoryAGithub TagsƒuƒƒbƒN**‚ð—˜—p‚·‚éê‡Aƒ†[ƒU[‚Ì‘®«î•ñ‚É
-github‚Ìƒ†[ƒU[–¼‚ð“ü—Í‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
-“ü—Í‚ª‚È‚¢ê‡Aƒ`ƒPƒbƒgAƒ^ƒOAƒŠƒ|ƒWƒgƒŠ‚ÌƒŠƒXƒg‚ðgithub‚ÌAPIŒo—R‚ÅŽæ“¾‚·‚é‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB
-‚Å‚·‚Ì‚ÅA•K‚¸“ü—Í‚ðs‚¤‚æ‚¤‚É‚µ‚Ä‚­‚¾‚³‚¢B
+1. ãƒ•ã‚¡ã‚¤ãƒ«ãƒžãƒãƒ¼ã‚¸ãƒ£ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+2. ã‚¢ã‚¯ã‚»ã‚¹æ¨©é™ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+3. è¨±å¯ã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«æ‹¡å¼µå­ã«ã€Œjsã€ã‚’è¿½åŠ ã—ã¾ã™ã€‚
+4. å…¥åŠ›ã—ãŸå†…å®¹ãŒè¡¨ç¤ºã•ã‚Œã‚Œã°å®Œäº†ã§ã™ã€‚
 
 
+### githubãƒ¦ãƒ¼ã‚¶ãƒ¼åã®è¿½åŠ 
 
-#### Žè‡
-
-1. ƒ†[ƒU[EƒOƒ‹[ƒvŠÇ—‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-2. ˆê——‚Ìƒ†[ƒU[–¼‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-3. ‰Eã‚Ìƒ†[ƒU[•ÒW‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-4. ˆê”Ô‰º‚Ìgithubƒ†[ƒU[–¼‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-5. “ü—Í—“‚Égithubƒ†[ƒU[–¼‚ð“ü—Í‚µ‚Ü‚·B
-6. ‰E‚Ì•ÒWƒAƒCƒRƒ“‚ðƒNƒŠƒbƒN‚µA“à—e‚ð”½‰f‚³‚¹‚Ü‚·B
-7. “ü—Í‚µ‚½“à—e‚ª•\Ž¦‚³‚ê‚ê‚ÎŠ®—¹‚Å‚·B
+**Mootools Plugin Build Formã€Github Issuesã€Github Repositoryã€Github Tagsãƒ–ãƒ­ãƒƒã‚¯**ã‚’åˆ©ç”¨ã™ã‚‹å ´åˆã€ãƒ¦ãƒ¼ã‚¶ãƒ¼ã®å±žæ€§æƒ…å ±ã«
+githubã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›ã™ã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
+å…¥åŠ›ãŒãªã„å ´åˆã€ãƒã‚±ãƒƒãƒˆã€ã‚¿ã‚°ã€ãƒªãƒã‚¸ãƒˆãƒªã®ãƒªã‚¹ãƒˆã‚’githubã®APIçµŒç”±ã§å–å¾—ã™ã‚‹ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚
+ã§ã™ã®ã§ã€å¿…ãšå…¥åŠ›ã‚’è¡Œã†ã‚ˆã†ã«ã—ã¦ãã ã•ã„ã€‚
 
 
 
-ƒuƒƒbƒN‚É‚Â‚¢‚Ä
+#### æ‰‹é †
+
+1. ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ»ã‚°ãƒ«ãƒ¼ãƒ—ç®¡ç†ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+2. ä¸€è¦§ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+3. å³ä¸Šã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ç·¨é›†ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+4. ä¸€ç•ªä¸‹ã®githubãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+5. å…¥åŠ›æ¬„ã«githubãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›ã—ã¾ã™ã€‚
+6. å³ã®ç·¨é›†ã‚¢ã‚¤ã‚³ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã€å†…å®¹ã‚’åæ˜ ã•ã›ã¾ã™ã€‚
+7. å…¥åŠ›ã—ãŸå†…å®¹ãŒè¡¨ç¤ºã•ã‚Œã‚Œã°å®Œäº†ã§ã™ã€‚
+
+
+
+ãƒ–ãƒ­ãƒƒã‚¯ã«ã¤ã„ã¦
 --------------------------------
 
-‚±‚ÌƒpƒbƒP[ƒW‚ÉŠÜ‚Ü‚ê‚é‚ÌƒuƒƒbƒN‚Ìà–¾‚Å‚·B
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«å«ã¾ã‚Œã‚‹ã®ãƒ–ãƒ­ãƒƒã‚¯ã®èª¬æ˜Žã§ã™ã€‚
 
 ### Mootools Plugin Build Gorm
-mootools.net‚Ì[Core Builder](http://mootools.net/core)A[More Builder](http://mootools.net/more)‚Ì‚æ‚¤‚ÈƒJƒXƒ^ƒ}ƒCƒYƒ_ƒEƒ“ƒ[ƒh‰Â”\‚ÈƒtƒH[ƒ€‚ð’ñ‹Ÿ‚µ‚Ü‚·B
-‚Ü‚½Aƒ_ƒEƒ“ƒ[ƒh‚ÌÛ‚Ìˆ³kŒ`Ž®‚ÉAYUI CompressorAJSMinA–³ˆ³k‚ð‘I‘ð‚Å‚«‚Ü‚·B
+mootools.netã®[Core Builder](http://mootools.net/core)ã€[More Builder](http://mootools.net/more)ã®ã‚ˆã†ãªã‚«ã‚¹ã‚¿ãƒžã‚¤ã‚ºãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰å¯èƒ½ãªãƒ•ã‚©ãƒ¼ãƒ ã‚’æä¾›ã—ã¾ã™ã€‚
+ã¾ãŸã€ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ã®éš›ã®åœ§ç¸®å½¢å¼ã«ã€YUI Compressorã€JSMinã€ç„¡åœ§ç¸®ã‚’é¸æŠžã§ãã¾ã™ã€‚
 
 ### Github Issues
-github‚Ìƒ`ƒPƒbƒgƒŠƒXƒg‚ð•\Ž¦‚µ‚Ü‚·B
-•\Ž¦‚·‚éƒ`ƒPƒbƒgŒ”‚ðŽw’è‚Å‚«‚Ü‚·B
+githubã®ãƒã‚±ãƒƒãƒˆãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+è¡¨ç¤ºã™ã‚‹ãƒã‚±ãƒƒãƒˆä»¶æ•°ã‚’æŒ‡å®šã§ãã¾ã™ã€‚
 
 ### Github Repository
-github‚ÌƒŠƒ|ƒWƒgƒŠƒŠƒXƒg‚ð•\Ž¦‚µ‚Ü‚·B
-•\Ž¦‚·‚éƒŠƒ|ƒWƒgƒŠ‚ðŽw’è‚Å‚«‚Ü‚·B
+githubã®ãƒªãƒã‚¸ãƒˆãƒªãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+è¡¨ç¤ºã™ã‚‹ãƒªãƒã‚¸ãƒˆãƒªã‚’æŒ‡å®šã§ãã¾ã™ã€‚
 
 ### Github Tags
-github‚Ìƒ^ƒOƒŠƒŠƒXƒg‚ð•\Ž¦‚µ‚Ü‚·B
-•\Ž¦‚·‚éƒ^ƒO‚ÌŒ”‚ðŽw’è‚Å‚«‚Ü‚·B
+githubã®ã‚¿ã‚°ãƒªãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã—ã¾ã™ã€‚
+è¡¨ç¤ºã™ã‚‹ã‚¿ã‚°ã®ä»¶æ•°ã‚’æŒ‡å®šã§ãã¾ã™ã€‚
 
 
-ƒe[ƒ}‚É‚Â‚¢‚Ä
+ãƒ†ãƒ¼ãƒžã«ã¤ã„ã¦
 --------------------------------
 
 ### Small Project
 
-‚±‚ÌƒpƒbƒP[ƒW—p‚Éì¬‚µ‚½ƒe[ƒ}‚Å‚·B
-ƒy[ƒWƒ^ƒCƒv‚Í‰º‹L‚ðƒTƒ|[ƒg‚µ‚Ä‚¢‚Ü‚·B
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ç”¨ã«ä½œæˆã—ãŸãƒ†ãƒ¼ãƒžã§ã™ã€‚
+ãƒšãƒ¼ã‚¸ã‚¿ã‚¤ãƒ—ã¯ä¸‹è¨˜ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¦ã„ã¾ã™ã€‚
 
-#### ƒy[ƒWƒ^ƒCƒv
+#### ãƒšãƒ¼ã‚¸ã‚¿ã‚¤ãƒ—
 
-* ‘S••\Ž¦
-* ¶ƒiƒrƒQ[ƒVƒ‡ƒ“
+* å…¨å¹…è¡¨ç¤º
+* å·¦ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³
 
-ƒfƒtƒHƒ‹ƒg‚Í¶ƒiƒrƒQ[ƒVƒ‡ƒ“‚Å‚·B
+ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯å·¦ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ã§ã™ã€‚
 
-#### ƒJƒXƒ^ƒ€ƒeƒ“ƒvƒŒ[ƒg
+#### ã‚«ã‚¹ã‚¿ãƒ ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 
-concrete5‚ÌƒfƒtƒHƒ‹ƒgƒuƒƒbƒN—p‚ÌƒJƒXƒ^ƒ€ƒeƒ“ƒvƒŒ[ƒg‚àŠÜ‚ñ‚Å‚¢‚Ü‚·B
+concrete5ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ–ãƒ­ãƒƒã‚¯ç”¨ã®ã‚«ã‚¹ã‚¿ãƒ ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚‚å«ã‚“ã§ã„ã¾ã™ã€‚
 
-##### ƒI[ƒgƒiƒr
+##### ã‚ªãƒ¼ãƒˆãƒŠãƒ“
 
-**Small Project Topic Menu** - ƒpƒ“‚­‚¸ƒŠƒXƒg—p‚Ìƒeƒ“ƒvƒŒ[ƒg
-**Small Project Local Menu** - ƒ[ƒJƒ‹ƒiƒrƒQ[ƒVƒ‡ƒ“—p‚Ìƒeƒ“ƒvƒŒ[ƒg
-**Small Project Header Menu** - ƒwƒbƒ_[ƒiƒrƒQ[ƒVƒ‡ƒ“—p‚Ìƒeƒ“ƒvƒŒ[ƒg
-**Small Project Dooter Menu** - ƒtƒbƒ^[ƒiƒrƒQ[ƒVƒ‡ƒ“—p‚Ìƒeƒ“ƒvƒŒ[ƒg
+**Small Project Topic Menu** - ãƒ‘ãƒ³ããšãƒªã‚¹ãƒˆç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**Small Project Local Menu** - ãƒ­ãƒ¼ã‚«ãƒ«ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**Small Project Header Menu** - ãƒ˜ãƒƒãƒ€ãƒ¼ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**Small Project Dooter Menu** - ãƒ•ãƒƒã‚¿ãƒ¼ãƒŠãƒ“ã‚²ãƒ¼ã‚·ãƒ§ãƒ³ç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 
-##### ƒRƒ“ƒeƒ“ƒc
+##### ã‚³ãƒ³ãƒ†ãƒ³ãƒ„
 
-**Small Project Module** - ƒ‚ƒWƒ…[ƒ‹—p‚Ìƒeƒ“ƒvƒŒ[ƒg
-**Small Project Line** - ƒOƒŠƒbƒh—p‚Ìƒeƒ“ƒvƒŒ[ƒg
+**Small Project Module** - ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**Small Project Line** - ã‚°ãƒªãƒƒãƒ‰ç”¨ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 
-ƒ‚ƒWƒ…[ƒ‹AƒOƒŠƒbƒh‚ÉŠÖ‚µ‚Ä‚ÍA[oocss](http://wiki.github.com/stubbornella/oocss/)‚ðŽQl‚É‚µ‚Ä‚­‚¾‚³‚¢B
-
-
-
-#### tinymce—p‚ÌƒRƒ“ƒeƒ“ƒcƒeƒ“ƒvƒŒ[ƒg
-
-tinymce‚Ìƒvƒ‰ƒOƒCƒ“‚Éƒeƒ“ƒvƒŒ[ƒg‚Æ‚¢‚¤‚à‚Ì‚ª‚ ‚è‚Ü‚·B
-‚±‚Ìƒvƒ‰ƒOƒCƒ“‚ÍŒˆ‚Ü‚Á‚½‘Ž®‚Ì—Œ`‚ðŒ³‚ÉAƒGƒfƒBƒ^“à‚ÉƒRƒ“ƒeƒ“ƒc‚ð‘}“ü‚µ‚Ü‚·B
-
-‚±‚ÌƒpƒbƒP[ƒW‚ÉŠÜ‚Ü‚ê‚éƒeƒ“ƒvƒŒ[ƒg‚Í‰º‹L‚Ì’Ê‚è‚Å‚·B
-
-**module_lead** - ƒy[ƒW‚Ì–`“ª‚É‹Lq‚·‚éƒŠ[ƒh•¶ƒeƒ“ƒvƒŒ[ƒg
-**module_default** - ƒ‚ƒWƒ…[ƒ‹ƒeƒ“ƒvƒŒ[ƒg
-**grid_5columns(20percent)** - 5ƒJƒ‰ƒ€ƒeƒ“ƒvƒŒ[ƒg
-**grid_3columns(33percent)** - 3ƒJƒ‰ƒ€ƒeƒ“ƒvƒŒ[ƒg
-**grid_2columns(50percent)** - 2ƒJƒ‰ƒ€ƒeƒ“ƒvƒŒ[ƒg
+ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã€ã‚°ãƒªãƒƒãƒ‰ã«é–¢ã—ã¦ã¯ã€[oocss](http://wiki.github.com/stubbornella/oocss/)ã‚’å‚è€ƒã«ã—ã¦ãã ã•ã„ã€‚
 
 
-##### Ý’è—á
 
-1. ƒTƒCƒg‚ÉƒƒOƒCƒ“‚µ‚Ü‚·B
-2. ƒTƒCƒg‘S‘Ì‚ÌÝ’è‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-3. ‹LŽ–ƒuƒƒbƒNƒGƒfƒBƒ^‚ÌÝ’è‚ÅuƒJƒXƒ^ƒ€v‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-4. “ü—Í—“‚ÉƒJƒXƒ^ƒ€Ý’è‚ð‹Lq‚µ‚Ü‚·B
+#### tinymceç”¨ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
 
-**Ý’è—á**
+tinymceã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã«ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã¨ã„ã†ã‚‚ã®ãŒã‚ã‚Šã¾ã™ã€‚
+ã“ã®ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã¯æ±ºã¾ã£ãŸæ›¸å¼ã®é››å½¢ã‚’å…ƒã«ã€ã‚¨ãƒ‡ã‚£ã‚¿å†…ã«ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚’æŒ¿å…¥ã—ã¾ã™ã€‚
 
-	//ƒvƒ‰ƒOƒCƒ“‚Étemplate‚ð’Ç‰Á‚·‚é
+ã“ã®ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«å«ã¾ã‚Œã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã¯ä¸‹è¨˜ã®é€šã‚Šã§ã™ã€‚
+
+**module_lead** - ãƒšãƒ¼ã‚¸ã®å†’é ­ã«è¨˜è¿°ã™ã‚‹ãƒªãƒ¼ãƒ‰æ–‡ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**module_default** - ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**grid_5columns(20percent)** - 5ã‚«ãƒ©ãƒ ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**grid_3columns(33percent)** - 3ã‚«ãƒ©ãƒ ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+**grid_2columns(50percent)** - 2ã‚«ãƒ©ãƒ ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
+
+
+##### è¨­å®šä¾‹
+
+1. ã‚µã‚¤ãƒˆã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚
+2. ã‚µã‚¤ãƒˆå…¨ä½“ã®è¨­å®šã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+3. è¨˜äº‹ãƒ–ãƒ­ãƒƒã‚¯ã‚¨ãƒ‡ã‚£ã‚¿ã®è¨­å®šã§ã€Œã‚«ã‚¹ã‚¿ãƒ ã€ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+4. å…¥åŠ›æ¬„ã«ã‚«ã‚¹ã‚¿ãƒ è¨­å®šã‚’è¨˜è¿°ã—ã¾ã™ã€‚
+
+**è¨­å®šä¾‹**
+
+	//ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã«templateã‚’è¿½åŠ ã™ã‚‹
 	plugins: "inlinepopups,spellchecker,safari,advlink,template",
 
-	//ƒ{ƒ^ƒ“‚Étemplate‚ð’Ç‰Á‚·‚é
+	//ãƒœã‚¿ãƒ³ã«templateã‚’è¿½åŠ ã™ã‚‹
 	theme_concrete_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,hr,|,styleselect,formatselect,fontsizeselect,template",
 
-	//ƒeƒ“ƒvƒŒ[ƒg‚ÌÝ’èƒtƒ@ƒCƒ‹‚ÌURL‚ðŽw’è‚·‚é
+	//ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã®è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®URLã‚’æŒ‡å®šã™ã‚‹
 	template_external_list_url: "/packages/frontend_developer/blocks/content/lists/template_list.js",
 
-	//ƒIƒvƒVƒ‡ƒ“‚ÌÝ’è‚ð’Ç‰Á‚·‚é
+	//ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã®è¨­å®šã‚’è¿½åŠ ã™ã‚‹
 	template_cdate_classes : "cdate creationdate",
 	template_mdate_classes : "mdate modifieddate",
 	template_selected_content_classes : "selcontent",
@@ -156,12 +156,12 @@ tinymce‚Ìƒvƒ‰ƒOƒCƒ“‚Éƒeƒ“ƒvƒŒ[ƒg‚Æ‚¢‚¤‚à‚Ì‚ª‚ ‚è‚Ü‚·B
 
 
 
-ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚ÌŽd•û
+ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã®ä»•æ–¹
 --------------------------------
 
-1. ƒTƒCƒg‚ÉƒƒOƒCƒ“‚µ‚Ü‚·B
-2. u‹@”\‚ð’Ç‰Ávƒƒjƒ…[‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-3. ƒCƒ“ƒXƒg[ƒ‹Ï‚ÝƒpƒbƒP[ƒW‚É•\Ž¦‚³‚ê‚Ä‚¢‚éAFrontend Developer Package‚Ì•ÒWƒ{ƒ^ƒ“‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-4. ˆê”Ô‰º‚ÌuƒpƒbƒP[ƒW‚ðíœv‚ðƒNƒŠƒbƒN‚µ‚Ü‚·B
-5. Šm”F‰æ–Ê‚Ì‰E‰º‚ÌuƒpƒbƒP[ƒW‚ðíœv‚ðƒNƒŠƒbƒN‚µ‚Ü‚·Bíœ‚µ‚½‚­‚È‚¢ê‡‚ÍƒLƒƒƒ“ƒZƒ‹‚ðƒNƒŠƒbƒN‚µ‚Ä‚­‚¾‚³‚¢B
-6. uƒpƒbƒP[ƒW‚ªíœ‚³‚ê‚Ü‚µ‚½Bv‚ÌƒƒbƒZ[ƒW‚ª•\Ž¦‚³‚ê‚ê‚ÎAƒAƒ“ƒCƒ“ƒXƒg[ƒ‹Š®—¹‚Å‚·B
+1. ã‚µã‚¤ãƒˆã«ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã™ã€‚
+2. ã€Œæ©Ÿèƒ½ã‚’è¿½åŠ ã€ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+3. ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ¸ˆã¿ãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã«è¡¨ç¤ºã•ã‚Œã¦ã„ã‚‹ã€Frontend Developer Packageã®ç·¨é›†ãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+4. ä¸€ç•ªä¸‹ã®ã€Œãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å‰Šé™¤ã€ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚
+5. ç¢ºèªç”»é¢ã®å³ä¸‹ã®ã€Œãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ã‚’å‰Šé™¤ã€ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¾ã™ã€‚å‰Šé™¤ã—ãŸããªã„å ´åˆã¯ã‚­ãƒ£ãƒ³ã‚»ãƒ«ã‚’ã‚¯ãƒªãƒƒã‚¯ã—ã¦ãã ã•ã„ã€‚
+6. ã€Œãƒ‘ãƒƒã‚±ãƒ¼ã‚¸ãŒå‰Šé™¤ã•ã‚Œã¾ã—ãŸã€‚ã€ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãŒè¡¨ç¤ºã•ã‚Œã‚Œã°ã€ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å®Œäº†ã§ã™ã€‚
