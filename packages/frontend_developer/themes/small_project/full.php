@@ -1,6 +1,6 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php $this->inc('elements/header.php'); ?>
-<div class="body">
+<div class="body liquid">
 	<div class="main">
 		<?php 
 			$main = new Area('Main');
