@@ -2,6 +2,8 @@
 <?php
 	$pageVersion = $c->vObj;
 	$block = Block::getByName('My_Site_Name');
+
+	$title = $pageVersion->cvName;
 	$description = $pageVersion->cvDescription;
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -27,7 +29,7 @@
 				</div>
 				<div class="bd">
 					<?php if ($description) : ?>
-						<p><?php echo $description ?></p>
+						<p><?php echo $title." - ".$description ?></p>
 					<?php endif; ?>
 
 					<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/frontend_developer/themes/small_project/images/img_logo.png" alt="" /></a></p>
