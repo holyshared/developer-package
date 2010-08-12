@@ -1,4 +1,4 @@
-var baseTemplatePath = "/packages/mootools_plugin_builder/blocks/content/";
+var baseTemplatePath = "/packages/frontend_developer/blocks/content/";
 var tinyMCETemplateList = [
 	["Lead",   	 baseTemplatePath + "tinymce/templates/module_lead.htm", "Lead"],
 	["Module",   baseTemplatePath + "tinymce/templates/module_default.htm", "Module Default"],
