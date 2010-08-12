@@ -13,7 +13,7 @@
 	
 		<?php foreach($tags as $key => $tag) : ?>
 			<?php
-				$baseURL = "http://github.com/holyshared/MMap/";
+				$baseURL = "http://github.com/holyshared/".$repos."/";
 				$tgz = $baseURL."tarball/".$key;
 				$zip = $baseURL."zipball/".$key;
 			?>
