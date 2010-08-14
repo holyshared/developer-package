@@ -32,10 +32,10 @@ version: 0.2
 	text-align: left;
 }
 
-.local { background: url(../images/bgi_nav.gif) no-repeat left top; }
-.repos { background: url(../images/bgi_repos.gif) no-repeat left top; }
-.download { background: url(../images/bgi_download.gif) no-repeat left top; }
-.issues { background: url(../images/bgi_issues.gif) no-repeat left top; }
+.local { background: url(images/bgi_nav.gif) no-repeat left top; }
+.repos { background: url(images/bgi_repos.gif) no-repeat left top; }
+.download { background: url(images/bgi_download.gif) no-repeat left top; }
+.issues { background: url(images/bgi_issues.gif) no-repeat left top; }
 
 
 
@@ -50,7 +50,7 @@ version: 0.2
 .pgdesc .inner {
 	padding-top: 7px;
 	padding-left: 160px;
-	background: url(../images/bgi_logo.png) no-repeat left top;
+	background: url(images/bgi_logo.png) no-repeat left top;
 }
 
 .pgdesc .bd {

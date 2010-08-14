@@ -10,9 +10,9 @@
  *  28 px : 216%  |  30 px : 231%
  *  32 px : 247%
 */
-
 body {
-	font-family: Georgia, Garamond, "Times New Roman", serif;
+	/* customize_body */ font: normal normal 13px Georgia; /* customize_body */
+	/* customize_body */ color: #333333; /* customize_body */
 }
 
 /* **************** CONTENT OBJECTS ***************** */
@@ -139,16 +139,6 @@ ul.simpleList li {
 	list-style-type: disc;
 	margin-left: 20px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .separator li {
 	overflow: hidden;

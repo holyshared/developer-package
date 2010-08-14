@@ -14,8 +14,9 @@
 		<meta http-equiv="Content-Language" content="ja" />
 		<meta http-equiv="Content-Script-Type" content="text/javascript" />
 		<meta http-equiv="Content-Style-Type" content="text/css" />
-<!--		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('style.css'); ?>" type="text/css" media="screen" /> -->
-		<link rel="stylesheet" href="/packages/frontend_developer/themes/small_project/style.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('main.css'); ?>" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('oocss.css'); ?>" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('typography.css'); ?>" type="text/css" media="screen" />
 		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shCore.js" type="text/javascript"></script>
 		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shAutoloader.js" type="text/javascript"></script>
 		<script src="<?php echo $this->getThemePath()?>/js/sh.js" type="text/javascript"></script>
@@ -35,7 +36,7 @@
 						<p><?php echo $title." - ".$description ?></p>
 					<?php endif; ?>
 
-					<p class="logo"><a href="<?php echo DIR_REL?>/"><img src="/packages/frontend_developer/themes/small_project/images/img_logo.png" alt="" /></a></p>
+					<p class="logo"><a href="<?php echo DIR_REL?>/"><?php echo ($block && $block->bID) ? $block->display() : SITE; ?></a></p>
 					<div class="nav">
 						<?php
 							$nav = new Area('Header Nav');

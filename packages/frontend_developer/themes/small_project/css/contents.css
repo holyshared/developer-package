@@ -59,9 +59,6 @@ table tr.selected td {
 
 
 /* ====== list ====== */
-
-
-
 .nav-topic {
 	margin-left: 10px;
 }
@@ -146,22 +143,6 @@ table tr.selected td {
 .taskList li .image {
 	float: left;
 }
-
-/* ====== inline ====== */
-/* links */
-a {
-	color: #036;
-	text-decoration: none;
-}
-
-a:focus, a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: #005a9c;
-}
-
 
 
 

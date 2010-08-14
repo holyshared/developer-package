@@ -3,7 +3,7 @@
 /* ====== Page Head, Body, and Foot ====== */
 body{_text-align:center;}/* IE5.5 */
 .main{display:table-cell;*display:block;width:auto; }
-.body { background: url(../images/bgi_sep.gif) repeat-y 255px top; }
+.body { background: url(images/bgi_sep.gif) repeat-y 255px top; }
 .body,.main{*zoom:1; }
 .body:after,.main:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";}
 .page{margin:0 auto;width:950px;_text-align:left;} /* wraps other template elems to set width */ /* text-align IE5.5 */
@@ -32,15 +32,15 @@ body{_text-align:center;}/* IE5.5 */
 	left: 0px;
 	top: 0px;
 	border-bottom: 5px solid #D8CFAB;
-}
+}	
 
 .head .inner { margin: 0px auto; }
 
-.body { margin-bottom: 30px; }
+.body { padding-bottom: 30px; }
 
 .foot {
-	border-top: 5px solid #D8CFAB;
 	padding-top: 20px;
+	border-top: 5px solid #D8CFAB;
 	background: #996600;
 	position: absolute;
 	width: 100%;
