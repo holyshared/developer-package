@@ -182,3 +182,9 @@ ul.simpleList li {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+
+.full {
+	padding: 5px;
+	background: #ffffff;
+	border: 1px solid #cccccc;
+}
