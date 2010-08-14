@@ -26,17 +26,22 @@ body{_text-align:center;}/* IE5.5 */
 }
 
 .head {
+	border-bottom: 5px solid #D8CFAB;
 	background: #573A00;
 	position: absolute;
 	width: 100%;
 	left: 0px;
 	top: 0px;
-	border-bottom: 5px solid #D8CFAB;
 }	
 
-.head .inner { margin: 0px auto; }
+.head .inner {
+	margin: 0px auto;
+}
 
-.body { padding-bottom: 30px; }
+.body:after {
+	content: "";
+	margin-bottom: 30px;
+}
 
 .foot {
 	padding-top: 20px;
@@ -47,4 +52,6 @@ body{_text-align:center;}/* IE5.5 */
 	left: 0px;
 }
 
-.foot .inner { margin: 0px auto; }
+.foot .inner {
+	margin: 0px auto;
+}

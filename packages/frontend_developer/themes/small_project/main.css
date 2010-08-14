@@ -3,7 +3,7 @@
 body {/* customize_background */ background-color: #fff; /* customize_background */ }
 
 .logo a {
-	/* customize_header_logo */ background: url(images/img_logo.png) no-repeat left top; /* customize_header_logo */
+	background: url(images/img_logo.png) no-repeat left top;
 	display: block;
 	width: 129px;
 	height: 147px;

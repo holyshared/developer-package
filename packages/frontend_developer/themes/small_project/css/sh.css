@@ -32,11 +32,11 @@
   float: none !important;
   height: auto !important;
   left: auto !important;
-  line-height: 160% !important;
+  line-height: 160%;
 /*  margin: 0 !important; */
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 0;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -54,10 +54,11 @@
 
 .syntaxhighlighter {
   width: 100% !important;
-  margin: 14px 0px 0px 0px;
+  margin: 14px 0px 10px 0px;
   position: relative !important;
   overflow: auto !important;
-  font-size: 1em !important;
+  font-size: 108%;
+  line-height: 160%;
 }
 .syntaxhighlighter.source {
   overflow: hidden !important;
