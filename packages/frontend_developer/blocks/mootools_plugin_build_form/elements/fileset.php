@@ -6,9 +6,9 @@
 	<table class="moduleList">
 		<thead>
 			<tr>
-				<th>&nbsp;</th>
-				<th><?php t("name"); ?></th>
-				<th><?php t("description"); ?></th>
+				<th><?php echo t("include"); ?></th>
+				<th><?php echo t("name"); ?></th>
+				<th><?php echo t("description"); ?></th>
 			</tr>
 		</thead>
 		<tbody>
