@@ -20,11 +20,13 @@ class phpGitHubApiRequest
     'format'      => 'json',
     'user_agent'  => 'php-github-api (http://github.com/ornicar/php-github-api)',
     'http_port'   => 80,
-    'timeout'     => 20,
+    'timeout'     => 10,
     'login'       => null,
     'token'       => null,
     'debug'       => false
   );
+
+  protected static $history = array();
 
   /**
    * Instanciate a new request
@@ -68,7 +70,8 @@ class phpGitHubApiRequest
       $this->configure($options);
     }
     
-    $response = $this->decodeResponse($this->doSend($apiPath, $parameters, $httpMethod));
+    $response = $this->doSend($apiPath, $parameters, $httpMethod);
+    $response = $this->decodeResponse($response);
 
     if(isset($initialOptions))
     {
@@ -126,6 +129,8 @@ class phpGitHubApiRequest
    */
   public function doSend($apiPath, array $parameters = array(), $httpMethod = 'GET')
   {
+    $this->updateHistory();
+
     $url = strtr($this->options['url'], array(
       ':protocol' => $this->options['protocol'],
       ':format'   => $this->options['format'],
@@ -188,10 +193,31 @@ class phpGitHubApiRequest
 
     if ($errorNumber != '')
     {
-      throw new phpGitHubApiRequestException($errorMessage, $errorNumber);
+      throw new phpGitHubApiRequestException('error '.$errorNumber);
     }
 
     return $response;
+  }
+
+  /**
+   * Records the requests times
+   * When 30 request have been sent in less than a minute,
+   * sleeps for one second to prevent reaching GitHub API limitation. 
+   * 
+   * @access protected
+   * @return void
+   */
+  protected function updateHistory()
+  {
+    self::$history[] = time();
+    if(30 === count(self::$history))
+    {
+      if(reset(self::$history) >= (time() - 30))
+      {
+        sleep(1);
+      }
+      array_shift(self::$history);
+    }
   }
 
   /**
