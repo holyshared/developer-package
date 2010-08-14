@@ -32,8 +32,8 @@
   float: none !important;
   height: auto !important;
   left: auto !important;
-  line-height: 1.1em !important;
-  margin: 0 !important;
+  line-height: 160% !important;
+/*  margin: 0 !important; */
   outline: 0 !important;
   overflow: visible !important;
   padding: 0 !important;
@@ -54,7 +54,7 @@
 
 .syntaxhighlighter {
   width: 100% !important;
-  margin: 1em 0 1em 0 !important;
+  margin: 14px 0px 0px 0px;
   position: relative !important;
   overflow: auto !important;
   font-size: 1em !important;
@@ -73,6 +73,7 @@
 }
 .syntaxhighlighter table {
   width: 100% !important;
+  margin-bottom: 0px;
 }
 .syntaxhighlighter table caption {
   text-align: left !important;
