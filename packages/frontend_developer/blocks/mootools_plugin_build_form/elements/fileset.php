@@ -7,8 +7,8 @@
 		<thead>
 			<tr>
 				<th>&nbsp;</th>
-				<th>name</th>
-				<th>description</th>
+				<th><?php t("name"); ?></th>
+				<th><?php t("description"); ?></th>
 			</tr>
 		</thead>
 		<tbody>
