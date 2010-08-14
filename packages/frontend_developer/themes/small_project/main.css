@@ -14,7 +14,7 @@ body {/* customize_background */ background-color: #fff; /* customize_background
 
 a {
 	/* customize_link */ color: #437aa9; /* customize_link */
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 a:hover {

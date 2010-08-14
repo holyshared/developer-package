@@ -26,8 +26,8 @@ body{_text-align:center;}/* IE5.5 */
 }
 
 .head {
+	background: #573A00 url(images/bgi_logo.png) no-repeat center top;
 	border-bottom: 5px solid #D8CFAB;
-	background: #573A00;
 	position: absolute;
 	width: 100%;
 	left: 0px;

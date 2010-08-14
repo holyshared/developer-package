@@ -50,7 +50,7 @@ version: 0.2
 .pgdesc .inner {
 	padding-top: 7px;
 	padding-left: 160px;
-	background: url(images/bgi_logo.png) no-repeat left top;
+/*	background: url(images/bgi_logo.png) no-repeat left top; */
 }
 
 .pgdesc .bd {
@@ -78,6 +78,21 @@ version: 0.2
 	color: #ffffff;
 	text-decoration: underline;
 }
+
+/*================== hot to use =====================*/
+
+.plugin-howtouse, .plugin-download {
+	background: url(images/bgi_h3.jpg) repeat-x left bottom; margin-bottom: 10px;
+}
+
+.plugin-howtouse h3, .plugin-howtouse .h3,
+.plugin-download h3, .plugin-download .h3 {
+	padding-left: 40px; margin-bottom: 0px;
+}
+
+.plugin-howtouse h3, .plugin-howtouse .h3 { background: url(images/img_h3_how_to_use.gif) no-repeat left top; }
+.plugin-download h3, .plugin-download .h3 { background: url(images/img_h3_download.gif) no-repeat left top; }
+
 
 /*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
