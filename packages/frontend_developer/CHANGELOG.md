@@ -7,6 +7,7 @@ v1.0.1
 * PHP GitHub API is upgraded from 2.6 to 2.11.
 * The translation leakage is corrected.
 * It corresponds to Configurable Style Themes. (Configurable Style Themes)[http://www.concrete5.org/documentation/developers/pages/configurable-theme-styles]
+* It is multilingualization as for the title of the table of the builder form.
 
 v1.0.0.1
 * The download links of **github_tag** are corrected.
