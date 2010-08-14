@@ -3,6 +3,8 @@ CHANGE LOG
 
 v1.0.1
 * The style of **small_project** is corrected.
+* SyntaxHighlighter was supported by theme **small_project** (SyntaxHighlighter v3.0.83.)
+* PHP GitHub API is upgraded from 2.6 to 2.11.
 
 v1.0.0.1
 * The download links of **github_tag** are corrected.

@@ -17,10 +17,7 @@
 <!--		<link rel="stylesheet" href="<?php echo $this->getStyleSheet('style.css'); ?>" type="text/css" media="screen" /> -->
 		<link rel="stylesheet" href="/packages/frontend_developer/themes/small_project/style.css" type="text/css" media="screen" />
 		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shCore.js" type="text/javascript"></script>
-		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shBrushCss.js" type="text/javascript"></script>
-		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shBrushJScript.js" type="text/javascript"></script>
-		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shBrushPhp.js" type="text/javascript"></script>
-		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shBrushXml.js" type="text/javascript"></script>
+		<script src="<?php echo $this->getThemePath()?>/js/syntax_highlighter/shAutoloader.js" type="text/javascript"></script>
 		<script src="<?php echo $this->getThemePath()?>/js/sh.js" type="text/javascript"></script>
 	</head>
 	<body>
