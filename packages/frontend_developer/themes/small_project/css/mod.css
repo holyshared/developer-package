@@ -38,6 +38,12 @@ version: 0.2
 .issues { background: url(images/bgi_issues.gif) no-repeat left top; }
 
 
+.local h4, .local .h4,
+.repos h4, .repos .h4, 
+.download h4, .download .h4,
+.issues h4, .issues .h4 {
+	font-weight: normal;
+}
 
 
 

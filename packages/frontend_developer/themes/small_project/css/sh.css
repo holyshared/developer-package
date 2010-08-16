@@ -53,13 +53,14 @@
 }
 
 .syntaxhighlighter {
-  width: 100% !important;
+  width: 680px !important;
   margin: 14px 0px 10px 0px;
-  position: relative !important;
-  overflow: auto !important;
+  position: relative;
+  overflow: hidden;
   font-size: 108%;
   line-height: 160%;
 }
+
 .syntaxhighlighter.source {
   overflow: hidden !important;
 }

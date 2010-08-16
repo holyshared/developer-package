@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+iframe {
+	border: 1px solid #cccccc;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
+
 /* ====== Tables ====== */
 table {
 	border-collapse: separate;
@@ -121,6 +128,10 @@ table tr.selected td {
 
 .nav-local li {
 	margin-bottom: 5px;
+}
+
+.nav-local li ul {
+	margin-top: 3px;
 }
 
 .nav-local a.nav-selected {

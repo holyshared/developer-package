@@ -1,13 +1,13 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php $this->inc('elements/header.php'); ?>
-<div class="body">
-	<div class="leftCol mBuilder">
+<div class="body gs960">
+	<div class="leftCol yahoo">
 		<?php 
 			$sidebar = new Area('Sidebar');
 			$sidebar->display($c);
 		?>
 	</div>
-	<div class="main">
+	<div class="main mBuilder">
 		<?php 
 			$main = new Area('Main');
 			$main->display($c);
