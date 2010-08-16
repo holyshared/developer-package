@@ -122,16 +122,16 @@ table tr.selected td {
 
 
 .nav-local ul {
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 	margin-left: 15px;
 }
 
 .nav-local li {
-	margin-bottom: 5px;
+	margin-bottom: 7px;
 }
 
 .nav-local li ul {
-	margin-top: 3px;
+	margin-top: 5px;
 }
 
 .nav-local a.nav-selected {
