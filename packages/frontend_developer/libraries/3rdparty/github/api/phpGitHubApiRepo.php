@@ -17,11 +17,16 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
    * http://develop.github.com/p/repos.html#searching_repositories
    *
    * @param   string  $query            the search query
+   * @param   string  $language         takes the same values as the language drop down on http://github.com/search
+   * @param   int     $startPage        the page number
    * @return  array                     list of repos found
    */
-  public function search($query)
+  public function search($query, $language = '', $startPage = 1)
   {
-    $response = $this->api->get('repos/search/'.urlencode($query));
+    $response = $this->api->get('repos/search/'.urlencode($query), array(
+      'language' => strtolower($language),
+      'start_page' => $startPage
+    ));
 
     return $response['repositories'];
   }
@@ -71,6 +76,27 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
   }
 
   /**
+   * Get the contributors of a repository
+   * http://develop.github.com/p/repos.html
+   *
+   * @param   string  $username         the username
+   * @param   string  $repo             the name of the repo
+   * @param   boolean $includingNonGithubUsers by default, the list only shows GitHub users. You can include non-users too by setting this to true
+   * @return  array                     list of the repo contributors
+   */
+  public function getRepoContributors($username, $repo, $includingNonGithubUsers = false)
+  {
+    $url = 'repos/show/'.urlencode($username).'/'.urlencode($repo).'/contributors';
+    if($includingNonGithubUsers)
+    {
+      $url .= '/anon';
+    }
+    $response = $this->api->get($url);
+
+    return $response['contributors'];
+  }
+
+  /**
    * Get the branches of a repository
    * http://develop.github.com/p/repos.html#repository_refs
    *
@@ -84,7 +110,7 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
 
     return $response['branches'];
   }
-  
+
   /**
    * create repo
    * http://develop.github.com/p/repo.html
@@ -98,16 +124,16 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
   public function create($name, $description = '', $homepage = '', $public = true)
   {
     $response = $this->api->post('repos/create', array(
-        'name'        => $name,
-        'description' => $description,
-        'homepage'    => $homepage,
-        'public'      => $public
-      ));
+      'name'        => $name,
+      'description' => $description,
+      'homepage'    => $homepage,
+      'public'      => $public
+    ));
 
     return $response['repository'];
   }
-  
-  
+
+
   /**
    * delete repo
    * http://develop.github.com/p/repo.html
@@ -125,17 +151,17 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
       $response = $this->api->post('repos/delete/'.urlencode($name));
 
       $token = $response['delete_token'];
-      
+
       if (!$force) 
       {
         return $token;
       }
     }
-    
+
     $response = $this->api->post('repos/delete/'.urlencode($name), array(
-        'delete_token'  => $token,
-      ));
-      
+      'delete_token'  => $token,
+    ));
+
     return $response;
   }
 }

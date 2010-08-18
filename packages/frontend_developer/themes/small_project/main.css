@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+body {/* customize_background */ background-color: #fff; /* customize_background */ }
+
+.logo a {
+	background: url(images/img_logo.png) no-repeat left top;
+	display: block;
+	width: 129px;
+	height: 147px;
+	text-indent: -9999px;
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	/* customize_link */ color: #437aa9; /* customize_link */
+	text-decoration: underline;
+}
+
+a:hover {
+	/* customize_link_hover */ color: #daa520; /* customize_link_hover */
+	text-decoration: underline;
+}
+
+a:focus {
+	text-decoration: underline;
+}
+
+/* customize_miscellaneous */ /* customize_miscellaneous */

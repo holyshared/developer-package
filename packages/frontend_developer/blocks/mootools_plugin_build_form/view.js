@@ -16,7 +16,7 @@ $(function() {
 	};
 
 	var onCheckboxClick = $.proxy(function(e) {
-		e.preventDefault();
+		e.stopPropagation();
 		var checkbox = e.target;
 		var index = $.inArray(checkbox, checkboxs);	
 		if ($(checkbox).attr("checked")) {
@@ -31,12 +31,20 @@ $(function() {
 	checkboxs.click(onCheckboxClick);
 
 	var onClick = $.proxy(function(e) {
+		e.preventDefault();
 		var row = $(e.target).parent().get(0);
 		var index = $.inArray(row, rows);
-		$(row).addClass("selected");
 		var checkbox = checkboxs[index];
-		$(checkbox).attr("checked", "checked");
-		$(checkbox).trigger("click");
+		if ($(row).hasClass("selected")) {
+			$(row).removeClass("selected");
+			$(checkbox).attr("checked", "");
+		} else {
+			$(row).addClass("selected");
+			$(checkbox).attr("checked", "checked");
+			var classes = $(checkbox).attr("class");
+			classes = classes.split(" ");
+			this.selectDependences(classes);
+		}
 	}, this);
 	rows.click(onClick);
 

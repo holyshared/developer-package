@@ -8,7 +8,7 @@ class FrontendDeveloperPackage extends Package {
 
 	protected $pkgHandle = FrontendDeveloperPackage::PACKAGE_HANDLE;
 	protected $appVersionRequired = '5.4.0';
-	protected $pkgVersion = '1.0';
+	protected $pkgVersion = '1.0.1b';
 
 	public function getPackageName() {
 		return t('Frontend Developer Package');
@@ -56,7 +56,6 @@ class FrontendDeveloperPackage extends Package {
 		);
 		$key = UserAttributeKey::add("text", $values, $pkg);
 
-		
 		$fileAttributes = array(
 			array(
 				"type" => "boolean",

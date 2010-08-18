@@ -167,7 +167,8 @@ class DashboardMootoolsImporterController extends Controller {
 		}
 
 		$tags = array_keys((array) $tags);
-		usort($tags, 'version_compare');
+//		usort($tags, 'version_compare');
+		rsort($tags);
 
 		if (empty($tags)) {
 			$response->setMessage("GitHub repository has no tags. At least one tag is required.");
@@ -209,8 +210,7 @@ class DashboardMootoolsImporterController extends Controller {
 		}
 
 		$response->setMessage("The archive was able to be downloaded.");
-		$response->setParameters(array("user" => $user, "repos" => $repos,
-			"file" => $file));
+		$response->setParameters(array("user" => $user, "repos" => $repos, "file" => $file));
 		$response->setStatus(true);
 		$response->flush();
 	}

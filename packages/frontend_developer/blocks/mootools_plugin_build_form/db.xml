@@ -6,6 +6,7 @@
 		<field name="uID" type="I"></field>
 		<field name="title" type="C" size="255"></field>
 		<field name="description" type="C" size="255"></field>
+		<field name="header" type="C" size="255"></field>
 		<field name="javascript" type="C" size="255"></field>
 	</table>
 

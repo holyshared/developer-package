@@ -11,9 +11,11 @@
 		},
 		
 		this.start = function(){
+			var action = "step" + this.current.toString();
+			$(this.container).attr("action", action);
 			this.send();
 		},
-		
+
 		this.success = function(json, statusText, xhr, form){
 			if (this.current < this.options.step) {
 				var response = json.response;
@@ -62,6 +64,10 @@
 		this.next = function(){
 			this.current++;
 			return this.current;
+		}
+
+		this.reset = function() {
+			this.current = 1;
 		}
 
 		this.initialize.apply(this, [container, options]);

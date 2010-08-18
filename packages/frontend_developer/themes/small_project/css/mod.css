@@ -32,12 +32,18 @@ version: 0.2
 	text-align: left;
 }
 
-.local { background: url(../images/bgi_nav.gif) no-repeat left top; }
-.repos { background: url(../images/bgi_repos.gif) no-repeat left top; }
-.download { background: url(../images/bgi_download.gif) no-repeat left top; }
-.issues { background: url(../images/bgi_issues.gif) no-repeat left top; }
+.local { background: url(images/bgi_nav.gif) no-repeat left top; }
+.repos { background: url(images/bgi_repos.gif) no-repeat left top; }
+.download { background: url(images/bgi_download.gif) no-repeat left top; }
+.issues { background: url(images/bgi_issues.gif) no-repeat left top; }
 
 
+.local h4, .local .h4,
+.repos h4, .repos .h4, 
+.download h4, .download .h4,
+.issues h4, .issues .h4 {
+	font-weight: normal;
+}
 
 
 
@@ -50,7 +56,7 @@ version: 0.2
 .pgdesc .inner {
 	padding-top: 7px;
 	padding-left: 160px;
-	background: url(../images/bgi_logo.png) no-repeat left top;
+/*	background: url(images/bgi_logo.png) no-repeat left top; */
 }
 
 .pgdesc .bd {
@@ -79,6 +85,21 @@ version: 0.2
 	text-decoration: underline;
 }
 
+/*================== hot to use =====================*/
+
+.plugin-howtouse, .plugin-download {
+	background: url(images/bgi_h3.jpg) repeat-x left bottom; margin-bottom: 10px;
+}
+
+.plugin-howtouse h3, .plugin-howtouse .h3,
+.plugin-download h3, .plugin-download .h3 {
+	padding-left: 40px; margin-bottom: 0px;
+}
+
+.plugin-howtouse h3, .plugin-howtouse .h3 { background: url(images/img_h3_how_to_use.gif) no-repeat left top; }
+.plugin-download h3, .plugin-download .h3 { background: url(images/img_h3_download.gif) no-repeat left top; }
+
+.plugin-guide { text-align: center; width: 200px; }
 
 
 /*================== credit =====================*/

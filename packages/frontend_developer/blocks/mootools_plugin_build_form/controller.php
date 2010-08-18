@@ -8,7 +8,11 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 	protected $btTable = 'btBuilderForm';
 	protected $btInterfaceWidth = "550";
 	protected $btInterfaceHeight = "400";
-	
+
+	const PACKTYPE_YUI_COMPRESSOR = 1;
+	const PACKTYPE_JSMin_COMPRESSOR = 2;
+	const PACKTYPE_NO_COMPRESSOR = 3;
+
 	public function getBlockTypeDescription() {
 		return t("The form that does the plugin of Mootools in the packaging is offered.");
 	}
@@ -149,9 +153,11 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 		}
 
 		switch($packType) {
-			case 2: $output = JSMin::minify($output); break;
-			case 3: break;
-			case 1:
+			case MootoolsPluginBuildFormBlockController::PACKTYPE_JSMin_COMPRESSOR:
+				$output = JSMin::minify($output); break;
+			case MootoolsPluginBuildFormBlockController::PACKTYPE_NO_COMPRESSOR:
+				break;
+			case MootoolsPluginBuildFormBlockController::PACKTYPE_YUI_COMPRESSOR:
 			default:
 				$yui = DIR_PACKAGES.'/'.$pkgHandle.'/'.DIRNAME_LIBRARIES.'/'.'3rdparty/yui/yuicompressor-2.4.2.jar';
 				$tmp = $fh->getTemporaryDirectory().'/';
@@ -160,6 +166,7 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 				Minify_YUICompressor::$tempDir = $tmp;
 				$output = Minify_YUICompressor::minifyJs($output); 			
 		}
+		$output = $this->header."\n".$output;
 
 		$file = $this->javascript.".js";
 		header("Content-disposition: attachment; filename=".$file);

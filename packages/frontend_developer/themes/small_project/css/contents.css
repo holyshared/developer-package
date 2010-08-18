@@ -1,5 +1,12 @@
 @charset "utf-8";
 
+iframe {
+	border: 1px solid #cccccc;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
+
 /* ====== Tables ====== */
 table {
 	border-collapse: separate;
@@ -59,11 +66,16 @@ table tr.selected td {
 
 
 /* ====== list ====== */
+.nav-topic {
+	margin-left: 10px;
+}
+
+.nav-topic li {
+	display: inline-block;
+	padding-right: 5px;
+}
 
 
-/* navigation header */
-
-/*
 .nav-header {
 	margin-top: 10px;
 	overflow: hidden;
@@ -82,23 +94,51 @@ table tr.selected td {
 	background: #7D5500;
 	color: #ffffff;
 }
-*/
 
-
-
-
-.nav-topic {
-	margin-left: 10px;
+.nav-header li a:hover,
+.nav-header li.nav-selected a {
+	background: #d07300;
 }
 
-.nav-topic li {
+
+.nav-footer {
+	text-align: center;
+}
+	
+.nav-footer li {
 	display: inline-block;
-	padding-right: 5px;
+	margin: 0px 5px;
 }
 
-.nav-local .nav-selected {
+.nav-footer li a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.nav-footer li a:hover {
+	color: #f0e68c;
+	text-decoration: underline;
+}
+
+
+.nav-local ul {
+	margin-bottom: 7px;
+	margin-left: 15px;
+}
+
+.nav-local li {
+	margin-bottom: 7px;
+}
+
+.nav-local li ul {
+	margin-top: 5px;
+}
+
+.nav-local a.nav-selected {
 	font-weight: bold;
 }
+
+
 
 
 /* version list */
@@ -114,22 +154,6 @@ table tr.selected td {
 .taskList li .image {
 	float: left;
 }
-
-/* ====== inline ====== */
-/* links */
-a {
-	color: #036;
-	text-decoration: none;
-}
-
-a:focus, a:hover {
-	text-decoration: underline;
-}
-
-a:visited {
-	color: #005a9c;
-}
-
 
 
 
@@ -152,4 +176,3 @@ cite {
 .control {
 	text-align: center;
 }
-

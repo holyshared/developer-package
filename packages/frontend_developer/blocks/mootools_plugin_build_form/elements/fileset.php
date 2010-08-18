@@ -6,9 +6,9 @@
 	<table class="moduleList">
 		<thead>
 			<tr>
-				<th>&nbsp;</th>
-				<th>name</th>
-				<th>description</th>
+				<th><?php echo t("include"); ?></th>
+				<th><?php echo t("name"); ?></th>
+				<th><?php echo t("description"); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,6 +16,7 @@
 				<?php
 					$fv = $file->getVersion();
 					$fa = $fv->getAttributeList();
+
 					$dependences = $fa->getAttribute(MOOTOOLS_PLUGIN_DEPENDENCES);	
 
 					$modules = $options = array();

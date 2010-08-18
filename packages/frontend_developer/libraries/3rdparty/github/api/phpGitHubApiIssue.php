@@ -19,7 +19,7 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $username         the username
    * @param   string  $repo             the repo
    * @param   string  $state            the issue state, can be open or closed
-   * @return  array                     list of users found
+   * @return  array                     list of issues found
    */
   public function getList($username, $repo, $state = 'open')
   {
@@ -36,11 +36,26 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $repo             the repo
    * @param   string  $state            the issue state, can be open or closed
    * @param   string  $searchTerm       the search term to filter issues by
-   * @return  array                     list of users found
+   * @return  array                     list of issues found
    */
   public function search($username, $repo, $state, $searchTerm)
   {
     $response = $this->api->get('issues/search/'.urlencode($username).'/'.urlencode($repo).'/'.urlencode($state).'/'.urlencode($searchTerm));
+
+    return $response['issues'];
+  }
+
+  /**
+   * Search issues by label
+   *
+   * @param   string  $username         the username
+   * @param   string  $repo             the repo
+   * @param   string  $label            the label to filter issues by
+   * @return  array                     list of issues found
+   */
+  public function searchLabel($username, $repo, $label)
+  {
+    $response = $this->api->get('issues/list/'.urlencode($username).'/'.urlencode($repo).'/label/'.urlencode($label));
 
     return $response['issues'];
   }
@@ -52,7 +67,7 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $username         the username
    * @param   string  $repo             the repo
    * @param   string  $issueNumber      the issue number
-   * @return  array                     informations about the issue
+   * @return  array                     information about the issue
    */
   public function show($username, $repo, $issueNumber)
   {
@@ -70,7 +85,7 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $repo             the repo
    * @param   string  $issueTitle       the new issue title
    * @param   string   $issueBody       the new issue body
-   * @return  array                     informations about the issue
+   * @return  array                     information about the issue
    */
   public function open($username, $repo, $issueTitle, $issueBody)
   {
@@ -89,7 +104,7 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $username         the username
    * @param   string  $repo             the repo
    * @param   string  $issueNumber      the issue number
-   * @return  array                     informations about the issue
+   * @return  array                     information about the issue
    */
   public function close($username, $repo, $issueNumber)
   {
@@ -107,7 +122,7 @@ class phpGitHubApiIssue extends phpGitHubApiAbstract
    * @param   string  $issueNumber      the issue number
    * @param   array   $data             key=>value user attributes to update.
    *                                    key can be title or body
-   * @return  array                     informations about the issue
+   * @return  array                     information about the issue
    */
   public function update($username, $repo, $issueNumber, array $data)
   {

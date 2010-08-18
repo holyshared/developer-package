@@ -23,13 +23,15 @@ Please do the plugin from the repository of github importing.</em></p>
 
 <p>Please select the plug-in name displayed in the list of the form.</p>
 <fieldset>
-	<legend>general</legend>
+	<legend>General</legend>
 	<p>General setting</p>
 	<dl>
-		<dt>form title&nbsp;<em class="required">required</em></dt>
+		<dt>Form title&nbsp;<em class="required">required</em></dt>
 		<dd><?php echo $f->text("title", $title, array("size" => 60)); ?></dd>
-		<dt>description of form</dt>
+		<dt>Description of form</dt>
 		<dd><?php echo $f->text("description", $description, array("size" => 80)); ?></dd>
+		<dt>Header of script</dt>
+		<dd><?php echo $f->textarea("header", $header, array("cols" => 57)); ?></dd>
 		<dt>Download file name&nbsp;<em class="required">required</em></dt>
 		<dd><?php echo $f->text("javascript", $javascript, array("size" => 20)); ?>.js</dd>
 	</dl>

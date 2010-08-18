@@ -11,6 +11,9 @@
 ?>
 <script type="text/javascript">
 $(document.body).ready(function() {
+
+	var wizard = null;
+
 	var progressbar = $.fn.progressbar($('#progressbar'));
 	var progress = function(event, step) {
 		var persent = step * (100 / 5);
@@ -18,13 +21,13 @@ $(document.body).ready(function() {
 	}
 
 	var complete = function() {
-		alert("complete");
+		wizard.reset();
 	}
 
 	$("#startImport").click(function(event) {
 		event.preventDefault();
 		progressbar.reset();
-		var wizard = $.fn.importWizard($('#importer'), {
+		wizard = $.fn.importWizard($('#importer'), {
 			"step" : 5,
 			"progress": progress,
 			"complete": complete
