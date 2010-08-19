@@ -123,24 +123,18 @@ h1 a:hover, .h1 a:hover {
 	color: #f0e68c;
 }
 
-
-
 /* ====== Lists ======*/
 
 .simpleList {}
 
 /* numbered list */
-ol.simpleList li {
-	list-style-type: decimal;
-	margin-left: 25px;
-}
+ol.simpleList li { list-style-type: decimal; margin-left: 25px; }
 
 /* standard list */
-ul.simpleList li {
-	list-style-type: disc;
-	margin-left: 20px;
-	margin-bottom: 10px;
-}
+ul.simpleList li { list-style-type: disc; margin-left: 20px; }
+
+dl.simpleDl dt { font-weight: bold; }
+dl.simpleDl dd { margin-bottom: 10px; }
 
 .separator li {
 	overflow: hidden;
