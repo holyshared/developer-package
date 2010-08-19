@@ -11,7 +11,6 @@
 		<?php  
 			$rssObj = $controller;
 			$textHelper = Loader::helper("text"); 
-		
 			if (!$dateFormat) {
 				$dateFormat = t('F jS');
 			}
@@ -22,7 +21,10 @@
 		<?php else: ?>
 		<ul>
 			<?php foreach ($posts as $itemNumber => $item) : ?>
-				<?php if (intval($itemNumber) >= intval($rssObj->itemsToDisplay)) break; ?>
+				<?php if (intval($itemNumber) >= intval($rssObj->itemsToDisplay)) : ?>
+					<?php break; ?>
+				<?php endif; ?>
+
 					<li><h4><?php echo $item->get_date($dateFormat); ?> - <a href="<?php echo $item->get_permalink(); ?>"><?php echo  $item->get_title(); ?></a></h4>
 						<p><?php 
 							if ($rssObj->showSummary) {
@@ -31,7 +33,6 @@
 							?>
 						</p>
 					</li>
-				<?php endif; ?>
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
