@@ -14,25 +14,32 @@
 			if (!$dateFormat) {
 				$dateFormat = t('F jS');
 			}
+
+			User::getByUserID(1);
+
+
+
+
 		?>
-			
 		<?php if (strlen($errorMsg) > 0) : ?>
 			<?php echo $errorMsg; ?>
 		<?php else: ?>
-		<ul>
+		<ul class="hfeed">
 			<?php foreach ($posts as $itemNumber => $item) : ?>
 				<?php if (intval($itemNumber) >= intval($rssObj->itemsToDisplay)) : ?>
 					<?php break; ?>
 				<?php endif; ?>
-
-					<li><h4><?php echo $item->get_date($dateFormat); ?> - <a href="<?php echo $item->get_permalink(); ?>"><?php echo  $item->get_title(); ?></a></h4>
-						<p><?php 
+				<li class="hentry">
+					<h4 class="h5 entry-title"><a href="<?php echo $item->get_permalink(); ?>" rel="bookmark"><?php echo  $item->get_title(); ?></a></h4>
+					<p class="entry-content">
+						<?php
 							if ($rssObj->showSummary) {
 								echo $textHelper->shortText( strip_tags($item->get_description()) );
 							}
-							?>
-						</p>
-					</li>
+						?>
+					</p>
+					<p><addr class="published" title="<?php echo $item->get_date(); ?>"><?php echo $item->get_date($dateFormat); ?></addr> | <span class="vcard author"><a class="fn url" href="http://sharedhat.com">holyshared</a></span></p>
+				</li>
 			<?php endforeach; ?>
 		</ul>
 		<?php endif; ?>
