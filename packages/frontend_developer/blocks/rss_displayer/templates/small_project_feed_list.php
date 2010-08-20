@@ -32,7 +32,7 @@
 				<?php endif; ?>
 				<li class="hentry">
 					<h4 class="entry-title"><a href="<?php echo $item->get_permalink(); ?>" rel="bookmark"><?php echo  $item->get_title(); ?></a></h4>
-					<p class="meta">published: <addr class="published" title="<?php echo $item->get_date(); ?>"><?php echo $item->get_date($dateFormat); ?></addr> | author: <span class="vcard author"><a class="fn url" href="<?php echo $feed->get_link(); ?>"><?php echo $item->get_author()->get_name(); ?></a></span></p>
+					<p class="meta">published: <abbr class="published" title="<?php echo $item->get_date(); ?>"><?php echo $item->get_date($dateFormat); ?></abbr> | author: <span class="vcard author"><a class="fn url" href="<?php echo $feed->get_link(); ?>"><?php echo $item->get_author()->get_name(); ?></a></span></p>
 					<p class="entry-content">
 						<?php
 							if ($rssObj->showSummary) {
@@ -42,7 +42,7 @@
 					</p>
 				</li>
 			<?php endforeach; ?>
-		</>
+		</ul>
 		<?php endif; ?>
 		</div>
 	</div>

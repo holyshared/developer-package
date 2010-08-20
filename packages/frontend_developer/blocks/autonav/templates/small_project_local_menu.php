@@ -22,7 +22,10 @@
 
 	$pageTitle = "";
 	$parentID = $c->getCollectionParentID();
-	if ($parentID > 1) {
+	if ($displayPagesCID > 0) {	
+		$page = Page::getById($displayPagesCID);
+		$pageTitle = $page->getCollectionName();
+	} else if ($parentID > 1) {
 		$page = Page::getById($parentID);
 		$pageTitle = $page->getCollectionName();
 	} else {
