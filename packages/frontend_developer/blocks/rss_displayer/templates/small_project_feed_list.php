@@ -1,4 +1,11 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php
+	$fp = Loader::helper("feed");
+	$feed = $fp->load($url); 
+	$feed->set_item_limit(intval($itemsToDisplay));
+	$feed->init();
+	$feed->handle_content_type();
+?>
 <div class="mod">
 	<div class="inner">
 		<?php if (strlen($title) > 0) : ?>
@@ -14,23 +21,18 @@
 			if (!$dateFormat) {
 				$dateFormat = t('F jS');
 			}
-
-			User::getByUserID(1);
-
-
-
-
 		?>
 		<?php if (strlen($errorMsg) > 0) : ?>
 			<?php echo $errorMsg; ?>
 		<?php else: ?>
-		<ul class="hfeed">
+		<ul class="hfeed simpleList">
 			<?php foreach ($posts as $itemNumber => $item) : ?>
 				<?php if (intval($itemNumber) >= intval($rssObj->itemsToDisplay)) : ?>
 					<?php break; ?>
 				<?php endif; ?>
 				<li class="hentry">
-					<h4 class="h5 entry-title"><a href="<?php echo $item->get_permalink(); ?>" rel="bookmark"><?php echo  $item->get_title(); ?></a></h4>
+					<h4 class="entry-title"><a href="<?php echo $item->get_permalink(); ?>" rel="bookmark"><?php echo  $item->get_title(); ?></a></h4>
+					<p class="meta">published: <addr class="published" title="<?php echo $item->get_date(); ?>"><?php echo $item->get_date($dateFormat); ?></addr> | author: <span class="vcard author"><a class="fn url" href="<?php echo $feed->get_link(); ?>"><?php echo $item->get_author()->get_name(); ?></a></span></p>
 					<p class="entry-content">
 						<?php
 							if ($rssObj->showSummary) {
@@ -38,10 +40,9 @@
 							}
 						?>
 					</p>
-					<p><addr class="published" title="<?php echo $item->get_date(); ?>"><?php echo $item->get_date($dateFormat); ?></addr> | <span class="vcard author"><a class="fn url" href="http://sharedhat.com">holyshared</a></span></p>
 				</li>
 			<?php endforeach; ?>
-		</ul>
+		</>
 		<?php endif; ?>
 		</div>
 	</div>

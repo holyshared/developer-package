@@ -80,7 +80,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-	font-size: 185%;
+	font-size: 189%;
 	font-weight: normal;
 	font-style: normal;
 	color: #437AA9;
@@ -90,8 +90,8 @@ h3, .h3 {
 }
 
 h4, .h4 {
-	font-size: 139%;
-	font-weight: bold;
+	font-size: 123.1%;
+	font-weight: normal;
 	font-style: normal;
 	color: #333;
 	padding: 3px 0px 5px 0px;
@@ -100,7 +100,7 @@ h4, .h4 {
 
 h5, .h5 {
 	font-size: 108%;
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 	color: #AE0345;
 }
@@ -128,7 +128,7 @@ h1 a:hover, .h1 a:hover {
 .simpleList {}
 
 /* numbered list */
-ol.simpleList li { list-style-type: decimal; margin-left: 25px; }
+ol.simpleList li { list-style-type: decimal; margin-left: 25px; font-size: 100% }
 
 /* standard list */
 ul.simpleList li { list-style-type: disc; margin-left: 20px; }
@@ -173,4 +173,11 @@ dl.simpleDl dd { margin-bottom: 10px; }
 	padding: 5px;
 	background: #ffffff;
 	border: 1px solid #cccccc;
+}
+
+.meta {
+	font-size: 93%;
+	
+}
+.entry-content {
 }
