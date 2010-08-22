@@ -3,7 +3,9 @@
 /* ====== Page Head, Body, and Foot ====== */
 body{_text-align:center;}/* IE5.5 */
 .main{display:table-cell;*display:block;width:auto; }
-.body { background: url(images/bgi_sep.gif) repeat-y 271px top; }
+.body { background: none; }
+.multi { background: url(images/bgi_sep.gif) repeat-y 271px top; }
+
 .body,.main{*zoom:1; }
 .body:after,.main:after{clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";}
 .page{margin:0 auto;width:950px;_text-align:left;} /* wraps other template elems to set width */ /* text-align IE5.5 */

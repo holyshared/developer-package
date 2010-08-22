@@ -36,13 +36,16 @@ version: 0.2
 .repos { background: url(images/bgi_repos.gif) no-repeat left top; }
 .download { background: url(images/bgi_download.gif) no-repeat left top; }
 .issues { background: url(images/bgi_issues.gif) no-repeat left top; }
+.user { background: url(images/bgi_user.gif) no-repeat left top; }
 
 
 .local h4, .local .h4,
 .repos h4, .repos .h4, 
 .download h4, .download .h4,
-.issues h4, .issues .h4 {
+.issues h4, .issues .h4,
+.user h4, .user .h4 {
 	font-weight: normal;
+	margin-bottom: 15px;
 }
 
 
@@ -99,18 +102,11 @@ version: 0.2
 .plugin-download h3, .plugin-download .h3 { background: url(images/img_h3_download.gif) no-repeat left top; }
 
 /*================== guide =====================*/
-.plugin-desc {
-}
+.plugin-desc { overflow: hidden; }
+.plugin-desc .photo { float: left; margin-right: 20px; }
 
-.plugin-desc {
-	overflow: hidden;
-}
-
-.plugin-desc .photo {
-	float: left;
-	margin-right: 20px;
-}
-
+/*================== banner =====================*/
+.banner { text-align: center; }
 
 /*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
