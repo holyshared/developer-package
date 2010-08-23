@@ -123,21 +123,6 @@ h1 a:hover, .h1 a:hover {
 	color: #f0e68c;
 }
 
-h3 a img, .h3 a img {
-	vertical-align: middle;
-}
-
-h3 a, .h3 a {
-	margin-left: 10px;
-}
-
-
-
-
-
-
-
-
 
 /* ====== Lists ======*/
 
@@ -193,7 +178,4 @@ dl.simpleDl dd { margin-bottom: 10px; }
 
 .meta {
 	font-size: 93%;
-	
-}
-.entry-content {
 }
