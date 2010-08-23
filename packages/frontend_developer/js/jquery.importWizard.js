@@ -20,7 +20,6 @@
 			if (this.current < this.options.step) {
 				var response = json.response;
 				if (response.status) {
-					alert(this.current);
 					$(this.container).trigger('progress', [this.current]);
 
 					var prevAction = "step" + this.current.toString();

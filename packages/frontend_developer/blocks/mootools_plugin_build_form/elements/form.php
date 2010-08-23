@@ -16,30 +16,30 @@
 <script type="text/javascript">var PluginPackages = <?php echo $json; ?>;</script>
 
 <?php if (count($packages) <= 0) : ?>
-<p><em class="warning">The plugin was not found. <br />
-Please do the plugin from the repository of github importing.</em></p>
-<p><a href="<?php echo $this->url("dashboard/mootools/importer") ?>">It moves to the import page.</a></p>
+<p><em class="warning"><?php echo t("The plugin was not found."); ?><br />
+<?php echo t("Please do the plugin from the repository of github importing."); ?></em></p>
+<p><a href="<?php echo $this->url("dashboard/mootools/importer") ?>"><?php echo t("It moves to the import page."); ?></a></p>
 <?php endif; ?>
 
-<p>Please select the plug-in name displayed in the list of the form.</p>
+<p><?php echo t("Please select the plug-in name displayed in the list of the form."); ?></p>
 <fieldset>
-	<legend>General</legend>
-	<p>General setting</p>
+	<legend><?php echo t("General"); ?></legend>
+	<p><?php echo t("General setting"); ?></p>
 	<dl>
-		<dt>Form title&nbsp;<em class="required">required</em></dt>
+		<dt><?php echo t("Form title"); ?>&nbsp;<em class="required"><?php echo t("required"); ?></em></dt>
 		<dd><?php echo $f->text("title", $title, array("size" => 60)); ?></dd>
-		<dt>Description of form</dt>
+		<dt><?php echo t("Description of form"); ?></dt>
 		<dd><?php echo $f->text("description", $description, array("size" => 80)); ?></dd>
-		<dt>Header of script</dt>
+		<dt><?php echo t("Header of script"); ?></dt>
 		<dd><?php echo $f->textarea("header", $header, array("cols" => 57)); ?></dd>
-		<dt>Download file name&nbsp;<em class="required">required</em></dt>
+		<dt><?php echo t("Download file name"); ?>&nbsp;<em class="required"><?php echo t("required"); ?></em></dt>
 		<dd><?php echo $f->text("javascript", $javascript, array("size" => 20)); ?>.js</dd>
 	</dl>
 </fieldset>
 
 <fieldset>
-	<legend>plugins</legend>
-	<p>Plugin displayed in form</p>
+	<legend><?php echo t("Plugins"); ?></legend>
+	<p><?php echo t("Plugin displayed in form"); ?></p>
 	<ul id="packageList" class="packageList">
 		<?php foreach($packages as $key => $value) : ?>
 			<li class="r<?php echo $key; ?> <?php echo (in_array($key, $current)) ? "selected" : "" ?>">
