@@ -25,10 +25,10 @@ if (version_compare($version, "1.4.", "<")
 				<?php $this->inc('elements/fileset.php'); ?>
 				<ul class="packtypeList">
 					<?php if ($isYUICompressorCRequirement) : ?>
-					<li><label class="compression"><input type="radio" name="packType" value="1" checked="checked" />&nbsp;YUI Compressor</label><br />Uses YUI Compressor by Julien Lecomte, to clean whitespace and rename internal variables to shorter values. Highest compression ratio.</li>
+					<li><label class="compression"><input type="radio" name="packType" value="1" checked="checked" />&nbsp;<?php echo t("YUI Compressor") ?></label><br /><?php echo t("Uses YUI Compressor by Julien Lecomte, to clean whitespace and rename internal variables to shorter values. Highest compression ratio.") ?></li>
 					<?php endif; ?>
-					<li><label class="compression"><input type="radio" name="packType" value="2" />&nbsp;JsMin Compression</label><br />Uses JSMin by Douglas Crockford. Cleans comments and whitespace.</li>
-					<li><label class="compression"><input type="radio" name="packType" value="3" />&nbsp;No Compression</label><br />Uncompressed source. Recommended in testing phase.</li>
+					<li><label class="compression"><input type="radio" name="packType" value="2" <?php echo ($isYUICompressorCRequirement) ? "" : "checked=\"checked\"" ?> />&nbsp;<?php echo t("JsMin Compression") ?></label><br /><?php echo t("Uses JSMin by Douglas Crockford. Cleans comments and whitespace.") ?></li>
+					<li><label class="compression"><input type="radio" name="packType" value="3" />&nbsp;<?php echo t("No Compression") ?></label><br /><?php echo t("Uncompressed source. Recommended in testing phase.") ?></li>
 				</ul>
 				<p class="control"><input id="download-.<?php echo $bID ?>" type="image" name="download" src="<?php echo $url->getPackageURL($pkg) ?>/images/img_download.jpg" /></p>
 			</form>
