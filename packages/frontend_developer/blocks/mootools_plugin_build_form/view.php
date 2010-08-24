@@ -5,10 +5,12 @@
 <?php $v = Loader::helper('validation/token'); ?>
 <?php
 exec("java -version 2>&1", $output);
-$line = array_shift($output);
-$version = str_replace(array("java version", "\""), "", $line);
+$version = str_replace(array("java version", "\""), "", array_shift($output));
+$runtime = array_shift($output);
+
 $isYUICompressorCRequirement = false;
-if (version_compare($version, "1.4.", "<")) {
+if (version_compare($version, "1.4.", "<")
+ && strpos($runtime, "Java(TM) SE Runtime Environment") !== false) {
 	$isYUICompressorCRequirement = true;
 }
 ?>
