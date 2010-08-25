@@ -9,6 +9,7 @@ v1.0.1
 * It corresponds to Configurable Style Themes. (Configurable Style Themes)[http://www.concrete5.org/documentation/developers/pages/configurable-theme-styles]
 * It is multilingualization as for the title of the table of the builder form.
 * The default of the small project theme is corrected.
+* It is corrected that the installation of java is confirmed with Build Form.
 
 v1.0.0.1
 * The download links of **github_tag** are corrected.
