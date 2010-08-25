@@ -1,5 +1,5 @@
-Frontend Developer Package 1.0b
-===============================
+Frontend Developer Package 1.0.1b
+=================================
 
 Frontend Developer Packageは**小規模なオープンソースソフトウェア開発者向けのパッケージ**です。
 主にフロントエンド開発者(HTML、CSS、javascript、Design)を対象にしています。
@@ -116,46 +116,6 @@ concrete5のデフォルトブロック用のカスタムテンプレートも�
 * **Small Project Line** - グリッド用のテンプレート
 
 モジュール、グリッドに関しては、[oocss](http://wiki.github.com/stubbornella/oocss/)を参考にしてください。
-
-
-
-#### tinymce用のコンテンツテンプレート
-
-tinymceのプラグインにテンプレートというものがあります。
-このプラグインは決まった書式の雛形を元に、エディタ内にコンテンツを挿入します。
-
-このパッケージに含まれるテンプレートは下記の通りです。
-
-* **module_lead** - ページの冒頭に記述するリード文テンプレート
-* **module_default** - モジュールテンプレート
-* **grid_5columns(20percent)** - 5カラムテンプレート
-* **grid_3columns(33percent)** - 3カラムテンプレート
-* **grid_2columns(50percent)** - 2カラムテンプレート
-
-
-##### 設定例
-
-1. サイトにログインします。
-2. サイト全体の設定をクリックします。
-3. 記事ブロックエディタの設定で「カスタム」をクリックします。
-4. 入力欄にカスタム設定を記述します。
-
-	**JS**
-	//プラグインにtemplateを追加する
-	plugins: "inlinepopups,spellchecker,safari,advlink,template",
-
-	//ボタンにtemplateを追加する
-	theme_concrete_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,hr,|,styleselect,formatselect,fontsizeselect,template",
-
-	//テンプレートの設定ファイルのURLを指定する
-	template_external_list_url: "/packages/frontend_developer/blocks/content/lists/template_list.js",
-
-	//オプションの設定を追加する
-	template_cdate_classes : "cdate creationdate",
-	template_mdate_classes : "mdate modifieddate",
-	template_selected_content_classes : "selcontent",
-	template_cdate_format : "%m/%d/%Y : %H:%M:%S",
-	template_mdate_format : "%m/%d/%Y : %H:%M:%S"
 
 
 アンインストールの仕方
