@@ -96,9 +96,18 @@ version: 0.2
 .plugin-howtouse h3, .plugin-howtouse .h3 { background: url(images/img_h3_how_to_use.gif) no-repeat left top; }
 .plugin-download h3, .plugin-download .h3 { background: url(images/img_h3_download.gif) no-repeat left top; }
 
-/*================== guide =====================*/
-.plugin-desc { overflow: hidden; }
-.plugin-desc .photo { float: left; margin-right: 20px; }
+.product-desc { overflow: hidden; }
+.product-desc .photo { float: left; margin-right: 20px; }
+.product-desc .version { float: left; margin-right: 10px; }
+.product-desc .version strong { font-style: italic; }
+.product-desc .repository { float: left; }
+.product-desc .repository strong { font-style: italic; }
+.product-desc .version, .product-desc .repository { margin-top: 14px; border: 1px solid #cccccc; padding: 10px 15px; }
+.product-desc .version strong, .product-desc .repository strong { 
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
 
 /*================== credit =====================*/
 .credit { text-align: center; color: #ffffff; }
