@@ -15,7 +15,7 @@
 			$name = $rp["repos"];
 			$current = $repositories[$name];
 		?>
-			<li><a title="<?php echo $t->entities($current["description"]); ?>" href="<?php echo $t->entities($current["url"]); ?>">github@<?php echo $t->entities($current["name"]); ?></a>
+			<li><a title="<?php echo $t->entities($current["description"]); ?>" href="<?php echo $t->entities($current["url"]); ?>"><?php echo $t->entities($current["name"]); ?>@github</a>
 			<br /><em><?php echo $t->entities(date("Y-m-d H:i", strtotime($current["pushed_at"]))); ?></em>
 			</li>
 		<?php endforeach; ?>

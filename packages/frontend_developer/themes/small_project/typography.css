@@ -91,7 +91,7 @@ h3, .h3 {
 
 h4, .h4 {
 	font-size: 123.1%;
-	font-weight: normal;
+	font-weight: bold;
 	font-style: normal;
 	color: #333;
 	padding: 3px 0px 5px 0px;
@@ -178,4 +178,8 @@ dl.simpleDl dd { margin-bottom: 10px; }
 
 .meta {
 	font-size: 93%;
+}
+
+.detailTo {
+	text-align: right;
 }
