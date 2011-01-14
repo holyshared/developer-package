@@ -14,7 +14,7 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
 {
   /**
    * Search repos by keyword
-   * http://develop.github.com/p/repos.html#searching_repositories
+   * http://develop.github.com/p/repo.html
    *
    * @param   string  $query            the search query
    * @param   string  $language         takes the same values as the language drop down on http://github.com/search
@@ -32,23 +32,8 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
   }
 
   /**
-   * Get extended information about a repository by its username and repo name
-   * http://develop.github.com/p/repos.html#show_repo_info
-   *
-   * @param   string  $username         the user who owns the repo
-   * @param   string  $repo             the name of the repo
-   * @return  array                     informations about the repo
-   */
-  public function show($username, $repo)
-  {
-    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo));
-
-    return $response['repository'];
-  }
-
-  /**
    * Get the repositories of a user
-   * http://develop.github.com/p/repos.html#list_all_repositories
+   * http://develop.github.com/p/repo.html
    *
    * @param   string  $username         the username
    * @return  array                     list of the user repos
@@ -61,54 +46,30 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
   }
 
   /**
-   * Get the tags of a repository
-   * http://develop.github.com/p/repos.html#repository_refs
+   * Get a list of the repositories that the authenticated user can push to
    *
-   * @param   string  $username         the username
-   * @param   string  $repo             the name of the repo
-   * @return  array                     list of the repo tags
+   * @return  array                     list of repositories
    */
-  public function getRepoTags($username, $repo)
+  public function getPushableRepos()
   {
-    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/tags');
+    $response = $this->api->get('repos/pushable');
 
-    return $response['tags'];
+    return $response['repositories'];
   }
 
   /**
-   * Get the contributors of a repository
-   * http://develop.github.com/p/repos.html
+   * Get extended information about a repository by its username and repo name
+   * http://develop.github.com/p/repo.html
    *
-   * @param   string  $username         the username
+   * @param   string  $username         the user who owns the repo
    * @param   string  $repo             the name of the repo
-   * @param   boolean $includingNonGithubUsers by default, the list only shows GitHub users. You can include non-users too by setting this to true
-   * @return  array                     list of the repo contributors
+   * @return  array                     informations about the repo
    */
-  public function getRepoContributors($username, $repo, $includingNonGithubUsers = false)
+  public function show($username, $repo)
   {
-    $url = 'repos/show/'.urlencode($username).'/'.urlencode($repo).'/contributors';
-    if($includingNonGithubUsers)
-    {
-      $url .= '/anon';
-    }
-    $response = $this->api->get($url);
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo));
 
-    return $response['contributors'];
-  }
-
-  /**
-   * Get the branches of a repository
-   * http://develop.github.com/p/repos.html#repository_refs
-   *
-   * @param   string  $username         the username
-   * @param   string  $repo             the name of the repo
-   * @return  array                     list of the repo branches
-   */
-  public function getRepoBranches($username, $repo)
-  {
-    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/branches');
-
-    return $response['branches'];
+    return $response['repository'];
   }
 
   /**
@@ -163,5 +124,283 @@ class phpGitHubApiRepo extends phpGitHubApiAbstract
     ));
 
     return $response;
+  }
+
+  /**
+   * Set information of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @param   array   $values           the key => value pairs to post
+   * @return  array                     informations about the repo
+   */
+  public function setRepoInfo($username, $repo, $values)
+  {
+    $response = $this->api->post('repos/show/'.urlencode($username).'/'.urlencode($repo), array('values' => $values));
+
+    return $response['repository'];
+  }
+
+  /**
+   * Set the visibility of a repostory to public
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $repo             the name of the repo
+   * @return  array                     informations about the repo
+   */
+  public function setPublic($repo)
+  {
+    $response = $this->api->get('repos/set/public/'.urlencode($repo));
+
+    return $response['repository'];
+  }
+
+  /**
+   * Set the visibility of a repostory to private
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $repo             the name of the repo
+   * @return  array                     informations about the repo
+   */
+  public function setPrivate($repo)
+  {
+    $response = $this->api->get('repos/set/private/'.urlencode($repo));
+
+    return $response['repository'];
+  }
+
+  /**
+   * Get the list of deploy keys for a repository
+   *
+   * @param   string  $repo             the name of the repo
+   * @return  array                     the list of deploy keys
+   */
+  public function getDeployKeys($repo)
+  {
+    $response = $this->api->get('repos/keys/'.urlencode($repo));
+
+    return $response['public_keys'];
+  }
+
+  /**
+   * Add a deploy key for a repository
+   *
+   * @param   string  $repo             the name of the repo
+   * @param   string  $title            the title of the key
+   * @param   string  $key              the public key data
+   * @return  array                     the list of deploy keys
+   */
+  public function addDeployKey($repo, $title, $key)
+  {
+    $response = $this->api->post('repos/key/'.urlencode($repo) . '/add', array(
+      'title' => $title,
+      'key' => $key
+    ));
+
+    return $response['public_keys'];
+  }
+
+  /**
+   * Delete a deploy key from a repository
+   *
+   * @param   string  $repo             the name of the repo
+   * @param   string  $id               the the id of the key to remove
+   * @return  array                     the list of deploy keys
+   */
+  public function removeDeployKey($repo, $id)
+  {
+    $response = $this->api->post('repos/key/'.urlencode($repo) . '/remove', array(
+      'id' => $id,
+    ));
+
+    return $response['public_keys'];
+  }
+
+  /**
+   * Get the collaborators of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the repo collaborators
+   */
+  public function getRepoCollaborators($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/collaborators');
+
+    return $response['collaborators'];
+  }
+
+  /**
+   * Add a collaborator to a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $repo             the name of the repo
+   * @param   string  $username         the user who should be added as a collaborator
+   * @return  array                     list of the repo collaborators
+   */
+  public function addRepoCollaborator($repo, $username)
+  {
+    $response = $this->api->post('repos/collaborators/'.urlencode($repo).'/add/' . urlencode($username));
+
+    return $response['collaborators'];
+  }
+
+  /**
+   * Delete a collaborator from a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $repo             the name of the repo
+   * @param   string  $username         the user who should be removed as a collaborator
+   * @return  array                     list of the repo collaborators
+   */
+  public function removeRepoCollaborator($repo, $username)
+  {
+    $response = $this->api->post('repos/collaborators/'.urlencode($repo).'/remove/' . urlencode($username));
+
+    return $response['collaborators'];
+  }
+
+  /**
+   * Make the authenticated user watch a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     informations about the repo
+   */
+  public function watch($username, $repo)
+  {
+    $response = $this->api->get('repos/watch/'.urlencode($username).'/'.urlencode($repo));
+
+    return $response['repository'];
+  }
+  
+  /**
+   * Make the authenticated user unwatch a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     informations about the repo
+   */
+  public function unwatch($username, $repo)
+  {
+    $response = $this->api->get('repos/unwatch/'.urlencode($username).'/'.urlencode($repo));
+
+    return $response['repository'];
+  }
+
+  /**
+   * Make the authenticated user fork a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     informations about the newly forked repo
+   */
+  public function fork($username, $repo)
+  {
+    $response = $this->api->get('repos/fork/'.urlencode($username).'/'.urlencode($repo));
+
+    return $response['repository'];
+  }
+
+  /**
+   * Get the tags of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the repo tags
+   */
+  public function getRepoTags($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/tags');
+
+    return $response['tags'];
+  }
+
+  /**
+   * Get the branches of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the username
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the repo branches
+   */
+  public function getRepoBranches($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/branches');
+
+    return $response['branches'];
+  }
+
+
+  /**
+   * Get the watchers of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the repo watchers
+   */
+  public function getRepoWatchers($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/watchers');
+
+    return $response['watchers'];
+  }
+  
+  /**
+   * Get the network (a list of forks) of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the repo forks
+   */
+  public function getRepoNetwork($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/network');
+
+    return $response['network'];
+  }
+
+  /**
+   * Get the language breakdown of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @return  array                     list of the languages
+   */
+  public function getRepoLanguages($username, $repo)
+  {
+    $response = $this->api->get('repos/show/'.urlencode($username).'/'.urlencode($repo).'/languages');
+
+    return $response['languages'];
+  }
+
+  /**
+   * Get the contributors of a repository
+   * http://develop.github.com/p/repo.html
+   *
+   * @param   string  $username         the user who owns the repo
+   * @param   string  $repo             the name of the repo
+   * @param   boolean $includingNonGithubUsers by default, the list only shows GitHub users. You can include non-users too by setting this to true
+   * @return  array                     list of the repo contributors
+   */
+  public function getRepoContributors($username, $repo, $includingNonGithubUsers = false)
+  {
+    $url = 'repos/show/'.urlencode($username).'/'.urlencode($repo).'/contributors';
+    if($includingNonGithubUsers)
+    {
+      $url .= '/anon';
+    }
+    $response = $this->api->get($url);
+
+    return $response['contributors'];
   }
 }

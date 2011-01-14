@@ -1,6 +1,13 @@
 CHANGE LOG
 ========================================
 
+
+
+v1.1.0
+* PHP GitHub API is upgraded from 2.11 to 2.12.
+
+
+
 v1.0.1
 * The style of **small_project** is corrected.
 * SyntaxHighlighter was supported by theme **small_project** (SyntaxHighlighter v3.0.83.)
