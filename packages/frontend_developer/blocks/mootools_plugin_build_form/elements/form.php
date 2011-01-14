@@ -1,7 +1,7 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php
 	$html = Loader::helper("html");
-	$this->addHeaderItem($html->css("style.css", FrontendDeveloperPackage::PACKAGE_HANDLE));
+	$this->addHeaderItem($html->css("style.css", FRONTEND_DEVELOPER_PACKAGE_HANDLE));
 
 	$t = Loader::helper('text');
 	$f = Loader::helper('form');

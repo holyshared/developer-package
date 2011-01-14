@@ -1,5 +1,5 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
-<?php Loader::library('mootools/attribute', FrontendDeveloperPackage::PACKAGE_HANDLE); ?>
+<?php Loader::library('mootools/attribute', FRONTEND_DEVELOPER_PACKAGE_HANDLE); ?>
 <?php $f = Loader::helper('form'); ?>
 <?php $t = Loader::helper('text'); ?>
 <?php $v = Loader::helper('validation/token'); ?>

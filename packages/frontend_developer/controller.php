@@ -2,25 +2,25 @@
 
 defined('C5_EXECUTE') or die(_('Access Denied.'));
 
+define('FRONTEND_DEVELOPER_PACKAGE_HANDLE', 'frontend_developer');
+
 class FrontendDeveloperPackage extends Package {
 
-	const PACKAGE_HANDLE = 'frontend_developer';
-
-	protected $pkgHandle = FrontendDeveloperPackage::PACKAGE_HANDLE;
+	protected $pkgHandle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 	protected $appVersionRequired = '5.4.0';
-	protected $pkgVersion = '1.0.1b';
+	protected $pkgVersion = '1.1.0';
 
 	public function getPackageName() {
 		return t('Frontend Developer Package');
 	}
-	
+
 	public function getPackageDescription() { 
 		return t('Add-on package for Frontend Developer');
 	}
 
 	public function install() {
 
-		Loader::library('mootools/attribute', FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library('mootools/attribute', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 		$pkg = parent::install();
 

@@ -25,7 +25,7 @@ class GithubTagsBlockController extends BlockController {
 
 	public function on_start() {
 		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('form.css', FrontendDeveloperPackage::PACKAGE_HANDLE));
+		$this->addHeaderItem($html->css('form.css', FRONTEND_DEVELOPER_PACKAGE_HANDLE));
 	}	
 	
 	public function view() {
@@ -55,7 +55,7 @@ class GithubTagsBlockController extends BlockController {
 	}
 	
 	protected function getUserRepositories() {
-		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 		$username = $this->getUserName();
 
 		if (empty($username)) {
@@ -69,7 +69,7 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	protected function getUserRepositoryTags() {
-		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 		$tags = array();
 		$username = $this->getUserName();

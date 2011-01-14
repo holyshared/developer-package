@@ -1,7 +1,7 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
 <?php 
 
-Loader::library('mootools/plugin_list', FrontendDeveloperPackage::PACKAGE_HANDLE);
+Loader::library('mootools/plugin_list', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 class MootoolsPluginBuildFormBlockController extends BlockController {
 
@@ -31,12 +31,12 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 	public function on_start() {
 		Loader::model('package');
 		$html  = Loader::helper('html');
-		$this->addHeaderItem($html->css('form.css', FrontendDeveloperPackage::PACKAGE_HANDLE));	
+		$this->addHeaderItem($html->css('form.css', FRONTEND_DEVELOPER_PACKAGE_HANDLE));	
 	}
 
 	public function view() {
 		$urls = Loader::helper('concrete/urls');
-		$pkg = Package::getByHandle(FrontendDeveloperPackage::PACKAGE_HANDLE);
+		$pkg = Package::getByHandle(FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 		$this->set("pkg", $pkg);
 		$this->set("url", $urls);
 		$this->set("bID", $this->bID);
@@ -135,7 +135,7 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 
 	protected function buildScript() {
 
-		$pkgHandle = FrontendDeveloperPackage::PACKAGE_HANDLE;
+		$pkgHandle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 		
 		Loader::library("3rdparty/jsminify/JSMin", $pkgHandle);
 		Loader::library("3rdparty/jsminify/Minify/YUICompressor", $pkgHandle);

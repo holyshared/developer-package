@@ -1,6 +1,6 @@
 <?php
 
-Loader::library("3rdparty/spyc", FrontendDeveloperPackage::PACKAGE_HANDLE);
+Loader::library("3rdparty/spyc", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 class MootoolsPluginParser {
 
@@ -20,7 +20,7 @@ class MootoolsPluginParser {
 	public function getMeta() {
 		return $this->meta;
 	}
-	
+
 }
 
 ?>

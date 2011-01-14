@@ -2,7 +2,7 @@
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
 Loader::library('archive');
-Loader::library('mootools/attribute', FrontendDeveloperPackage::PACKAGE_HANDLE);
+Loader::library('mootools/attribute', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 class PluginArchive extends Archive {
 
@@ -73,9 +73,9 @@ class DashboardMootoolsImporterController extends Controller {
 	const GITHUB_URL = "http://github.com/";
 
 	public function view() {
-		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
-		$handle = FrontendDeveloperPackage::PACKAGE_HANDLE;
+		$handle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 		$html  = Loader::helper('html');
 		$this->addHeaderItem($html->css('style.css', $handle));
 		$this->addHeaderItem($html->javascript("jquery.importWizard.js", $handle));
@@ -96,7 +96,7 @@ class DashboardMootoolsImporterController extends Controller {
 				$rows[$key] = $repos;
 			}
 		}
-		$this->set("pkgHandle", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		$this->set("pkgHandle", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
 		$this->set("repos", $rows);
@@ -126,7 +126,7 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step2() {
-		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
@@ -149,7 +149,7 @@ class DashboardMootoolsImporterController extends Controller {
 	}
 
 	public function step3() {
-		Loader::library("3rdparty/github/phpGitHubApi", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 		
 		$user	= $this->post("user");
 		$repos	= $this->post("repos");
@@ -280,7 +280,7 @@ class DashboardMootoolsImporterController extends Controller {
 
 	private function _addFile($file, $fr = false) {
 		Loader::library("file/importer");
-		Loader::library("mootools/plugin_parser", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		Loader::library("mootools/plugin_parser", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 		$cf = Loader::helper("file");
 

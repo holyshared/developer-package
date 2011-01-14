@@ -1,13 +1,13 @@
 <?php 
 defined('C5_EXECUTE') or die(_("Access Denied."));
 
-Loader::library('mootools/attribute', FrontendDeveloperPackage::PACKAGE_HANDLE);
-Loader::library('mootools/plugin_list', FrontendDeveloperPackage::PACKAGE_HANDLE);
+Loader::library('mootools/attribute', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+Loader::library('mootools/plugin_list', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 class DashboardMootoolsPluginController extends Controller {
 
 	public function view() {
-		$handle = FrontendDeveloperPackage::PACKAGE_HANDLE;
+		$handle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 		$pl = new MootoolsPluginList();
 
 		$html  = Loader::helper('html');
@@ -26,7 +26,7 @@ class DashboardMootoolsPluginController extends Controller {
 		}
 		$this->set("uID", $u->getUserID());
 		$this->set("username", $username);
-		$this->set("pkgHandle", FrontendDeveloperPackage::PACKAGE_HANDLE);
+		$this->set("pkgHandle", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 		$this->set("plugins", $plugins);
 		$this->set("filesets", $filesets);
 		$this->set("searchInstance", 'file'.time());
@@ -44,7 +44,7 @@ class DashboardMootoolsPluginController extends Controller {
 		$ui = UserInfo::getByID($u->getUserID());
 		$username = $ui->getAttribute(MOOTOOLS_GITHUB_USER);
 
-		$pkgHandle = FrontendDeveloperPackage::PACKAGE_HANDLE;
+		$pkgHandle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 		$uID = $u->getUserID();
 
 		$files = $pl->getMootoolsPluginFiles($fs);
