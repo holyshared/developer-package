@@ -119,7 +119,7 @@ class FrontendDeveloperPackage extends Package {
 			$type = $attr["type"];
 			$values = $attr["values"];
 			$handle = $values["akHandle"];
-			$attributesKeys[$handle] =	FileAttributeKey::add($type, $values, $pkg);	
+			$attributesKeys[$handle] =	FileAttributeKey::add($type, $values, $pkg);
 		}
 
 		if (!empty($attributesKeys[MOOTOOLS_PLUGIN_DEPENDENCES])) {
