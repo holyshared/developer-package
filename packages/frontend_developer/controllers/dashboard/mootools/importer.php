@@ -318,8 +318,10 @@ class DashboardMootoolsImporterController extends Controller {
 					$ak = FileAttributeKey::getByHandle(MOOTOOLS_PLUGIN_DEPENDENCES);
 					$type = SelectAttributeTypeOption::add($ak, $module, true);
 					$value = $type->getSelectAttributeOptionValue();
-					$requireValues[$value] = $value;
+				} else {
+					$value = $option->getSelectAttributeOptionValue();
 				}
+				$requireValues[$value] = $value;
 			}
 		}
 

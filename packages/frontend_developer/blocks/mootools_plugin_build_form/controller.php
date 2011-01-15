@@ -88,13 +88,22 @@ class MootoolsPluginBuildFormBlockController extends BlockController {
 		$v = Loader::helper("validation/form");
 
 		$v->setData($this->post());
-		$v->addRequired("module", t("Please select a necessary module."));
+//		$v->addRequired("module", t("Please select a necessary module."));
 		$v->addRequired("packType", t("Please select the compressed method."));
-		if (!$v->test()) {
+
+		$selects = $this->post('module');
+		if (!is_array($selects) && count($selects) <= 0) {
+			$error = $v->getError();
+			$error->add(t("Please select a necessary module."));
 			$this->set("error", $v->getError());
 			return;
 		}
 
+		if (!$v->test()) {
+			$this->set("error", $v->getError());
+			return;
+		}
+		
 		$t = Loader::helper("validation/token");
 		if (!$t->validate()) {
 			$e = Loader::helper('validation/error');

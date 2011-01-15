@@ -17,6 +17,7 @@
 					$fv = $file->getVersion();
 					$fa = $fv->getAttributeList();
 
+					$componentName = $fa->getAttribute(MOOTOOLS_COMPONENT_NAME);	
 					$dependences = $fa->getAttribute(MOOTOOLS_PLUGIN_DEPENDENCES);	
 
 					$modules = $options = array();
@@ -30,12 +31,12 @@
 						}
 					}
 					foreach ($options as $module) {
-						$modules[] = str_replace(".", "_", $module);
+						$modules[] = str_replace(array(".", "/"), array("_", "_"), $module);
 					}
-					$name = str_replace(".", "_", $fv->getFileName());
+					$componentName = str_replace(array(".", "/"), array("_", "_"), $componentName);
 				?>
 				<tr>
-					<td class="check"><input id="<?php echo $name; ?>" type="checkbox" name="module[]" value="<?php echo $t->entities($file->getFileID()) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
+					<td class="check"><input id="<?php echo $componentName; ?>" type="checkbox" name="module[]" value="<?php echo $t->entities($file->getFileID()) ?>" class="<?php echo $t->entities(join(" ", $modules)); ?>" /></td>
 					<td class="name"><?php echo $t->entities($fv->getFileName()); ?></td>
 					<td class="description"><?php echo $t->entities($fv->getDescription()); ?></td>
 				</tr>
