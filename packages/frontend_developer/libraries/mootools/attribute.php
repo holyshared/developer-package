@@ -9,6 +9,10 @@ if (!defined('MOOTOOLS_PLUGIN')) {
 	define('MOOTOOLS_PLUGIN', 'mootools_plugin');
 }
 
+if (!defined('MOOTOOLS_COMPONENT_NAME')) {
+	define('MOOTOOLS_COMPONENT_NAME', 'mootools_plugin_component_name');
+}
+
 if (!defined('MOOTOOLS_PLUGIN_DEPENDENCES')) {
 	define('MOOTOOLS_PLUGIN_DEPENDENCES', 'mootools_plugin_dependences');
 }

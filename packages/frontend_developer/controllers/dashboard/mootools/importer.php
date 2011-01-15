@@ -176,8 +176,11 @@ class DashboardMootoolsImporterController extends Controller {
 		}
 
 		$response->setMessage("Tag was able to be confirmed.");
-		$response->setParameters(array("user" => $user, "repos" => $repos,
-			"tag" => array_shift($tags)));
+		$response->setParameters(array(
+			"user" => $user,
+			"repos" => $repos,
+			"tag" => array_shift($tags)
+		));
 		$response->setStatus(true);
 		$response->flush();
 	}
@@ -257,7 +260,7 @@ class DashboardMootoolsImporterController extends Controller {
 		$pluginDir = $plugin->unzip($archive);
 		
 		if ($pluginDir) {
-			$dir = $pluginDir."/Source/";
+			$dir = $pluginDir . "/Source/";
 			if ($dh = opendir($dir)) {
 				$files = array();
 				while (($file = readdir($dh)) !== false) {
@@ -306,19 +309,33 @@ class DashboardMootoolsImporterController extends Controller {
 			return $message;
 		}
 
-		$option = SelectAttributeTypeOption::getByValue(basename($file));
-		if (empty($option)) {
-			$ak = FileAttributeKey::getByHandle(MOOTOOLS_PLUGIN_DEPENDENCES);
-			SelectAttributeTypeOption::add($ak, basename($file), true);
+		$requireValues = array();
+		if (is_array($meta["requires"]))  {
+			$requires = $meta["requires"];
+			foreach($requires as $module) {
+				$option = SelectAttributeTypeOption::getByValue($module);
+				if (empty($option)) {
+					$ak = FileAttributeKey::getByHandle(MOOTOOLS_PLUGIN_DEPENDENCES);
+					$type = SelectAttributeTypeOption::add($ak, $module, true);
+					$value = $type->getSelectAttributeOptionValue();
+					$requireValues[$value] = $value;
+				}
+			}
 		}
 
+		$namespaces = explode('.', $meta['name']);
+		$packageName = array_shift($namespaces);
+		$moduleName = str_replace('.js', '', basename($file));
+
+		$componentName = $packageName . '/' . $moduleName;
 		$authors = (is_array($meta["authors"])) ? join(",", $meta["authors"]) : $meta["authors"];
 		$license = (is_array($meta["license"])) ? join(",", $meta["license"]) : $meta["license"];
 
 		$fv->setAttribute(MOOTOOLS_PLUGIN, true);
+		$fv->setAttribute(MOOTOOLS_COMPONENT_NAME, $componentName);
 		$fv->setAttribute(MOOTOOLS_PLUGIN_LICENSE, $license);
 		$fv->setAttribute(MOOTOOLS_PLUGIN_AUTHORS, $authors);
-		$fv->setAttribute(MOOTOOLS_PLUGIN_DEPENDENCES, null);
+		$fv->setAttribute(MOOTOOLS_PLUGIN_DEPENDENCES, $requireValues);
 		$fv->setAttribute(MOOTOOLS_PLUGIN_DISPLAY_ORDER, 0);
 		$fv->updateDescription($meta["description"]);
 		$fv->updateTags("mootools\nplugin");

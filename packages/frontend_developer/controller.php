@@ -61,7 +61,18 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "boolean",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN,
-					"akName" => "This file is a plugin of mootools",
+					"akName" => "This file is a plugin of Mootools",
+					"akIsSearchable" => true,
+					"akIsSearchableIndexed" => true,
+					"akIsAutoCreated" => true,
+					"akIsEditable" => true
+				)
+			),
+			array(
+				"type" => "text",
+				"values" => array(
+					"akHandle" => MOOTOOLS_COMPONENT_NAME,
+					"akName" => "Component name of Mootools",
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -94,7 +105,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "select",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_DEPENDENCES,
-					"akName" => "Dependence of mootools plugin",
+					"akName" => "Dependence of Mootools plugin",
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -105,7 +116,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "number",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_DISPLAY_ORDER,
-					"akName" => "The order of display of mootools plugin",
+					"akName" => "The order of display of Mootools plugin",
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
