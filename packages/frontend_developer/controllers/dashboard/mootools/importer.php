@@ -3,6 +3,7 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 Loader::library('archive');
 Loader::library('mootools/attribute', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+Loader::library('mootools/importer', FRONTEND_DEVELOPER_PACKAGE_HANDLE);
 
 class PluginArchive extends Archive {
 
@@ -71,6 +72,8 @@ class JSONResponse {
 class DashboardMootoolsImporterController extends Controller {
 
 	const GITHUB_URL = "http://github.com/";
+
+	private $_importFiles = array();
 
 	public function view() {
 		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
@@ -229,122 +232,51 @@ class DashboardMootoolsImporterController extends Controller {
 		$repos	= $this->post("repos");
 		$file	= $this->post("file");
 
+		$plugin = new PluginArchive();
+		$pluginDir = $plugin->unzip($file);
+
 		$u = new User();
 		$fs = FileSet::createAndGetSet($repos, 1, $u->getUserID());
-		
-		$existsFiles = $this->_getExistsFilesByFileset($fs);
-		$result = $this->_importByArchive($fs, $file, $existsFiles);
+
+		$importer = new MootoolsPluginImporter($fs);
+		$importFiles = $importer->getComponentFiles($pluginDir . "/Source/");
+
+		$resultFiles = array();
+		foreach($importFiles as $file) {
+			$result = $importer->canImport($file);
+			if ($result) {
+				$resultFiles[$file] = $importer->addFile($file);
+			}
+		}
 
 		$response->setMessage("Plugin taking was completed.");
-		$response->setParameter("files", $result);
+		$response->setParameter("files", $resultFiles);
 		$response->setStatus(true);
 		$response->flush();
 	}
 
-	private function _getExistsFilesByFileset($fs) {
-		$fl = new FileList();
-		$fl->filterByExtension("js");
-		$fl->filterBySet($fs);
-		$files = $fl->get();
-
-		$setFiles = array();
-		foreach($files as $f) {
-			$fv = $f->getRecentVersion();
-			$setFiles[$fv->getFileName()] = $f;
+	private function _traverse($dir) {
+		$dh = opendir($dir);
+		if ($dh === false) {
+			return false;
 		}
-		return $setFiles;
-	}
-	
-	private function _importByArchive($fs, $archive, $existsFiles) {
-		$plugin = new PluginArchive();
-		$pluginDir = $plugin->unzip($archive);
-		
-		if ($pluginDir) {
-			$dir = $pluginDir . "/Source/";
-			if ($dh = opendir($dir)) {
-				$files = array();
-				while (($file = readdir($dh)) !== false) {
-					if (filetype($dir.$file) == 'file') {
-						if (array_key_exists($file, $existsFiles)) {
-							$fv = $this->_addFile($dir.$file, $existsFiles[$file]);
-						} else {
-							$fv = $this->_addFile($dir.$file);
-						}
-						$fs->addFileToSet($fv);
-						$files[$file] = $file;
-					}
-			    }
-				closedir($dh);
+
+		$files = array();
+		while (($file = readdir($dh)) !== false) {
+			$fileOrDir = $dir . '/' . $file;
+			if ($file == '.' || $file == '..') {
+				continue;
 			}
-			@unlink($tmpArchive);
-		}
-		return $files;
-	}
-
-	private function _addFile($file, $fr = false) {
-		Loader::library("file/importer");
-		Loader::library("mootools/plugin_parser", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
-
-		$cf = Loader::helper("file");
-
-		$parser = new MootoolsPluginParser();
-		$meta = $parser->parse($dir.$file);
-		
-		$fp = FilePermissions::getGlobal();
-		if (!$fp->canAddFiles()) {
-			$error = FileImporter::getErrorMessage(FileImporter::E_PHP_FILE_ERROR_DEFAULT);
-			return $error;
-		}
-
-		$u = new User();
-		if (!$fp->canAddFileType($cf->getExtension($file))) {
-			$message = FileImporter::getErrorMessage(FileImporter::E_FILE_INVALID_EXTENSION);
-			return $message;
-		}
-			
-		$fi = new FileImporter();
-		$fv = $fi->import($file, basename($file), $fr);
-		if (!($fv instanceof FileVersion)) {
-			$message = FileImporter::getErrorMessage($result);
-			return $message;
-		}
-
-		$requireValues = array();
-		if (is_array($meta["requires"]))  {
-			$requires = $meta["requires"];
-			foreach($requires as $module) {
-				$option = SelectAttributeTypeOption::getByValue($module);
-				if (empty($option)) {
-					$ak = FileAttributeKey::getByHandle(MOOTOOLS_PLUGIN_DEPENDENCES);
-					$type = SelectAttributeTypeOption::add($ak, $module, true);
-					$value = $type->getSelectAttributeOptionValue();
-				} else {
-					$value = $option->getSelectAttributeOptionValue();
-				}
-				$requireValues[$value] = $value;
+			switch(filetype($fileOrDir)) {
+				case 'file':
+					$this->_importFiles[$file] = $fileOrDir;
+					break;
+				case 'dir':
+					$this->_traverse($fileOrDir);
+					break;
 			}
 		}
-
-		$namespaces = explode('.', $meta['name']);
-		$packageName = array_shift($namespaces);
-		$moduleName = str_replace('.js', '', basename($file));
-
-		$componentName = $packageName . '/' . $moduleName;
-		$authors = (is_array($meta["authors"])) ? join(",", $meta["authors"]) : $meta["authors"];
-		$license = (is_array($meta["license"])) ? join(",", $meta["license"]) : $meta["license"];
-
-		$fv->setAttribute(MOOTOOLS_PLUGIN, true);
-		$fv->setAttribute(MOOTOOLS_COMPONENT_NAME, $componentName);
-		$fv->setAttribute(MOOTOOLS_PLUGIN_LICENSE, $license);
-		$fv->setAttribute(MOOTOOLS_PLUGIN_AUTHORS, $authors);
-		$fv->setAttribute(MOOTOOLS_PLUGIN_DEPENDENCES, $requireValues);
-		$fv->setAttribute(MOOTOOLS_PLUGIN_DISPLAY_ORDER, 0);
-		$fv->updateDescription($meta["description"]);
-		$fv->updateTags("mootools\nplugin");
-
-		return $fv;
+		closedir($dh);
 	}
 
 }
-
-?>
