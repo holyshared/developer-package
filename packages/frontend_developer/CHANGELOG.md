@@ -6,6 +6,7 @@ v1.1.0
 * PHP GitHub API is upgraded from 2.11 to 2.12.  
 * The view of the block of Github Repogitory, Github Tags, and Github Isuue is changed.  
 * The bug of the build form is corrected.
+* Refactoring of taking processing.
 
 v1.0.1
 ----------------------------------------------------------------------------
