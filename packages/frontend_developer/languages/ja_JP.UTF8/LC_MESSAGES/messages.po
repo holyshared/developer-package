@@ -1,20 +1,17 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-17 23:13+0900\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Noritaka Horio <holy.shared.design@gmail.com>\n"
+"Language-Team: Noritaka Horio <holy.shared.design@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:3
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\autonav\templates\small_project_footer_menu.php:2
@@ -60,148 +57,104 @@ msgstr ""
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:1
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\header.php:1
 msgid "Access Denied."
-msgstr ""
+msgstr "アクセス拒否"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:14
 msgid "Frontend Developer Package"
-msgstr ""
+msgstr "Frontend Developer Package"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:18
 msgid "Add-on package for Frontend Developer"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:34
-msgid "Management of mootools plugin"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:38
-msgid "Management of Mootools Plugin that does import"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:42
-msgid "Import from repository"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:54
-msgid "Name of user of github"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:64
-msgid "This file is a plugin of Mootools"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:75
-msgid "Component name of Mootools"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:86
-msgid "License of Mootools plugin"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:97
-msgid "Authors of Mootools plugin"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:108
-msgid "Dependence of Mootools plugin"
-msgstr ""
-
-#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:119
-msgid "The order of display of Mootools plugin"
-msgstr ""
+msgstr "Add-on package for Frontend Developer"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:11
 msgid "The ticket of the github repository is displayed."
-msgstr ""
+msgstr "Githubリポジトリのチケットを表示します。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:15
 msgid "Github Issues"
-msgstr ""
+msgstr "Githubチケット"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:20
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\controller.php:22
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\controller.php:20
 msgid "Please input a title."
-msgstr ""
+msgstr "タイトルを入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:21
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\controller.php:23
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\controller.php:21
 msgid "Please select the repository."
-msgstr ""
+msgstr "リポジトリを選択してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:22
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\controller.php:22
 msgid "Please select the display number."
-msgstr ""
+msgstr "表示する件数を選択してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\view.php:31
 msgid "There is no ticket."
-msgstr ""
+msgstr "チケットはありません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:11
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:18
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:11
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\username_empty.php:4
 msgid "The name of the user of github is not input."
-msgstr ""
+msgstr "Githubのユーザー名を入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:12
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:19
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:12
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\username_empty.php:5
 msgid "Please input the name of the user of github by user's edit display."
-msgstr ""
+msgstr "ユーザー編集画面でGithubのユーザー名を入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:16
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:23
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:16
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\username_empty.php:9
 msgid "It moves to user's profile page"
-msgstr ""
+msgstr "ユーザープロフィールページへ移動する。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:16
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:23
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:16
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\username_empty.php:9
 msgid "It moves to user's profile page &gt;&gt;"
-msgstr ""
+msgstr "ユーザープロフィールページへ移動する &gt;&gt;"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:27
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:34
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:20
 #, php-format
-msgid ""
-"It tries to register the content of the repository list of <em class="
-"\"username\">%s</em>."
-msgstr ""
+msgid "It tries to register the content of the repository list of <em class=\"username\">%s</em>."
+msgstr "<em class=\"username\">%s</em>のリポジトリを表示しています。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:28
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:35
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:21
-msgid ""
-"Please correct it from the change screen of user information when differing "
-"if you register."
-msgstr ""
+msgid "Please correct it from the change screen of user information when differing if you register."
+msgstr "表示されているユーザー名が違う場合、登録されているユーザー情報を修正してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:30
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:38
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:30
 msgid "Please input a necessary item."
-msgstr ""
+msgstr "必要な項目を入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:33
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:41
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:33
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:27
 msgid "General setting"
-msgstr ""
+msgstr "一般設定"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:35
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:43
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:35
 msgid "Title of tag list"
-msgstr ""
+msgstr "タグリストのタイトル"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:35
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:37
@@ -214,258 +167,255 @@ msgstr ""
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:29
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:35
 msgid "required"
-msgstr ""
+msgstr "必須"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:37
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\elements\form.php:46
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:37
 msgid "Repository of github"
-msgstr ""
+msgstr "Githubのリポジトリ"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\elements\form.php:39
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\elements\form.php:39
 msgid "Number of displayed tag"
-msgstr ""
+msgstr "表示するタグ数"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\controller.php:13
 msgid "The repository of github is displayed"
-msgstr ""
+msgstr "Githubのリポジトリを表示します。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\controller.php:17
 msgid "Github Repository"
-msgstr ""
+msgstr "Githubリポジトリ"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_repository\view.php:24
 msgid "There is no repository."
-msgstr ""
+msgstr "リポジトリはありません"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\controller.php:11
 msgid "Tag list of github repository"
-msgstr ""
+msgstr "Githubリポジトリのタグリスト"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\controller.php:15
 msgid "Github Tags"
-msgstr ""
+msgstr "Githubタグリスト"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_tags\view.php:27
 msgid "There is no tag yet."
-msgstr ""
+msgstr "タグはありません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:17
 msgid "The form that does the plugin of Mootools in the packaging is offered."
-msgstr ""
+msgstr "Mootoolｓのプラグインをパッケージングするフォームを提供します。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:21
 msgid "Mootools Plugin Build Form"
-msgstr ""
+msgstr "Mootoolsプラグインビルドフォーム"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:26
 msgid "Please input a form title."
-msgstr ""
+msgstr "フォームのタイトルを入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:27
 msgid "Please input the file name when it downloads it."
-msgstr ""
+msgstr "ダウンロード時のファイル名を入力してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:92
 msgid "Please select the compressed method."
-msgstr ""
+msgstr "圧縮する方法を選択してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\controller.php:97
 msgid "Please select a necessary module."
-msgstr ""
+msgstr "モジュールを選択してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:28
 msgid "YUI Compressor"
-msgstr ""
+msgstr "YUI Compressor"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:28
-msgid ""
-"Uses YUI Compressor by Julien Lecomte, to clean whitespace and rename "
-"internal variables to shorter values. Highest compression ratio."
-msgstr ""
+msgid "Uses YUI Compressor by Julien Lecomte, to clean whitespace and rename internal variables to shorter values. Highest compression ratio."
+msgstr "Julien LecomteのYUI Compressorを利用する。 空白と変数名を短い名称にリネームします。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:30
 msgid "JsMin Compression"
-msgstr ""
+msgstr "JsMin Compression"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:30
 msgid "Uses JSMin by Douglas Crockford. Cleans comments and whitespace."
-msgstr ""
+msgstr "Douglas CrockfordのJsMinを利用する。　コメントと空白を削除します。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:31
 msgid "No Compression"
-msgstr ""
+msgstr "未圧縮"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\view.php:31
 msgid "Uncompressed source. Recommended in testing phase."
-msgstr ""
+msgstr "未圧縮のソースファイル。　テストフェーズ時で利用することをお勧めします。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\fileset.php:9
 msgid "include"
-msgstr ""
+msgstr "取り込み"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\fileset.php:10
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\plugin_files.php:9
 msgid "name"
-msgstr ""
+msgstr "名前"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\fileset.php:11
 msgid "description"
-msgstr ""
+msgstr "詳細"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:19
 msgid "The plugin was not found."
-msgstr ""
+msgstr "プラグインが見つかりませんでした。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:20
 msgid "Please do the plugin from the repository of github importing."
-msgstr ""
+msgstr "Githubのリポジトリからプラグインをインポートしてください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:21
 msgid "It moves to the import page."
-msgstr ""
+msgstr "インポートページへ移動する。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:24
 msgid "Please select the plug-in name displayed in the list of the form."
-msgstr ""
+msgstr "フォームに表示するプラグインを選択してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:26
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:29
 msgid "Form title"
-msgstr ""
+msgstr "フォームタイトル"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:31
 msgid "Description of form"
-msgstr ""
+msgstr "フォームの詳細"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:33
 msgid "Header of script"
-msgstr ""
+msgstr "スクリプトのヘッダー"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:35
 msgid "Download file name"
-msgstr ""
+msgstr "ダウンロードファイル名"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:41
 msgid "Plugins"
-msgstr ""
+msgstr "プラグイン"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\mootools_plugin_build_form\elements\form.php:42
 msgid "Plugin displayed in form"
-msgstr ""
+msgstr "フォームに表示するプラグイン"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\rss_displayer\templates\small_project_feed_list.php:22
 msgid "F jS"
-msgstr ""
+msgstr "F jS"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\javascript_permission.php:4
 msgid "There is no taking permission of the javascript file."
-msgstr ""
+msgstr "javascriptファイルの取り込みが許可されていません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\javascript_permission.php:5
 msgid "Please permit taking the javascript file by setting file management."
-msgstr ""
+msgstr "ファイルマネージャの設定でjavascriptの取り込みを許可してください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\javascript_permission.php:8
 msgid "It moves to the file management page."
-msgstr ""
+msgstr "ファイルマネージャへ移動する。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\javascript_permission.php:8
 msgid "It moves to the file management page. &gt;&gt;"
-msgstr ""
+msgstr "ファイルマネージャへ移動する。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\plugin_files.php:10
 msgid "authors"
-msgstr ""
+msgstr "著作者"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\plugin_files.php:11
 msgid "license"
-msgstr ""
+msgstr "ライセンス"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\plugin_files.php:12
 msgid "dependences"
-msgstr ""
+msgstr "依存関係"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:54
 msgid "Your Repository"
-msgstr ""
+msgstr "あなたのリポジトリ"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:63
 msgid "There is no repository of you."
-msgstr ""
+msgstr "あなたのリポジトリはありません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:75
 msgid "Plugin importing of mootools"
-msgstr ""
+msgstr "Mootoolsのプラグインのインポート"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:77
 msgid "Please input repository URL of github, and click the import button."
-msgstr ""
+msgstr "GithubのリポジトリURLを入力して、インポートボタンをクリックしてください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:78
 msgid "The plugin of the latest version is taken from the repository."
-msgstr ""
+msgstr "リポジトリからプラグインの最新バージョンを取得します。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:81
 msgid "repository URL"
-msgstr ""
+msgstr "リポジトリURL"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:98
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:113
 msgid "Unable to access file manager."
-msgstr ""
+msgstr "ファイルマネージャにアクセスできません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:69
 msgid "Your Plugins"
-msgstr ""
+msgstr "あなたのプラグイン"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:79
 msgid "There is no plugin of you."
-msgstr ""
+msgstr "プラグインはありません。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:92
 msgid "Plugin list that does import"
-msgstr ""
+msgstr "インポート済みのプラグインリスト"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:94
 msgid "A plugin file that does the import is displayed."
-msgstr ""
+msgstr "インポートしたプラグインを表示しています。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:95
 msgid "Please permute the file in drag and drop."
-msgstr ""
+msgstr "ドラッグアンドドロップでファイルを並び替えてください。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:96
-msgid ""
-"When the javascript file is downloaded by a form builder, it is output as "
-"shown in this order of the row."
-msgstr ""
+msgid "When the javascript file is downloaded by a form builder, it is output as shown in this order of the row."
+msgstr "フォームビルダー使用時にこの表示順序で出力されます。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:15
 msgid "concrete5 open source CMS"
-msgstr ""
+msgstr "concrete5 open source CMS"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:15
 msgid "concrete5 Content Management"
-msgstr ""
+msgstr "concrete5 Content Management"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:18
 msgid "All rights reserved."
-msgstr ""
+msgstr "All rights reserved."
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:31
 #, php-format
 msgid "Currently logged in as <strong>%s</strong>."
-msgstr ""
+msgstr "<strong>%s</strong>でログインしています。"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:31
 msgid "Sign Out"
-msgstr ""
+msgstr "サインアウト"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:33
 msgid "Sign In to Edit this Site"
-msgstr ""
+msgstr "ログイン"
+

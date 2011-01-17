@@ -31,15 +31,15 @@ class FrontendDeveloperPackage extends Package {
 		$singlePages = array(
 			"/dashboard/mootools" => array(
 				'cName' => 'Mootools Plugin Developer',
-				'cDescription'	=> 'Management of mootools plugin'
+				'cDescription'	=> t('Management of mootools plugin')
 			),
 			"/dashboard/mootools/plugin" => array(
 				'cName' => 'plugin',
-				'cDescription'	=> 'Management of Mootools Plugin that does import'
+				'cDescription'	=> t('Management of Mootools Plugin that does import')
 			),
 			"/dashboard/mootools/importer" => array(
 				'cName' => 'import',
-				'cDescription'	=> 'Import from repository'
+				'cDescription'	=> t('Import from repository')
 			)
 		);
 		foreach ($singlePages as $key => $page) {
@@ -51,7 +51,7 @@ class FrontendDeveloperPackage extends Package {
 
 		//The name of the user of github is added to the attribute.
 		$values = array(
-			"akHandle" => MOOTOOLS_GITHUB_USER, "akName" => "Name of user of github",
+			"akHandle" => MOOTOOLS_GITHUB_USER, "akName" => t("Name of user of github"),
 			"akIsSearchable" => true, "akIsSearchableIndexed" => true, "akIsAutoCreated" => true, "akIsEditable" => true
 		);
 		$key = UserAttributeKey::add("text", $values, $pkg);
@@ -61,7 +61,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "boolean",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN,
-					"akName" => "This file is a plugin of Mootools",
+					"akName" => t("This file is a plugin of Mootools"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -72,7 +72,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "text",
 				"values" => array(
 					"akHandle" => MOOTOOLS_COMPONENT_NAME,
-					"akName" => "Component name of Mootools",
+					"akName" => t("Component name of Mootools"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -83,7 +83,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "text",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_LICENSE,
-					"akName" => "License of Mootools plugin",
+					"akName" => t("License of Mootools plugin"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -94,7 +94,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "text",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_AUTHORS,
-					"akName" => "Authors of Mootools plugin",
+					"akName" => t("Authors of Mootools plugin"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -105,7 +105,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "select",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_DEPENDENCES,
-					"akName" => "Dependence of Mootools plugin",
+					"akName" => t("Dependence of Mootools plugin"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,
@@ -116,7 +116,7 @@ class FrontendDeveloperPackage extends Package {
 				"type" => "number",
 				"values" => array(
 					"akHandle" => MOOTOOLS_PLUGIN_DISPLAY_ORDER,
-					"akName" => "The order of display of Mootools plugin",
+					"akName" => t("The order of display of Mootools plugin"),
 					"akIsSearchable" => true,
 					"akIsSearchableIndexed" => true,
 					"akIsAutoCreated" => true,

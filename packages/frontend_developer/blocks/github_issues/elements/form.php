@@ -24,7 +24,7 @@
 		}
 	?>
 
-	<p><?php echo t("It tries to register the content of the repository list of ") ?><em class="username"><?php echo $userName ?></em>.<br />
+	<p><?php echo t('It tries to register the content of the repository list of <em class="username">%s</em>.', $t->entities($userName)) ?><br />
 	<?php echo t("Please correct it from the change screen of user information when differing if you register.") ?></p>
 
 	<p><?php echo t("Please input a necessary item.") ?></p>
