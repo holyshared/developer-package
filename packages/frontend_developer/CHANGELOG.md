@@ -7,6 +7,7 @@ v1.1.0
 * The view of the block of Github Repogitory, Github Tags, and Github Isuue is changed.  
 * The bug of the build form is corrected.
 * Refactoring of taking processing.
+* The Japanese translation file is added.
 
 v1.0.1
 ----------------------------------------------------------------------------
