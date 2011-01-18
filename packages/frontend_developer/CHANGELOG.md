@@ -8,6 +8,7 @@ v1.1.0
 * The bug of the build form is corrected.
 * Refactoring of taking processing.
 * The Japanese translation file is added.
+* The shortfall of the translation is added. 
 
 v1.0.1
 ----------------------------------------------------------------------------

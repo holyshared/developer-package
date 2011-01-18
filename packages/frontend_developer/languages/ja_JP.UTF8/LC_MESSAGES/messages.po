@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-17 23:13+0900\n"
+"POT-Creation-Date: 2011-01-18 23:09+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Noritaka Horio <holy.shared.design@gmail.com>\n"
 "Language-Team: Noritaka Horio <holy.shared.design@gmail.com>\n"
@@ -66,6 +66,59 @@ msgstr "Frontend Developer Package"
 #: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:18
 msgid "Add-on package for Frontend Developer"
 msgstr "Add-on package for Frontend Developer"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:33
+msgid "Mootools Plugin Developer"
+msgstr "Mootoolsプラグイン管理"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:34
+msgid "Management of mootools plugin"
+msgstr "Mootoolsプラグインの管理"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:37
+msgid "plugin"
+msgstr "プラグイン"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:38
+msgid "Management of Mootools Plugin that does import"
+msgstr "Mootoolsプラグインのインポート"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:41
+#: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:87
+msgid "import"
+msgstr "インポート"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:42
+msgid "Import from repository"
+msgstr "リポジトリからのインポート"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:54
+msgid "Name of user of github"
+msgstr "Githubのユーザー名"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:64
+msgid "This file is a plugin of Mootools"
+msgstr "Mootoolsプラグインのファイル"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:75
+msgid "Component name of Mootools"
+msgstr "Mootoolsのコンポーネント名"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:86
+msgid "License of Mootools plugin"
+msgstr "Mootoolsプラグインのライセンス"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:97
+msgid "Authors of Mootools plugin"
+msgstr "Mootoolsプラグインの著作者"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:108
+msgid "Dependence of Mootools plugin"
+msgstr "Mootoolsプラグインの依存関係"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controller.php:119
+msgid "The order of display of Mootools plugin"
+msgstr "Mootoolsプラグインの表示順序"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\blocks\github_issues\controller.php:11
 msgid "The ticket of the github repository is displayed."
@@ -313,6 +366,42 @@ msgstr "フォームに表示するプラグイン"
 msgid "F jS"
 msgstr "F jS"
 
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:122
+msgid "URL is not effective. Please confirm it."
+msgstr "URLは有効ではありません。 URLを確認してください。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:125
+msgid "URL is effective."
+msgstr "URLを確認しました。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:145
+msgid "The repository was not able to be confirmed. Please confirm whether the repository exists."
+msgstr "リポジトリを確認できませんでした。存在するか確認してください。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:148
+msgid "The repository was able to be confirmed."
+msgstr "リポジトリを確認しました。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:168
+msgid "Bad GitHub response. Try again later."
+msgstr "Githubが応答しませんでした。　しばらくしてから再度試してください。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:177
+msgid "GitHub repository has no tags. At least one tag is required."
+msgstr "Githubのリポジトリにタグがありません。　一つ以上のタグが必要です。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:181
+msgid "Tag was able to be confirmed."
+msgstr "タグを確認しました。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:218
+msgid "The archive was able to be downloaded."
+msgstr "プラグインのアーカイブを取得しました。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\controllers\dashboard\mootools\importer.php:252
+msgid "Plugin taking was completed."
+msgstr "プラグインのインポートが完了しました。"
+
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\javascript_permission.php:4
 msgid "There is no taking permission of the javascript file."
 msgstr "javascriptファイルの取り込みが許可されていません。"
@@ -340,6 +429,10 @@ msgstr "ライセンス"
 #: C:\var\www\git\developer-package\packages\frontend_developer\elements\plugin_files.php:12
 msgid "dependences"
 msgstr "依存関係"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:49
+msgid "Plugin Import"
+msgstr "プラグインのインポート"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\importer.php:54
 msgid "Your Repository"
@@ -370,6 +463,10 @@ msgstr "リポジトリURL"
 msgid "Unable to access file manager."
 msgstr "ファイルマネージャにアクセスできません。"
 
+#: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:64
+msgid "Plugin Manager"
+msgstr "プラグインマネージャ"
+
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:69
 msgid "Your Plugins"
 msgstr "あなたのプラグイン"
@@ -393,6 +490,10 @@ msgstr "ドラッグアンドドロップでファイルを並び替えてくだ
 #: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:96
 msgid "When the javascript file is downloaded by a form builder, it is output as shown in this order of the row."
 msgstr "フォームビルダー使用時にこの表示順序で出力されます。"
+
+#: C:\var\www\git\developer-package\packages\frontend_developer\single_pages\dashboard\mootools\plugin.php:103
+msgid "Update"
+msgstr "更新"
 
 #: C:\var\www\git\developer-package\packages\frontend_developer\themes\small_project\elements\footer.php:15
 msgid "concrete5 open source CMS"

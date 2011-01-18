@@ -61,7 +61,7 @@ table td {
 <?php $fp = FilePermissions::getGlobal(); ?>
 <?php if ($fp->canSearchFiles()) : ?>
 
-	<h1><span>Plugin Manager</span></h1>
+	<h1><span><?php echo t("Plugin Manager") ?></span></h1>
 	<div class="ccm-dashboard-inner mainCol">
 
 		<div class="leftCol">
@@ -100,7 +100,7 @@ table td {
 						<div id="fileList">
 							<?php echo Loader::packageElement("plugin_files", $pkgHandle, array("filesets" => $filesets, "searchInstance" => $searchInstance)) ?>
 						</div>
-					<?php echo $f->submit("send", "Update"); ?>
+					<?php echo $f->submit("send", t("Update")); ?>
 					</form>
 				<?php endif; ?>
 			<?php endif; ?>

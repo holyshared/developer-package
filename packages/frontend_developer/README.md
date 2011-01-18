@@ -1,4 +1,4 @@
-Frontend Developer Package 1.0.1b
+Frontend Developer Package 1.1.0
 =================================
 
 Frontend Developer Package is a package for a small-scale open source software development person.

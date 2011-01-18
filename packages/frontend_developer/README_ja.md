@@ -1,4 +1,4 @@
-Frontend Developer Package 1.0.1b
+Frontend Developer Package 1.1.0
 =================================
 
 Frontend Developer Packageは**小規模なオープンソースソフトウェア開発者向けのパッケージ**です。

@@ -30,15 +30,15 @@ class FrontendDeveloperPackage extends Package {
 
 		$singlePages = array(
 			"/dashboard/mootools" => array(
-				'cName' => 'Mootools Plugin Developer',
+				'cName' => t('Mootools Plugin Developer'),
 				'cDescription'	=> t('Management of mootools plugin')
 			),
 			"/dashboard/mootools/plugin" => array(
-				'cName' => 'plugin',
+				'cName' => t('plugin'),
 				'cDescription'	=> t('Management of Mootools Plugin that does import')
 			),
 			"/dashboard/mootools/importer" => array(
-				'cName' => 'import',
+				'cName' => t('import'),
 				'cDescription'	=> t('Import from repository')
 			)
 		);

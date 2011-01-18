@@ -17,8 +17,8 @@
 		},
 
 		this.success = function(json, statusText, xhr, form){
+			var response = json.response;
 			if (this.current < this.options.step) {
-				var response = json.response;
 				if (response.status) {
 					$(this.container).trigger('progress', [this.current]);
 
@@ -43,6 +43,7 @@
 			} else {
 				$(this.container).trigger('progress', [this.current]);
 				$(this.container).trigger("complete");
+				$("#message").html(response.message);
 				this.current = 1;
 			}
 		},

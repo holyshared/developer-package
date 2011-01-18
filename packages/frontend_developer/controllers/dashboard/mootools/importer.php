@@ -119,10 +119,10 @@ class DashboardMootoolsImporterController extends Controller {
 
 		$result = array();
 		if (empty($url)) {
-			$response->setMessage("URL is not effective. Please confirm it.");
+			$response->setMessage(t("URL is not effective. Please confirm it."));
 			$response->flush();
 		}
-		$response->setMessage("URL is effective.");
+		$response->setMessage(t("URL is effective."));
 		$response->setParameters(array("user" => $username, "repos" => $repos));
 		$response->setStatus(true);
 		$response->flush();
@@ -142,10 +142,10 @@ class DashboardMootoolsImporterController extends Controller {
 		$json = $api->show($user, $repos);
 
 		if ($json === false) {
-			$response->setMessage("The repository was not able to be confirmed. Please confirm whether the repository exists.");
+			$response->setMessage(t("The repository was not able to be confirmed. Please confirm whether the repository exists."));
 			$response->flush();
 		}
-		$response->setMessage("The repository was able to be confirmed.");
+		$response->setMessage(t("The repository was able to be confirmed."));
 		$response->setParameters(array("user" => $user, "repos" => $repos));
 		$response->setStatus(true);
 		$response->flush();
@@ -165,7 +165,7 @@ class DashboardMootoolsImporterController extends Controller {
 		$response->setStatus(false);
 
 		if (!$tags) {
-			$response->setMessage("Bad GitHub response. Try again later.");
+			$response->setMessage(t("Bad GitHub response. Try again later."));
 			$response->flush();
 		}
 
@@ -174,11 +174,11 @@ class DashboardMootoolsImporterController extends Controller {
 		rsort($tags);
 
 		if (empty($tags)) {
-			$response->setMessage("GitHub repository has no tags. At least one tag is required.");
+			$response->setMessage(t("GitHub repository has no tags. At least one tag is required."));
 			$response->flush();
 		}
 
-		$response->setMessage("Tag was able to be confirmed.");
+		$response->setMessage(t("Tag was able to be confirmed."));
 		$response->setParameters(array(
 			"user" => $user,
 			"repos" => $repos,
@@ -215,7 +215,7 @@ class DashboardMootoolsImporterController extends Controller {
 			$response->flush();
 		}
 
-		$response->setMessage("The archive was able to be downloaded.");
+		$response->setMessage(t("The archive was able to be downloaded."));
 		$response->setParameters(array("user" => $user, "repos" => $repos, "file" => $file));
 		$response->setStatus(true);
 		$response->flush();
@@ -249,7 +249,7 @@ class DashboardMootoolsImporterController extends Controller {
 			}
 		}
 
-		$response->setMessage("Plugin taking was completed.");
+		$response->setMessage(t("Plugin taking was completed."));
 		$response->setParameter("files", $resultFiles);
 		$response->setStatus(true);
 		$response->flush();

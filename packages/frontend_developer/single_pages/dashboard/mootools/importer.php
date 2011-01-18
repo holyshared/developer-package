@@ -46,7 +46,7 @@ $(document.body).ready(function() {
 <?php $fp = FilePermissions::getGlobal(); ?>
 <?php if ($fp->canSearchFiles()) : ?>
 
-	<h1><span>Plugin Import</span></h1>
+	<h1><span><?php echo t("Plugin Import") ?></span></h1>
 	<div class="ccm-dashboard-inner mainCol">
 
 		<div class="leftCol">
@@ -84,7 +84,7 @@ $(document.body).ready(function() {
 					<p>
 						<?php //echo $f->text('repository', 'http://github.com/holyshared/Exhibition', array("size" => "80")); ?>
 						http://github.com/<strong class="username">holyshared</strong>/&nbsp;&nbsp;<?php echo $f->text('repository', '', array("size" => "20")); ?>
-						<input id="startImport" type="button" name="import" value="import" />
+						<input id="startImport" type="button" name="import" value="<?php echo t("import") ?>" />
 					</p>
 				</form>
 				<p id="message"></p>
