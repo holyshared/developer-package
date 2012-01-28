@@ -8,7 +8,7 @@ class FrontendDeveloperPackage extends Package {
 
 	protected $pkgHandle = FRONTEND_DEVELOPER_PACKAGE_HANDLE;
 	protected $appVersionRequired = '5.4.0';
-	protected $pkgVersion = '1.1.0';
+	protected $pkgVersion = '1.2.0';
 
 	public function getPackageName() {
 		return t('Frontend Developer Package');
