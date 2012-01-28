@@ -29,7 +29,20 @@ class GithubTagsBlockController extends BlockController {
 	}	
 	
 	public function view() {
-		$this->set("tags", $this->getUserRepositoryTags());
+		$displayCount = 0;
+		$displayTags = array();
+
+		$tags = $this->getUserRepositoryTags();
+
+		foreach($tags as $key => $value){
+			if ($displayCount > $this->displayCount - 1){
+				break;
+			}
+			$displayTags[$key] = $value;
+			$displayCount++;
+		}
+
+		$this->set("tags", $displayTags);
 	}
 
 	public function add() {
