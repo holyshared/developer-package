@@ -1,6 +1,11 @@
 CHANGE LOG
 ========================================
 
+v1.2
+----------------------------------------------------------------------------
+* Version of PHP Github API library is upgraded to 3.2. (**github tags**, **github issues**, **github repogitory**)
+* **github tags**, **github issues** block bugfixed.
+
 v1.1.0
 ----------------------------------------------------------------------------
 * PHP GitHub API is upgraded from 2.11 to 2.12.  
