@@ -29,7 +29,19 @@ class GithubIssuesBlockController extends BlockController {
 	}	
 	
 	public function view() {
-		$this->set("issues", $this->getUserRepositoryIssues());
+		$diplayCount = 0;
+		$displayIssues = array();
+
+		$issues = $this->getUserRepositoryIssues();
+
+		foreach($issues as $key => $issue){
+			if ($diplayCount > $this->displayCount - 1){
+				break;
+			}
+			$displayIssues[$key] = $issue;
+			$diplayCount++;
+		}
+		$this->set("issues", $displayIssues);
 	}
 
 	public function add() {
