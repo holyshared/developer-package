@@ -73,7 +73,7 @@ class GithubIssuesBlockController extends BlockController {
 
 		$username = $this->getUserName();
 
-		$github = new GitHub_Client();
+		$github = new Github_Client();
 		$api = $github->getIssueApi();
 		$issues = $api->getList($username, $this->repos);
 
@@ -90,7 +90,7 @@ class GithubIssuesBlockController extends BlockController {
 			return null;
 		}
 
-		$github = new GitHub_Client();
+		$github = new Github_Client();
 
 		$api = $github->getRepoApi();
 		$repositories = $api->getUserRepos($username);
