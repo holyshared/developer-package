@@ -67,11 +67,13 @@ class GithubIssuesBlockController extends BlockController {
 	}
 
 	protected function getUserRepositoryIssues() {
-		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+		Loader::library("3rdparty/github3/Github/Autoloader", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+
+		Github_Autoloader::register();
 
 		$username = $this->getUserName();
 
-		$github = new phpGitHubApi();
+		$github = new GitHub_Client();
 		$api = $github->getIssueApi();
 		$issues = $api->getList($username, $this->repos);
 
@@ -79,14 +81,17 @@ class GithubIssuesBlockController extends BlockController {
 	}
 	
 	protected function getUserRepositories() {
-		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+		Loader::library("3rdparty/github3/Github/Autoloader", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+
+		Github_Autoloader::register();
 
 		$username = $this->getUserName();
 		if (empty($username)) {
 			return null;
 		}
 
-		$github = new phpGitHubApi();
+		$github = new GitHub_Client();
+
 		$api = $github->getRepoApi();
 		$repositories = $api->getUserRepos($username);
 
