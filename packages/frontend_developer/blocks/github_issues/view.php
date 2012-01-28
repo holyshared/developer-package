@@ -17,9 +17,9 @@
 				$url .= $issue["gravatar_id"];
 				$url .= "?s=30";
 					
-				$ticket  = "http://github.com/".$t->entities($user)."/".$t->entities($repos);
-				$ticket .= "/issues#issue/".$t->entities($issue["position"]);
-			
+				$ticket  = "http://github.com/".$t->entities($user) . "/" . $t->entities($repos);
+				$ticket .= "/issues/" . $t->entities($issue["position"]);
+
 				$updateAt = date("Y-m-d H:i", strtotime($issue["updated_at"]));
 			?>
 			<li><a href="http://github.com/<?php echo $t->entities($user) ?>/"><img src="<?php echo $t->entities($url) ?>" alt="<?php echo $t->entities($user) ?>" class="image" /></a><a href="<?php echo $ticket ?>"><?php echo $t->entities($issue["title"]) ?></a>
