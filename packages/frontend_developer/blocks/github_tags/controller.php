@@ -82,13 +82,15 @@ class GithubTagsBlockController extends BlockController {
 	}
 
 	protected function getUserRepositoryTags() {
-		Loader::library("3rdparty/github/phpGitHubApi", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+		Loader::library("3rdparty/github3/Github/Autoloader", FRONTEND_DEVELOPER_PACKAGE_HANDLE);
+
+		Github_Autoloader::register();
 
 		$tags = array();
 		$username = $this->getUserName();
 
 		if (!empty($username)) {
-			$github = new phpGitHubApi();
+			$github = new Github_Client();
 			$api = $github->getRepoApi();
 			$tags = $api->getRepoTags($username, $this->repos);
 		}
